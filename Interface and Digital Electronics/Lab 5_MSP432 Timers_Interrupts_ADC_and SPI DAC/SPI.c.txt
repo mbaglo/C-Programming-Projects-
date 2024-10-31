@@ -1,0 +1,59 @@
+/*
+* Rochester Institute of Technology
+* Department of Computer Engineering
+* CMPE 460  Interfacing Digital Electronics
+* Hunter Culverhouse, Gloria MBaka
+* 1/14/2021
+*
+* Filename: SPI.c
+*/
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "msp.h"
+#include "uart.h"
+#include "leds.h"
+#include "switches.h"
+#include "Timer32.h"
+#include "CortexM.h"
+#include "Common.h"
+#include "ADC14.h"
+#include "ControlPins.h"
+#include "SPI.h"
+
+void SPI_Init(){
+	EUSCI_B0->CTLW0 = 0x0001;
+	EUSCI_B0->CTLW0 = 0xE9C1; //1110 1001 1100 0001
+	EUSCI_B0->BRW = 3; //3mhz / 1 = 3mhz
+	EUSCI_B0->CTLW0 &= ~0x0001;
+	
+	P1->SEL0 |= (BIT5 | BIT6);
+	P1->SEL1 &= ~(BIT5 | BIT6);
+	
+	P2->SEL0 &= ~BIT3;
+	P2->SEL1 &= ~BIT3;
+	
+	P2->DIR |= BIT3;
+	P2->OUT |= BIT3;
+}
+
+void DAC_Write(unsigned int writeVal){
+	unsigned char byte1,byte2;
+	P2->OUT &= ~BIT3;
+	
+	byte1 = (unsigned char)(0x30)|(writeVal>>4);
+	
+	while(!(EUSCI_B0->IFG & 2));
+	
+	EUSCI_B0->TXBUF = byte1;
+	
+	while(EUSCI_B0->STATW & 1);
+	
+	byte2 = (unsigned char)(writeVal<<4);
+	
+	EUSCI_B0->TXBUF = byte2;
+	
+	while(EUSCI_B0->STATW & 1);	
+	P2->OUT |= BIT3;
+	
+}

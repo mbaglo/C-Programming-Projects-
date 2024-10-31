@@ -1,0 +1,19 @@
+
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include "TimerA.h"
+#include "msp.h"
+#include "servo.h"
+
+void servo_init(void){
+	uint16_t period = 24000000/50.0; //12MHz/50Hz 
+	double dutyCycle = 0.075; // 0.05 for 1ms, 0.075 for 1.5ms, and 0.1 for 2ms at 50Hz
+	 
+	TIMER_A2_PWM_Init(period, dutyCycle, 1);
+}
+
+void servo_run(float dutyCycle){
+	TIMER_A2_PWM_DutyCycle(dutyCycle, 1);
+}

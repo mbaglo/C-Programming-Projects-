@@ -1,0 +1,74 @@
+/*
+* Rochester Institute of Technology
+* Department of Computer Engineering
+* CMPE 460  Interfacing Digital Electronics
+* Hunter Culverhouse, Gloria MBaka
+* 2/26/24
+*
+* Filename: Lab5-SPIDAC.c
+*/
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+#include "msp.h"
+#include "uart.h"
+#include "leds.h"
+#include "switches.h"
+#include "Timer32.h"
+#include "CortexM.h"
+#include "Common.h"
+#include "ADC14.h"
+#include "ControlPins.h"
+#include "SPI.h"
+unsigned int data[100];
+int indexData = 0;
+
+void Timer32_1_ISR(void){
+	DAC_Write(data[indexData]);
+			/*uart0_put("Data = ");
+			uart0_putnum(data[indexData]);
+			uart0_put("\n\r");*/
+			indexData++;
+			if(indexData == 100){
+				indexData = 0;
+			}
+}
+
+int main(void){
+		float vout;
+		//char uartString[100];
+		SPI_Init();
+		uart0_init();
+		unsigned long period = CalcPeriodFromFrequency (100.0);
+		Timer32_1_Init(&Timer32_1_ISR, period, T32DIV1);
+		for(int i = 0; i < 100; i++){
+			vout = 120.0 * sin((2.0 * 3.1415 * (float)i)/(100.0)) + 128.0;
+			/*if( i < 10){
+				vout = 0;
+			} else if ( i < 20 & i >= 10) {
+				vout = 25;
+			} else if ( i < 30 & i >= 20) {
+				vout = 50;
+			} else if ( i < 40 & i >= 30) {
+				vout =75;
+			} else if (i < 50 & i >= 40) {
+				vout = 100;
+			} else if (i < 60 & i >= 50) {
+				vout = 125;
+			} else if (i < 70 & i >= 60) {
+				vout = 150;
+			} else if (i < 80 & i >= 70) {
+				vout = 175;
+			} else if (i < 90 & i >= 80) {
+				vout = 200;
+			} else {
+				vout = 225;
+			}*/
+			data[i] = (unsigned int)(vout + 0.5);
+		}
+		EnableInterrupts();
+		while(1){
+			WaitForInterrupt();
+		}
+}

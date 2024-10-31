@@ -1,0 +1,93 @@
+/*
+ * Main module for testing the HeartRateMonitor
+ * 
+ * Author:  Hunter Culverhouse
+ * Created:  
+ */
+
+#include "msp.h"
+#include "uart.h"
+#include "Common.h"
+#include "Timer32.h"
+#include "TimerA.h"
+#include "ADC14.h"
+#include "CortexM.h"
+#include <stdio.h>
+
+
+
+BOOLEAN Timer1RunningFlag = FALSE;
+unsigned long MillisecondCounter = 0;
+unsigned int ADCVal[500];
+
+void Msdelay(int del){
+	volatile int i;
+	for (i=0; i<del*10000; i++){
+		;// Do nothing
+	}
+}
+
+void Timer32_1_ISR(void) {
+	
+		MillisecondCounter++;
+}
+
+void sample(void){
+	MillisecondCounter = 0;
+	Timer32_1_Init(&Timer32_1_ISR, SystemCoreClock/1000, T32DIV1);
+	for(int i = 0; i < 500; i++){
+		ADCVal[i] = ADC_In();
+		//uart0_put("\r\n");
+		//uart0_putnum(ADCVal[i]);
+		//uart0_put("\r\n");
+		Msdelay(1);
+	}
+	Timer32_1_Stop();
+		//uart0_put("\r\n");
+		//uart0_putnum(MillisecondCounter);
+		//uart0_put("\r\n");
+}
+
+int peakTimes(unsigned int sample[500]){
+	int peaks = 0;
+	int downs = 0;
+	for(int i = 1; i < 500; i++){
+		if ((ADCVal[i] == 16383) && (ADCVal[i] > ADCVal[i-1])) {
+			peaks++;
+		} else if((ADCVal[i] == 0) && (ADCVal[i] <+- ADCVal[i-1])){
+			downs++;
+		}
+	}
+/*	uart0_put("\r\n");
+		uart0_putnum(peaks);
+		uart0_put("\r\n");
+	uart0_put("\r\n");
+		uart0_putnum(downs);
+		uart0_put("\r\n");
+	uart0_put("\r\n");
+		uart0_putnum(MillisecondCounter);
+		uart0_put("\r\n");*/
+	return peaks;
+}
+
+int main(void) {
+	DisableInterrupts();
+	int peakPerSec = 0;
+	float BPM = 0.0;
+	uart0_init();
+	ADC0_InitSWTriggerCh6();
+	
+	EnableInterrupts();
+	uart0_put("\r\nStarting HRM\r\n");
+	while(TRUE){
+		sample();
+		peakPerSec = peakTimes(ADCVal);
+		BPM = (float) ((float)peakPerSec/((float)MillisecondCounter / 1000.0)) * 60.0;
+		peakPerSec = 0; 
+		uart0_put("\r\nBPM = ");
+		uart0_putnum(BPM);
+	//MillisecondCounter = 0;
+	
+	}
+	
+}

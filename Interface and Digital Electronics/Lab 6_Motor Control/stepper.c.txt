@@ -1,0 +1,52 @@
+#include "msp.h"
+#include "uart.h"
+#include "stepper.h"
+
+
+void StepperInit(void){
+    P4->SEL0 &= ~(BIT1 | BIT2 | BIT3 | BIT4); //Coil A, B, C, D -> 4.1, 4.2, 4.3, 4.4 respectively
+    P4->SEL1 &= ~(BIT1 | BIT2 | BIT3 | BIT4);
+
+    P4->DIR |= (BIT1 | BIT2 | BIT3 | BIT4);
+    P4->OUT &= ~(BIT1 | BIT2 | BIT3 | BIT4);
+}
+
+void CoilAOn(void) {
+    P4->OUT |= BIT1;
+}
+
+void CoilAOff(void) {
+    P4->OUT &= ~BIT1;
+}
+
+void CoilBOn(void) {
+    P4->OUT |= BIT2;
+}
+
+void CoilBOff(void) {
+    P4->OUT &= ~BIT2;
+}
+
+void CoilCOn(void) {
+    P4->OUT |= BIT3;
+}
+
+void CoilCOff(void) {
+    P4->OUT &= ~BIT3;
+}
+
+void CoilDOn(void) {
+    P4->OUT |= BIT4;
+}
+
+void CoilDOff(void) {
+    P4->OUT &= ~BIT4;
+}
+
+void CoilAllOff(void) {
+    P4->OUT &= ~(BIT1 | BIT2 | BIT3 | BIT4);
+}
+
+void CoilAllOn(void) {
+    P4->OUT |= (BIT1 | BIT2 | BIT3 | BIT4);
+}

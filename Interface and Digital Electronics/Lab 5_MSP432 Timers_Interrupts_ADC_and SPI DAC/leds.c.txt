@@ -1,0 +1,162 @@
+#include "msp.h"
+#include "uart.h"
+#include "Common.h"
+
+
+void LED1_Init(void)
+{
+	// configure PortPin for LED1 as port I/O 
+  P1->SEL1 &=~BIT0;
+	P1->SEL0 &=~BIT0;  
+  
+	// make built-in LED1 LED high drive strength
+  P1->DS |=~BIT0;
+
+	// make built-in LED1 out	 
+	P1->DIR |=BIT0;
+
+	// turn off LED
+  P1->OUT &= ~BIT0;
+}
+
+void LED1_Off(void){
+	P1->OUT &= ~BIT0;
+}
+
+void LED1_On(void){
+	P1->OUT |= BIT0;
+}
+
+void LED2_Init(void)
+{
+	// configure PortPin for LED2 as port I/O 
+  P2->SEL1 &=~BIT0;
+	P2->SEL0 &=~BIT0;
+	
+	P2->SEL1 &=~BIT1;
+	P2->SEL0 &=~BIT1;
+	
+	P2->SEL1 &=~BIT2;
+	P2->SEL0 &=~BIT2;
+
+	// make built-in LED2 LEDs high drive strength
+  P2->DS |=~BIT0;
+	P2->DS |=~BIT1;
+	P2->DS |=~BIT2;
+
+	// make built-in LED2 out	 
+	P2->DIR |=BIT0;
+	P2->DIR |=BIT1;
+	P2->DIR |=BIT2;
+
+	// turn off LED
+  P2->OUT &= ~BIT0;
+	P2->OUT &= ~BIT1;
+	P2->OUT &= ~BIT2;
+}
+
+void LED2_Off(void){
+	P2->OUT &= ~BIT0;
+	P2->OUT &= ~BIT1;
+	P2->OUT &= ~BIT2;
+}
+
+void LED2_On(void){
+	P2->OUT |= BIT0;
+	P2->OUT |= BIT1;
+	P2->OUT |= BIT2;
+}
+
+void LED2_OnRed(void){
+	P2->OUT |= BIT0;
+	P2->OUT &= ~BIT1;
+	P2->OUT &= ~BIT2;
+}
+
+void LED2_OnGreen(void){
+	P2->OUT |= BIT1;
+	P2->OUT &= ~BIT2;
+	P2->OUT &= ~BIT0;
+}
+
+void LED2_OnBlue(void){
+	P2->OUT |= BIT2;
+	P2->OUT &= ~BIT1;
+	P2->OUT &= ~BIT0;
+}
+void LED2_OnCyan(void){
+	P2->OUT |= BIT2;
+	P2->OUT |= BIT1;
+	P2->OUT &= ~BIT0;
+}
+void LED2_OnMagenta(void){
+	P2->OUT |= BIT2;
+	P2->OUT &= ~BIT1;
+	P2->OUT |= BIT0;
+}
+void LED2_OnYellow(void){
+	P2->OUT &= ~BIT2;
+	P2->OUT |= BIT1;
+	P2->OUT |= BIT0;
+}
+void LED2_OnWhite(void){
+	P2->OUT |= BIT2;
+	P2->OUT |= BIT1;
+	P2->OUT |= BIT0;
+}
+void CycleLED2Color(void) {
+    static int colorIndex = 0;  // Static variable to keep track of the current color
+
+    switch (colorIndex) {
+        case 0:
+            LED2_OnRed();    // Set LED2 to Red
+            break;
+        case 1:
+            LED2_OnGreen();  // Set LED2 to Green
+            break;
+        case 2:
+            LED2_OnBlue();   // Set LED2 to Blue
+            break;
+        case 3:
+            LED2_OnCyan();   // Set LED2 to Cyan
+            break;
+        case 4:
+            LED2_OnMagenta(); // Set LED2 to Magenta
+            break;
+        case 5:
+            LED2_OnYellow(); // Set LED2 to Yellow
+            break;
+        case 6:
+            LED2_OnWhite();  // Set LED2 to White
+            break;
+        default:
+            colorIndex = 0;  // Reset index if out of bounds
+            LED2_OnRed();    // Default to Red
+            break;
+    }
+
+    colorIndex = (colorIndex + 1) % 7;  // Increment and wrap around the color index
+}
+
+
+BOOLEAN LED1_State(void) {
+    return (P1->OUT & BIT0) ? TRUE : FALSE;
+}
+
+BOOLEAN LED2_State(void) {
+    
+    
+    if ((P2->OUT & (BIT0 | BIT1 | BIT2)) != 0) {  // If any of the LED2 pins are high
+        return TRUE;
+    } else {
+        return FALSE;
+    }
+}
+
+void msDelay(int delay){
+	for(int i = 0; i < delay; i++)
+		for(int j = 0; j<16000; j++);
+}
+
+
+

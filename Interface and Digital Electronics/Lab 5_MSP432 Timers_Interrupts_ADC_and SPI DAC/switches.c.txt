@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "msp.h"
+#include "uart.h"
+#include "switches.h"
+#include "leds.h"
+#include "Timer32.h"
+#include "CortexM.h"
+#include "Common.h"
+
+void Switch1_Init(void)
+{
+	// configure PortPin for Switch 1 and Switch2 as port I/O 
+	P1->SEL0 &= ~BIT1;
+	P1->SEL1 &= ~BIT1;
+	
+	// configure as input
+	P1->DIR &= ~BIT1;
+	
+	P1->REN |= BIT1;
+	
+	P1->OUT |= BIT1;
+              
+}
+void Switch2_Init(void)
+{
+	// configure PortPin for Switch 1 and Switch2 as port I/O 
+	P1->SEL0 &= ~BIT4;
+	P1->SEL1 &= ~BIT4;
+	
+	// configure as input
+	P1->DIR &= ~BIT4;
+	
+	P1->REN |= BIT4;
+	
+	P1->OUT |= BIT4;
+}

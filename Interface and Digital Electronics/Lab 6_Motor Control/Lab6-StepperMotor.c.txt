@@ -1,0 +1,65 @@
+/*
+ * Main module for testing the stepper motor
+ * 
+ * Author:  Hunter Culverhouse
+ * Created: 
+ */
+
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include "msp.h"
+#include "uart.h"
+#include "stepper.h"
+
+void delay(int del){
+	volatile int i;
+	for (i=0; i<del*50000; i++){
+		;// Do nothing
+	}
+}
+
+int main(void) {
+    StepperInit();
+    uart0_init();
+
+    int forward = 1;
+    int phase = 0;
+
+    while(1){
+        CoilAllOff();
+        if(forward){
+            if(phase == 0){
+                CoilAOn();
+                phase++;
+            } else if (phase == 1){
+                CoilBOn();
+                phase++;
+            } else if (phase == 2){
+                CoilCOn();
+                phase++;
+            } else {
+                CoilDOn();
+                phase = 0;
+		forward = 0;
+            }
+        } else {
+            if(phase == 0) {
+                CoilDOn();
+                phase++;
+            } else if(phase == 1) {
+                CoilCOn();
+                phase++;
+            } else if(phase == 2) {
+                CoilBOn();
+                phase++;
+            } else {
+                CoilAOn();
+                phase = 0;
+		forward = 1;
+            }
+        }
+        delay(10);
+    }
+
+}
