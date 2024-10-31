@@ -1,0 +1,47 @@
+The answers to the pre-lab questions on threading
+--------------------------------------------------
+
+1) How do you know if a standard C library or any other library is thread 
+safe?
+   - To determine if a library is thread safe, one should check the documentation 
+   for any mention of thread safety or look for keywords such as "reentrant" or 
+   "thread-safe" in the function descriptions. Libraries that do not explicitly 
+   claim to be thread safe should be assumed not to be. One can also check if the 
+   library uses any global or static variables without protection mechanisms like 
+   mutexes, which can indicate that the library is not thread safe.
+
+2) In what cases does threading not improve performance?
+   - Threading does not improve performance in the following cases:
+     - Single-core processors: On single-core systems, multiple threads may 
+      not improve performance due to the overhead of context switching.
+     - I/O-bound tasks: If a program is waiting on I/O operations (like 
+      disk access or network communication), threading might not enhance performance 
+      because the bottleneck is the I/O operation, not the CPU processing.
+     - High synchronization overhead: If threads need frequent 
+      synchronization or access shared resources often, the overhead of managing 
+      these can negate the benefits of parallel execution.
+
+3) By default, how much stack space does a single thread get?
+   - By default, a single thread typically gets a stack space of about 8 MB in 
+   most modern operating systems. However, this size can be adjusted by system 
+   settings or explicitly when the thread is created if the system allows such 
+   configuration.
+
+4) If we have a threadable task running on one CPU for 2 CPU seconds and 2 
+wall seconds. We move the task to a dual core system, what will be the new CPU 
+time and Wall time?
+   - On a dual-core system, if the task is perfectly parallelizable, the CPU 
+   time would still be 2 CPU seconds total, as each core can handle part of the 
+   task simultaneously. The wall time, however, would potentially decrease to 
+   about 1 wall second, assuming the task divides evenly and there are no 
+   overheads for synchronization or communication between cores.
+
+5) Why must we use volatile for mutex() protected data?
+   - The `volatile` keyword is used to prevent the compiler from optimizing out 
+   necessary loads and stores to variables that can change in ways that cannot be 
+   determined by the compiler, such as by another thread. In the context of 
+   mutex-protected data, `volatile` ensures that the value of the variable is 
+   re-read from memory every time it is accessed, because other threads might have 
+   modified it, despite the presence of locks. This is crucial for maintaining 
+   data consistency and preventing the compiler from caching the value in a 
+   register, unaware of changes made by other threads.

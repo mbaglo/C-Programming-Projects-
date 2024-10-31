@@ -1,0 +1,44 @@
+CC = gcc
+CFLAGS = -O1 -g -Wall -std=c99 -pedantic
+OBJ = fib.o
+PROG = fib
+SRC = fib.c
+
+.SILENT:
+
+# Default target
+.PHONY: all
+all: $(PROG)
+
+# Compile fib.c to fib.o only if fib.c is newer than fib.o
+$(OBJ): $(SRC)
+	@echo "Compiling fib.c to fib.o..."
+	$(CC) $(CFLAGS) -c $(SRC) -o $(OBJ)
+
+# Link fib.o to executable fib
+$(PROG): $(OBJ)
+	@echo "Linking fib.o to create executable fib..."
+	$(CC) $(OBJ) -o $(PROG)
+
+# Run the binary with Valgrind for memory checking
+.PHONY: mem
+mem: $(PROG)
+	@echo "Running fib with memory check..."
+	valgrind --tool=memcheck --leak-check=yes --track-origins=yes --error-exitcode=99 ./$(PROG)
+
+# Clean the application up
+.PHONY: clean
+clean:
+	@echo "Cleaning up..."
+	rm -f $(OBJ) $(PROG)
+
+# Help message
+.PHONY: help
+help:
+	@echo "Makefile usage:"
+	@echo "  make all    - Compile and link the program"
+	@echo "  make mem    - Run the program with Valgrind for memory checking"
+	@echo "  make clean  - Remove all compiled objects and executable"
+	@echo "  make help   - Display this help message"
+
+

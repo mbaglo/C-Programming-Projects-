@@ -1,0 +1,89 @@
+Student prelab questions
+
+1) Write a simple macro called “SHORT_PI”to define the value “3.1415”
+
+#define SHORT_PI 3.1415
+
+
+2) Explain the use of #ifdef and #ifndef macro commands.
+
+#ifdef is used to check if a macro is defined. If the macro is defined, the code following #ifdef until the next #endif is included in the compilation/executed.
+
+#ifndef checks if a macro is not defined. If the macro is not defined, the code following #ifndef until the next #endif is included in the compilation/executed.
+
+3) Explain the use of the: __FILE__ and __LINE__ macros.
+
+__FILE__ is a predefined macro in C  that expands to the name of the source file being compiled or current input file, in the form of a C string constant. This is useful for logging and debugging, to know the source file of the code being executed.
+
+__LINE__ is predefined macro that expands to the current input line number, in the form of a decimal constant. Like __FILE__, it's useful for logging and debugging purposes, to pinpoint the location of events within a file.
+ 
+4) Explain what makes a macro different than a function.
+
+4) **Contrast between Macros and Functions**:
+
+In Macros, code is directly inlined, which can result in larger program sizes but offers the benefit of faster execution due to the elimination of function call overhead. However, Macros are limited in their ability to manage side effects and are inherently typeless, offering no type safety.
+
+On the other hand, with Functions, there is an actual call mechanism involved, which contributes to smaller program sizes as the code is not duplicated. This, however, introduces additional overhead, making execution slightly slower. Functions excel in controlling side effects through their scoped and encapsulated nature and are typed, providing strict type checking for arguments and return values.  
+
+5) Explain the difference between the “#” and “##” macro metacommands.
+
+The “#” operator within a macro definition is called the "stringification" or "stringizing" operator. It converts macro parameters to a quoted string or string literals.
+
+The “##” operator is known as the "token-pasting" operator. It concatenates two tokens into a single token, which is useful for creating composite identifiers or variable names within macros.
+
+6) Assuming a char is one byte, how many bytes will be allocated by the compiler 
+   using the following code?  
+   char array [20];
+
+	Number of bytes  = 20 * 1 = 20 bytes 
+	
+
+7) Assuming a char is one byte, how many bytes will be allocated by the compiler 
+   using the following code?
+   int num = 20; 
+   char array [num];
+
+	Number of Character = 20 * 1 = 20 bytes
+
+8) Explain why trying to create dynamic arrays using variables in the index won’t work.
+ 
+Trying to create dynamic arrays with sizes determined by variables (non-const) won't work because the size needs to be known at compile-time. 
+
+9) Explain how the 2D approach works.
+
+A 2D array is an array of arrays. We can think of it as a table with rows and columns, where each row is an array itself. Accessing elements in a 2D array requires specifying two indices: one for the row and one for the column. The memory for a 2D array is allocated either in a row-major order (where rows are stored in contiguous memory locations) or less commonly, in a column-major order, depending on the language and its implementation. The location of the row major index is dependent on the length of the row. The C “storage mapping function” is more complicated and must know the length of a row ahead of time.
+
+To find the memory address of an element A[i][j] in a 2D array, the compiler uses a formula that accounts for the row and column indices of the element, the size of each element in the array (in bytes), and the total number of elements in a row.
+
+The formula is:
+
+ A[i][j] = Base Address + (i * n + j) * size_of_element
+
+where:
+
+Base Address is the starting address of the array.
+i is the row index.
+n is the total number of columns in each row.
+j is the column index.
+size_of_element is the size of each element in the array.
+
+ 
+10) Calculate the memory address for double Z[3], in decimal, given the array. 
+
+double Z[3] is at memory location &Z + 8*3 (bytes) = &Z + 24 bytes
+ 
+11) Calculate the memory address for double R[3][2], in decimal, given the array R 
+   is defined as R[10][10], starts at 100 decimal,  and the double data type 
+   is 8 bytes long.  Show your work.
+
+Using the formula R[i][j] = Base Address + (i * n + j) * size_of_element
+
+where:
+
+Base Address is the starting address of the array = 100 
+i is the row index = 3 
+n is the total number of columns in each row = 10 
+j is the column index =  2 
+size_of_element is the size of each element in the array = 8 bytes 
+
+The memory address for double R[3][2] = &[100 + (3 * 10 + 2) * 8 bytes] = &356

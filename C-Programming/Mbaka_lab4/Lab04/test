@@ -1,0 +1,11 @@
+#############################################################################
+# Simple script to run tests
+#############################################################################
+rm out.txt
+./simpleTest 0   > out.txt 2>&1
+./simpleTest 1  >> out.txt 2>&1
+./simpleTest 2  >> out.txt 2>&1
+./simpleTest 3  >> out.txt 2>&1
+./simpleTest 4  >> out.txt 2>&1
+cat out.txt
+

@@ -1,0 +1,1367 @@
+Looping variable 'i3'
+0
+1
+2
+Looping variable 'i3'
+0
+1
+2
+Looping variable 'ii'
+0
+1
+
+typedef long unsigned int size_t;
+typedef unsigned char __u_char;
+typedef unsigned short int __u_short;
+typedef unsigned int __u_int;
+typedef unsigned long int __u_long;
+typedef signed char __int8_t;
+typedef unsigned char __uint8_t;
+typedef signed short int __int16_t;
+typedef unsigned short int __uint16_t;
+typedef signed int __int32_t;
+typedef unsigned int __uint32_t;
+typedef signed long int __int64_t;
+typedef unsigned long int __uint64_t;
+typedef long int __quad_t;
+typedef unsigned long int __u_quad_t;
+typedef unsigned long int __dev_t;
+typedef unsigned int __uid_t;
+typedef unsigned int __gid_t;
+typedef unsigned long int __ino_t;
+typedef unsigned long int __ino64_t;
+typedef unsigned int __mode_t;
+typedef unsigned long int __nlink_t;
+typedef long int __off_t;
+typedef long int __off64_t;
+typedef int __pid_t;
+typedef struct { int __val[2]; } __fsid_t;
+typedef long int __clock_t;
+typedef unsigned long int __rlim_t;
+typedef unsigned long int __rlim64_t;
+typedef unsigned int __id_t;
+typedef long int __time_t;
+typedef unsigned int __useconds_t;
+typedef long int __suseconds_t;
+typedef int __daddr_t;
+typedef int __key_t;
+typedef int __clockid_t;
+typedef void * __timer_t;
+typedef long int __blksize_t;
+typedef long int __blkcnt_t;
+typedef long int __blkcnt64_t;
+typedef unsigned long int __fsblkcnt_t;
+typedef unsigned long int __fsblkcnt64_t;
+typedef unsigned long int __fsfilcnt_t;
+typedef unsigned long int __fsfilcnt64_t;
+typedef long int __fsword_t;
+typedef long int __ssize_t;
+typedef long int __syscall_slong_t;
+typedef unsigned long int __syscall_ulong_t;
+typedef __off64_t __loff_t;
+typedef __quad_t *__qaddr_t;
+typedef char *__caddr_t;
+typedef long int __intptr_t;
+typedef unsigned int __socklen_t;
+struct _IO_FILE;
+
+typedef struct _IO_FILE FILE;
+
+
+typedef struct _IO_FILE __FILE;
+typedef struct
+{
+  int __count;
+  union
+  {
+    unsigned int __wch;
+    char __wchb[4];
+  } __value;
+} __mbstate_t;
+typedef struct
+{
+  __off_t __pos;
+  __mbstate_t __state;
+} _G_fpos_t;
+typedef struct
+{
+  __off64_t __pos;
+  __mbstate_t __state;
+} _G_fpos64_t;
+typedef __builtin_va_list __gnuc_va_list;
+struct _IO_jump_t; struct _IO_FILE;
+typedef void _IO_lock_t;
+struct _IO_marker {
+  struct _IO_marker *_next;
+  struct _IO_FILE *_sbuf;
+  int _pos;
+};
+enum __codecvt_result
+{
+  __codecvt_ok,
+  __codecvt_partial,
+  __codecvt_error,
+  __codecvt_noconv
+};
+struct _IO_FILE {
+  int _flags;
+  char* _IO_read_ptr;
+  char* _IO_read_end;
+  char* _IO_read_base;
+  char* _IO_write_base;
+  char* _IO_write_ptr;
+  char* _IO_write_end;
+  char* _IO_buf_base;
+  char* _IO_buf_end;
+  char *_IO_save_base;
+  char *_IO_backup_base;
+  char *_IO_save_end;
+  struct _IO_marker *_markers;
+  struct _IO_FILE *_chain;
+  int _fileno;
+  int _flags2;
+  __off_t _old_offset;
+  unsigned short _cur_column;
+  signed char _vtable_offset;
+  char _shortbuf[1];
+  _IO_lock_t *_lock;
+  __off64_t _offset;
+  void *__pad1;
+  void *__pad2;
+  void *__pad3;
+  void *__pad4;
+  size_t __pad5;
+  int _mode;
+  char _unused2[15 * sizeof (int) - 4 * sizeof (void *) - sizeof (size_t)];
+};
+typedef struct _IO_FILE _IO_FILE;
+struct _IO_FILE_plus;
+extern struct _IO_FILE_plus _IO_2_1_stdin_;
+extern struct _IO_FILE_plus _IO_2_1_stdout_;
+extern struct _IO_FILE_plus _IO_2_1_stderr_;
+typedef __ssize_t __io_read_fn (void *__cookie, char *__buf, size_t __nbytes);
+typedef __ssize_t __io_write_fn (void *__cookie, const char *__buf,
+     size_t __n);
+typedef int __io_seek_fn (void *__cookie, __off64_t *__pos, int __w);
+typedef int __io_close_fn (void *__cookie);
+extern int __underflow (_IO_FILE *);
+extern int __uflow (_IO_FILE *);
+extern int __overflow (_IO_FILE *, int);
+extern int _IO_getc (_IO_FILE *__fp);
+extern int _IO_putc (int __c, _IO_FILE *__fp);
+extern int _IO_feof (_IO_FILE *__fp) __attribute__ ((__nothrow__ , __leaf__));
+extern int _IO_ferror (_IO_FILE *__fp) __attribute__ ((__nothrow__ , __leaf__));
+extern int _IO_peekc_locked (_IO_FILE *__fp);
+extern void _IO_flockfile (_IO_FILE *) __attribute__ ((__nothrow__ , __leaf__));
+extern void _IO_funlockfile (_IO_FILE *) __attribute__ ((__nothrow__ , __leaf__));
+extern int _IO_ftrylockfile (_IO_FILE *) __attribute__ ((__nothrow__ , __leaf__));
+extern int _IO_vfscanf (_IO_FILE * __restrict, const char * __restrict,
+   __gnuc_va_list, int *__restrict);
+extern int _IO_vfprintf (_IO_FILE *__restrict, const char *__restrict,
+    __gnuc_va_list);
+extern __ssize_t _IO_padn (_IO_FILE *, int, __ssize_t);
+extern size_t _IO_sgetn (_IO_FILE *, void *, size_t);
+extern __off64_t _IO_seekoff (_IO_FILE *, __off64_t, int, int);
+extern __off64_t _IO_seekpos (_IO_FILE *, __off64_t, int);
+extern void _IO_free_backup_area (_IO_FILE *) __attribute__ ((__nothrow__ , __leaf__));
+
+typedef _G_fpos_t fpos_t;
+
+extern struct _IO_FILE *stdin;
+extern struct _IO_FILE *stdout;
+extern struct _IO_FILE *stderr;
+
+extern int remove (const char *__filename) __attribute__ ((__nothrow__ , __leaf__));
+extern int rename (const char *__old, const char *__new) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern FILE *tmpfile (void) ;
+extern char *tmpnam (char *__s) __attribute__ ((__nothrow__ , __leaf__)) ;
+
+
+extern int fclose (FILE *__stream);
+extern int fflush (FILE *__stream);
+
+
+extern FILE *fopen (const char *__restrict __filename,
+      const char *__restrict __modes) ;
+extern FILE *freopen (const char *__restrict __filename,
+        const char *__restrict __modes,
+        FILE *__restrict __stream) ;
+
+
+extern void setbuf (FILE *__restrict __stream, char *__restrict __buf) __attribute__ ((__nothrow__ , __leaf__));
+extern int setvbuf (FILE *__restrict __stream, char *__restrict __buf,
+      int __modes, size_t __n) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int fprintf (FILE *__restrict __stream,
+      const char *__restrict __format, ...);
+extern int printf (const char *__restrict __format, ...);
+extern int sprintf (char *__restrict __s,
+      const char *__restrict __format, ...) __attribute__ ((__nothrow__));
+extern int vfprintf (FILE *__restrict __s, const char *__restrict __format,
+       __gnuc_va_list __arg);
+extern int vprintf (const char *__restrict __format, __gnuc_va_list __arg);
+extern int vsprintf (char *__restrict __s, const char *__restrict __format,
+       __gnuc_va_list __arg) __attribute__ ((__nothrow__));
+
+
+extern int snprintf (char *__restrict __s, size_t __maxlen,
+       const char *__restrict __format, ...)
+     __attribute__ ((__nothrow__)) __attribute__ ((__format__ (__printf__, 3, 4)));
+extern int vsnprintf (char *__restrict __s, size_t __maxlen,
+        const char *__restrict __format, __gnuc_va_list __arg)
+     __attribute__ ((__nothrow__)) __attribute__ ((__format__ (__printf__, 3, 0)));
+
+
+extern int fscanf (FILE *__restrict __stream,
+     const char *__restrict __format, ...) ;
+extern int scanf (const char *__restrict __format, ...) ;
+extern int sscanf (const char *__restrict __s,
+     const char *__restrict __format, ...) __attribute__ ((__nothrow__ , __leaf__));
+extern int fscanf (FILE *__restrict __stream, const char *__restrict __format, ...) __asm__ ("" "__isoc99_fscanf") ;
+extern int scanf (const char *__restrict __format, ...) __asm__ ("" "__isoc99_scanf") ;
+extern int sscanf (const char *__restrict __s, const char *__restrict __format, ...) __asm__ ("" "__isoc99_sscanf") __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int vfscanf (FILE *__restrict __s, const char *__restrict __format,
+      __gnuc_va_list __arg)
+     __attribute__ ((__format__ (__scanf__, 2, 0))) ;
+extern int vscanf (const char *__restrict __format, __gnuc_va_list __arg)
+     __attribute__ ((__format__ (__scanf__, 1, 0))) ;
+extern int vsscanf (const char *__restrict __s,
+      const char *__restrict __format, __gnuc_va_list __arg)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__format__ (__scanf__, 2, 0)));
+extern int vfscanf (FILE *__restrict __s, const char *__restrict __format, __gnuc_va_list __arg) __asm__ ("" "__isoc99_vfscanf")
+     __attribute__ ((__format__ (__scanf__, 2, 0))) ;
+extern int vscanf (const char *__restrict __format, __gnuc_va_list __arg) __asm__ ("" "__isoc99_vscanf")
+     __attribute__ ((__format__ (__scanf__, 1, 0))) ;
+extern int vsscanf (const char *__restrict __s, const char *__restrict __format, __gnuc_va_list __arg) __asm__ ("" "__isoc99_vsscanf") __attribute__ ((__nothrow__ , __leaf__))
+     __attribute__ ((__format__ (__scanf__, 2, 0)));
+
+
+extern int fgetc (FILE *__stream);
+extern int getc (FILE *__stream);
+extern int getchar (void);
+
+
+extern int fputc (int __c, FILE *__stream);
+extern int putc (int __c, FILE *__stream);
+extern int putchar (int __c);
+
+
+extern char *fgets (char *__restrict __s, int __n, FILE *__restrict __stream)
+     ;
+extern char *gets (char *__s) __attribute__ ((__deprecated__));
+
+
+extern int fputs (const char *__restrict __s, FILE *__restrict __stream);
+extern int puts (const char *__s);
+extern int ungetc (int __c, FILE *__stream);
+extern size_t fread (void *__restrict __ptr, size_t __size,
+       size_t __n, FILE *__restrict __stream) ;
+extern size_t fwrite (const void *__restrict __ptr, size_t __size,
+        size_t __n, FILE *__restrict __s);
+
+
+extern int fseek (FILE *__stream, long int __off, int __whence);
+extern long int ftell (FILE *__stream) ;
+extern void rewind (FILE *__stream);
+
+
+extern int fgetpos (FILE *__restrict __stream, fpos_t *__restrict __pos);
+extern int fsetpos (FILE *__stream, const fpos_t *__pos);
+
+
+extern void clearerr (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__));
+extern int feof (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__)) ;
+extern int ferror (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__)) ;
+
+
+extern void perror (const char *__s);
+
+
+typedef int wchar_t;
+
+
+typedef struct
+  {
+    int quot;
+    int rem;
+  } div_t;
+typedef struct
+  {
+    long int quot;
+    long int rem;
+  } ldiv_t;
+
+
+__extension__ typedef struct
+  {
+    long long int quot;
+    long long int rem;
+  } lldiv_t;
+
+extern size_t __ctype_get_mb_cur_max (void) __attribute__ ((__nothrow__ , __leaf__)) ;
+
+extern double atof (const char *__nptr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1))) ;
+extern int atoi (const char *__nptr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1))) ;
+extern long int atol (const char *__nptr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1))) ;
+
+
+__extension__ extern long long int atoll (const char *__nptr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1))) ;
+
+
+extern double strtod (const char *__restrict __nptr,
+        char **__restrict __endptr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern float strtof (const char *__restrict __nptr,
+       char **__restrict __endptr) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+extern long double strtold (const char *__restrict __nptr,
+       char **__restrict __endptr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern long int strtol (const char *__restrict __nptr,
+   char **__restrict __endptr, int __base)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+extern unsigned long int strtoul (const char *__restrict __nptr,
+      char **__restrict __endptr, int __base)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+__extension__
+extern long long int strtoll (const char *__restrict __nptr,
+         char **__restrict __endptr, int __base)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+__extension__
+extern unsigned long long int strtoull (const char *__restrict __nptr,
+     char **__restrict __endptr, int __base)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int rand (void) __attribute__ ((__nothrow__ , __leaf__));
+extern void srand (unsigned int __seed) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern void *malloc (size_t __size) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__malloc__)) ;
+extern void *calloc (size_t __nmemb, size_t __size)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__malloc__)) ;
+
+
+extern void *realloc (void *__ptr, size_t __size)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__warn_unused_result__));
+extern void free (void *__ptr) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern void abort (void) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__noreturn__));
+extern int atexit (void (*__func) (void)) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern void exit (int __status) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__noreturn__));
+
+
+extern void _Exit (int __status) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__noreturn__));
+
+
+extern char *getenv (const char *__name) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1))) ;
+
+
+extern int system (const char *__command) ;
+
+typedef int (*__compar_fn_t) (const void *, const void *);
+
+extern void *bsearch (const void *__key, const void *__base,
+        size_t __nmemb, size_t __size, __compar_fn_t __compar)
+     __attribute__ ((__nonnull__ (1, 2, 5))) ;
+extern void qsort (void *__base, size_t __nmemb, size_t __size,
+     __compar_fn_t __compar) __attribute__ ((__nonnull__ (1, 4)));
+extern int abs (int __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)) ;
+extern long int labs (long int __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)) ;
+
+__extension__ extern long long int llabs (long long int __x)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)) ;
+
+extern div_t div (int __numer, int __denom)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)) ;
+extern ldiv_t ldiv (long int __numer, long int __denom)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)) ;
+
+
+__extension__ extern lldiv_t lldiv (long long int __numer,
+        long long int __denom)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)) ;
+
+
+extern int mblen (const char *__s, size_t __n) __attribute__ ((__nothrow__ , __leaf__)) ;
+extern int mbtowc (wchar_t *__restrict __pwc,
+     const char *__restrict __s, size_t __n) __attribute__ ((__nothrow__ , __leaf__)) ;
+extern int wctomb (char *__s, wchar_t __wchar) __attribute__ ((__nothrow__ , __leaf__)) ;
+extern size_t mbstowcs (wchar_t *__restrict __pwcs,
+   const char *__restrict __s, size_t __n) __attribute__ ((__nothrow__ , __leaf__));
+extern size_t wcstombs (char *__restrict __s,
+   const wchar_t *__restrict __pwcs, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern void *memcpy (void *__restrict __dest, const void *__restrict __src,
+       size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+extern void *memmove (void *__dest, const void *__src, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern void *memset (void *__s, int __c, size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+extern int memcmp (const void *__s1, const void *__s2, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+extern void *memchr (const void *__s, int __c, size_t __n)
+      __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+extern char *strncpy (char *__restrict __dest,
+        const char *__restrict __src, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+extern char *strcat (char *__restrict __dest, const char *__restrict __src)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+extern char *strncat (char *__restrict __dest, const char *__restrict __src,
+        size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+extern int strcmp (const char *__s1, const char *__s2)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+extern int strncmp (const char *__s1, const char *__s2, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+extern int strcoll (const char *__s1, const char *__s2)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+extern size_t strxfrm (char *__restrict __dest,
+         const char *__restrict __src, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
+
+
+extern char *strchr (const char *__s, int __c)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+extern char *strrchr (const char *__s, int __c)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern size_t strcspn (const char *__s, const char *__reject)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+extern size_t strspn (const char *__s, const char *__accept)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+extern char *strpbrk (const char *__s, const char *__accept)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+extern char *strstr (const char *__haystack, const char *__needle)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+extern char *strtok (char *__restrict __s, const char *__restrict __delim)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
+
+extern char *__strtok_r (char *__restrict __s,
+    const char *__restrict __delim,
+    char **__restrict __save_ptr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2, 3)));
+
+extern size_t strlen (const char *__s)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern char *strerror (int __errnum) __attribute__ ((__nothrow__ , __leaf__));
+
+extern void __bzero (void *__s, size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+int charCount(char *str);
+void f2();
+int main(int argc, char *argv[]) {
+   int i = 2;
+   { int i3; printf("Looping variable 'i%s'\n", "3"); for(i3=0; i3 < 3; i3++) { printf("%d\n",i3); } };
+   { int i3; printf("Looping variable 'i%s'\n", "3"); for(i3=0; i3 < 3; i3++) { printf("%d\n",i3); } };
+   { int ii; printf("Looping variable 'i%s'\n", "i"); for(ii=0; ii < i; ii++) { printf("%d\n",ii); } };
+   return(0);
+}
+void f2() {
+   int var1 = 5;
+   printf("var1 in f2: %d\n", var1);
+}
+int charCount(char *str) {
+   return(strlen(str));
+}
+
+
+-------------------------------------
+Line 4 - Expanded Macro Documentation
+-------------------------------------
+
+Original Macro Call (from lab_b.c): MACRO1(3);
+Expanded Code in exercise.txt:
+{ 
+   int i3; 
+   printf("Looping variable 'i%s'\n", "3");
+   for(i3 = 0; i3 < 3; i3++) { 
+   printf("%d\n", i3); 
+   } 
+ }
+This code block is the result of the MACRO1(3) expansion, where 'i3' is the looping variable.
+
+Original Macro Call (from lab_b.c): MACRO1(i);
+Expanded Code in exercise.txt:
+{ 
+   int ii; 
+   printf("Looping variable 'i%s'\n", "i");
+   for(ii = 0; ii < i; ii++) { 
+   printf("%d\n", ii); 
+   } 
+ }
+This code block is the result of the MACRO1(i) expansion, with 'i' being a variable concatenated with i, leading to 'ii' as the looping variable.
+
+-------------------------------------
+Line 5 - Explanation of "#if TEST==1"
+-------------------------------------
+
+The "#if TEST==1" macro directive is used to conditionally include the following block of code during compilation only if the macro 'TEST' is defined and set to '1'. This allows for selective compilation of code segments based on the defined value of 'TEST'. In this case, when compiled with '-DTEST=1', the compiler includes and compiles the code block following this directive, which involves calls to the 'MACRO1' macro with different arguments. This approach is useful for testing different parts of the program by simply changing the value of 'TEST' during compilation without altering the source code.
+
+
+
+
+lab_b.c: In function 'main':
+lab_b.c:18:29: error: 'var' undeclared (first use in this function)
+   printf("var in f1: %d\n", var);}
+                             ^
+lab_b.c:42:4: note: in expansion of macro 'f1'
+    f1();
+    ^
+lab_b.c:18:29: note: each undeclared identifier is reported only once for each function it appears in
+   printf("var in f1: %d\n", var);}
+                             ^
+lab_b.c:42:4: note: in expansion of macro 'f1'
+    f1();
+    ^
+lab_b.c:17:8: warning: unused variable '_var' [-Wunused-variable]
+   {int _var = 10;                 \
+        ^
+lab_b.c:42:4: note: in expansion of macro 'f1'
+    f1();
+    ^
+
+
+-------------------------------------
+Line 6 - Compilation Error with TEST=2
+-------------------------------------
+
+When compiling with '-DTEST=2', the 'f1()' macro is expanded within the 'main' function. The 'f1()' macro contains a 'printf' statement that attempts to print a variable named 'var', which is undeclared and causes a compilation error. The macro was intended to declare and use a variable named '_var', but due to a typo, it tries to print 'var' instead, leading to the error.
+
+Additionally, the warning about the unused variable '_var' indicates that although '_var' is declared within the macro, it is never used. This is because the 'printf' statement was supposed to use '_var' but incorrectly references 'var', resulting in '_var' being declared but never utilized.
+
+To resolve this issue, the 'printf' statement inside the 'f1()' macro should be corrected to use '_var' instead of 'var', ensuring the declared variable is used and eliminating the undeclared identifier error.
+
+
+
+
+
+
+typedef long unsigned int size_t;
+typedef unsigned char __u_char;
+typedef unsigned short int __u_short;
+typedef unsigned int __u_int;
+typedef unsigned long int __u_long;
+typedef signed char __int8_t;
+typedef unsigned char __uint8_t;
+typedef signed short int __int16_t;
+typedef unsigned short int __uint16_t;
+typedef signed int __int32_t;
+typedef unsigned int __uint32_t;
+typedef signed long int __int64_t;
+typedef unsigned long int __uint64_t;
+typedef long int __quad_t;
+typedef unsigned long int __u_quad_t;
+typedef unsigned long int __dev_t;
+typedef unsigned int __uid_t;
+typedef unsigned int __gid_t;
+typedef unsigned long int __ino_t;
+typedef unsigned long int __ino64_t;
+typedef unsigned int __mode_t;
+typedef unsigned long int __nlink_t;
+typedef long int __off_t;
+typedef long int __off64_t;
+typedef int __pid_t;
+typedef struct { int __val[2]; } __fsid_t;
+typedef long int __clock_t;
+typedef unsigned long int __rlim_t;
+typedef unsigned long int __rlim64_t;
+typedef unsigned int __id_t;
+typedef long int __time_t;
+typedef unsigned int __useconds_t;
+typedef long int __suseconds_t;
+typedef int __daddr_t;
+typedef int __key_t;
+typedef int __clockid_t;
+typedef void * __timer_t;
+typedef long int __blksize_t;
+typedef long int __blkcnt_t;
+typedef long int __blkcnt64_t;
+typedef unsigned long int __fsblkcnt_t;
+typedef unsigned long int __fsblkcnt64_t;
+typedef unsigned long int __fsfilcnt_t;
+typedef unsigned long int __fsfilcnt64_t;
+typedef long int __fsword_t;
+typedef long int __ssize_t;
+typedef long int __syscall_slong_t;
+typedef unsigned long int __syscall_ulong_t;
+typedef __off64_t __loff_t;
+typedef __quad_t *__qaddr_t;
+typedef char *__caddr_t;
+typedef long int __intptr_t;
+typedef unsigned int __socklen_t;
+struct _IO_FILE;
+
+typedef struct _IO_FILE FILE;
+
+
+typedef struct _IO_FILE __FILE;
+typedef struct
+{
+  int __count;
+  union
+  {
+    unsigned int __wch;
+    char __wchb[4];
+  } __value;
+} __mbstate_t;
+typedef struct
+{
+  __off_t __pos;
+  __mbstate_t __state;
+} _G_fpos_t;
+typedef struct
+{
+  __off64_t __pos;
+  __mbstate_t __state;
+} _G_fpos64_t;
+typedef __builtin_va_list __gnuc_va_list;
+struct _IO_jump_t; struct _IO_FILE;
+typedef void _IO_lock_t;
+struct _IO_marker {
+  struct _IO_marker *_next;
+  struct _IO_FILE *_sbuf;
+  int _pos;
+};
+enum __codecvt_result
+{
+  __codecvt_ok,
+  __codecvt_partial,
+  __codecvt_error,
+  __codecvt_noconv
+};
+struct _IO_FILE {
+  int _flags;
+  char* _IO_read_ptr;
+  char* _IO_read_end;
+  char* _IO_read_base;
+  char* _IO_write_base;
+  char* _IO_write_ptr;
+  char* _IO_write_end;
+  char* _IO_buf_base;
+  char* _IO_buf_end;
+  char *_IO_save_base;
+  char *_IO_backup_base;
+  char *_IO_save_end;
+  struct _IO_marker *_markers;
+  struct _IO_FILE *_chain;
+  int _fileno;
+  int _flags2;
+  __off_t _old_offset;
+  unsigned short _cur_column;
+  signed char _vtable_offset;
+  char _shortbuf[1];
+  _IO_lock_t *_lock;
+  __off64_t _offset;
+  void *__pad1;
+  void *__pad2;
+  void *__pad3;
+  void *__pad4;
+  size_t __pad5;
+  int _mode;
+  char _unused2[15 * sizeof (int) - 4 * sizeof (void *) - sizeof (size_t)];
+};
+typedef struct _IO_FILE _IO_FILE;
+struct _IO_FILE_plus;
+extern struct _IO_FILE_plus _IO_2_1_stdin_;
+extern struct _IO_FILE_plus _IO_2_1_stdout_;
+extern struct _IO_FILE_plus _IO_2_1_stderr_;
+typedef __ssize_t __io_read_fn (void *__cookie, char *__buf, size_t __nbytes);
+typedef __ssize_t __io_write_fn (void *__cookie, const char *__buf,
+     size_t __n);
+typedef int __io_seek_fn (void *__cookie, __off64_t *__pos, int __w);
+typedef int __io_close_fn (void *__cookie);
+extern int __underflow (_IO_FILE *);
+extern int __uflow (_IO_FILE *);
+extern int __overflow (_IO_FILE *, int);
+extern int _IO_getc (_IO_FILE *__fp);
+extern int _IO_putc (int __c, _IO_FILE *__fp);
+extern int _IO_feof (_IO_FILE *__fp) __attribute__ ((__nothrow__ , __leaf__));
+extern int _IO_ferror (_IO_FILE *__fp) __attribute__ ((__nothrow__ , __leaf__));
+extern int _IO_peekc_locked (_IO_FILE *__fp);
+extern void _IO_flockfile (_IO_FILE *) __attribute__ ((__nothrow__ , __leaf__));
+extern void _IO_funlockfile (_IO_FILE *) __attribute__ ((__nothrow__ , __leaf__));
+extern int _IO_ftrylockfile (_IO_FILE *) __attribute__ ((__nothrow__ , __leaf__));
+extern int _IO_vfscanf (_IO_FILE * __restrict, const char * __restrict,
+   __gnuc_va_list, int *__restrict);
+extern int _IO_vfprintf (_IO_FILE *__restrict, const char *__restrict,
+    __gnuc_va_list);
+extern __ssize_t _IO_padn (_IO_FILE *, int, __ssize_t);
+extern size_t _IO_sgetn (_IO_FILE *, void *, size_t);
+extern __off64_t _IO_seekoff (_IO_FILE *, __off64_t, int, int);
+extern __off64_t _IO_seekpos (_IO_FILE *, __off64_t, int);
+extern void _IO_free_backup_area (_IO_FILE *) __attribute__ ((__nothrow__ , __leaf__));
+
+typedef _G_fpos_t fpos_t;
+
+extern struct _IO_FILE *stdin;
+extern struct _IO_FILE *stdout;
+extern struct _IO_FILE *stderr;
+
+extern int remove (const char *__filename) __attribute__ ((__nothrow__ , __leaf__));
+extern int rename (const char *__old, const char *__new) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern FILE *tmpfile (void) ;
+extern char *tmpnam (char *__s) __attribute__ ((__nothrow__ , __leaf__)) ;
+
+
+extern int fclose (FILE *__stream);
+extern int fflush (FILE *__stream);
+
+
+extern FILE *fopen (const char *__restrict __filename,
+      const char *__restrict __modes) ;
+extern FILE *freopen (const char *__restrict __filename,
+        const char *__restrict __modes,
+        FILE *__restrict __stream) ;
+
+
+extern void setbuf (FILE *__restrict __stream, char *__restrict __buf) __attribute__ ((__nothrow__ , __leaf__));
+extern int setvbuf (FILE *__restrict __stream, char *__restrict __buf,
+      int __modes, size_t __n) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int fprintf (FILE *__restrict __stream,
+      const char *__restrict __format, ...);
+extern int printf (const char *__restrict __format, ...);
+extern int sprintf (char *__restrict __s,
+      const char *__restrict __format, ...) __attribute__ ((__nothrow__));
+extern int vfprintf (FILE *__restrict __s, const char *__restrict __format,
+       __gnuc_va_list __arg);
+extern int vprintf (const char *__restrict __format, __gnuc_va_list __arg);
+extern int vsprintf (char *__restrict __s, const char *__restrict __format,
+       __gnuc_va_list __arg) __attribute__ ((__nothrow__));
+
+
+extern int snprintf (char *__restrict __s, size_t __maxlen,
+       const char *__restrict __format, ...)
+     __attribute__ ((__nothrow__)) __attribute__ ((__format__ (__printf__, 3, 4)));
+extern int vsnprintf (char *__restrict __s, size_t __maxlen,
+        const char *__restrict __format, __gnuc_va_list __arg)
+     __attribute__ ((__nothrow__)) __attribute__ ((__format__ (__printf__, 3, 0)));
+
+
+extern int fscanf (FILE *__restrict __stream,
+     const char *__restrict __format, ...) ;
+extern int scanf (const char *__restrict __format, ...) ;
+extern int sscanf (const char *__restrict __s,
+     const char *__restrict __format, ...) __attribute__ ((__nothrow__ , __leaf__));
+extern int fscanf (FILE *__restrict __stream, const char *__restrict __format, ...) __asm__ ("" "__isoc99_fscanf") ;
+extern int scanf (const char *__restrict __format, ...) __asm__ ("" "__isoc99_scanf") ;
+extern int sscanf (const char *__restrict __s, const char *__restrict __format, ...) __asm__ ("" "__isoc99_sscanf") __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern int vfscanf (FILE *__restrict __s, const char *__restrict __format,
+      __gnuc_va_list __arg)
+     __attribute__ ((__format__ (__scanf__, 2, 0))) ;
+extern int vscanf (const char *__restrict __format, __gnuc_va_list __arg)
+     __attribute__ ((__format__ (__scanf__, 1, 0))) ;
+extern int vsscanf (const char *__restrict __s,
+      const char *__restrict __format, __gnuc_va_list __arg)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__format__ (__scanf__, 2, 0)));
+extern int vfscanf (FILE *__restrict __s, const char *__restrict __format, __gnuc_va_list __arg) __asm__ ("" "__isoc99_vfscanf")
+     __attribute__ ((__format__ (__scanf__, 2, 0))) ;
+extern int vscanf (const char *__restrict __format, __gnuc_va_list __arg) __asm__ ("" "__isoc99_vscanf")
+     __attribute__ ((__format__ (__scanf__, 1, 0))) ;
+extern int vsscanf (const char *__restrict __s, const char *__restrict __format, __gnuc_va_list __arg) __asm__ ("" "__isoc99_vsscanf") __attribute__ ((__nothrow__ , __leaf__))
+     __attribute__ ((__format__ (__scanf__, 2, 0)));
+
+
+extern int fgetc (FILE *__stream);
+extern int getc (FILE *__stream);
+extern int getchar (void);
+
+
+extern int fputc (int __c, FILE *__stream);
+extern int putc (int __c, FILE *__stream);
+extern int putchar (int __c);
+
+
+extern char *fgets (char *__restrict __s, int __n, FILE *__restrict __stream)
+     ;
+extern char *gets (char *__s) __attribute__ ((__deprecated__));
+
+
+extern int fputs (const char *__restrict __s, FILE *__restrict __stream);
+extern int puts (const char *__s);
+extern int ungetc (int __c, FILE *__stream);
+extern size_t fread (void *__restrict __ptr, size_t __size,
+       size_t __n, FILE *__restrict __stream) ;
+extern size_t fwrite (const void *__restrict __ptr, size_t __size,
+        size_t __n, FILE *__restrict __s);
+
+
+extern int fseek (FILE *__stream, long int __off, int __whence);
+extern long int ftell (FILE *__stream) ;
+extern void rewind (FILE *__stream);
+
+
+extern int fgetpos (FILE *__restrict __stream, fpos_t *__restrict __pos);
+extern int fsetpos (FILE *__stream, const fpos_t *__pos);
+
+
+extern void clearerr (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__));
+extern int feof (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__)) ;
+extern int ferror (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__)) ;
+
+
+extern void perror (const char *__s);
+
+
+typedef int wchar_t;
+
+
+typedef struct
+  {
+    int quot;
+    int rem;
+  } div_t;
+typedef struct
+  {
+    long int quot;
+    long int rem;
+  } ldiv_t;
+
+
+__extension__ typedef struct
+  {
+    long long int quot;
+    long long int rem;
+  } lldiv_t;
+
+extern size_t __ctype_get_mb_cur_max (void) __attribute__ ((__nothrow__ , __leaf__)) ;
+
+extern double atof (const char *__nptr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1))) ;
+extern int atoi (const char *__nptr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1))) ;
+extern long int atol (const char *__nptr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1))) ;
+
+
+__extension__ extern long long int atoll (const char *__nptr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1))) ;
+
+
+extern double strtod (const char *__restrict __nptr,
+        char **__restrict __endptr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern float strtof (const char *__restrict __nptr,
+       char **__restrict __endptr) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+extern long double strtold (const char *__restrict __nptr,
+       char **__restrict __endptr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern long int strtol (const char *__restrict __nptr,
+   char **__restrict __endptr, int __base)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+extern unsigned long int strtoul (const char *__restrict __nptr,
+      char **__restrict __endptr, int __base)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+__extension__
+extern long long int strtoll (const char *__restrict __nptr,
+         char **__restrict __endptr, int __base)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+__extension__
+extern unsigned long long int strtoull (const char *__restrict __nptr,
+     char **__restrict __endptr, int __base)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int rand (void) __attribute__ ((__nothrow__ , __leaf__));
+extern void srand (unsigned int __seed) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern void *malloc (size_t __size) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__malloc__)) ;
+extern void *calloc (size_t __nmemb, size_t __size)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__malloc__)) ;
+
+
+extern void *realloc (void *__ptr, size_t __size)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__warn_unused_result__));
+extern void free (void *__ptr) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern void abort (void) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__noreturn__));
+extern int atexit (void (*__func) (void)) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern void exit (int __status) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__noreturn__));
+
+
+extern void _Exit (int __status) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__noreturn__));
+
+
+extern char *getenv (const char *__name) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1))) ;
+
+
+extern int system (const char *__command) ;
+
+typedef int (*__compar_fn_t) (const void *, const void *);
+
+extern void *bsearch (const void *__key, const void *__base,
+        size_t __nmemb, size_t __size, __compar_fn_t __compar)
+     __attribute__ ((__nonnull__ (1, 2, 5))) ;
+extern void qsort (void *__base, size_t __nmemb, size_t __size,
+     __compar_fn_t __compar) __attribute__ ((__nonnull__ (1, 4)));
+extern int abs (int __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)) ;
+extern long int labs (long int __x) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)) ;
+
+__extension__ extern long long int llabs (long long int __x)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)) ;
+
+extern div_t div (int __numer, int __denom)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)) ;
+extern ldiv_t ldiv (long int __numer, long int __denom)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)) ;
+
+
+__extension__ extern lldiv_t lldiv (long long int __numer,
+        long long int __denom)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__)) ;
+
+
+extern int mblen (const char *__s, size_t __n) __attribute__ ((__nothrow__ , __leaf__)) ;
+extern int mbtowc (wchar_t *__restrict __pwc,
+     const char *__restrict __s, size_t __n) __attribute__ ((__nothrow__ , __leaf__)) ;
+extern int wctomb (char *__s, wchar_t __wchar) __attribute__ ((__nothrow__ , __leaf__)) ;
+extern size_t mbstowcs (wchar_t *__restrict __pwcs,
+   const char *__restrict __s, size_t __n) __attribute__ ((__nothrow__ , __leaf__));
+extern size_t wcstombs (char *__restrict __s,
+   const wchar_t *__restrict __pwcs, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern void *memcpy (void *__restrict __dest, const void *__restrict __src,
+       size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+extern void *memmove (void *__dest, const void *__src, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern void *memset (void *__s, int __c, size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+extern int memcmp (const void *__s1, const void *__s2, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+extern void *memchr (const void *__s, int __c, size_t __n)
+      __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+extern char *strncpy (char *__restrict __dest,
+        const char *__restrict __src, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+extern char *strcat (char *__restrict __dest, const char *__restrict __src)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+extern char *strncat (char *__restrict __dest, const char *__restrict __src,
+        size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+extern int strcmp (const char *__s1, const char *__s2)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+extern int strncmp (const char *__s1, const char *__s2, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+extern int strcoll (const char *__s1, const char *__s2)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+extern size_t strxfrm (char *__restrict __dest,
+         const char *__restrict __src, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
+
+
+extern char *strchr (const char *__s, int __c)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+extern char *strrchr (const char *__s, int __c)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern size_t strcspn (const char *__s, const char *__reject)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+extern size_t strspn (const char *__s, const char *__accept)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+extern char *strpbrk (const char *__s, const char *__accept)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+extern char *strstr (const char *__haystack, const char *__needle)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+extern char *strtok (char *__restrict __s, const char *__restrict __delim)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
+
+extern char *__strtok_r (char *__restrict __s,
+    const char *__restrict __delim,
+    char **__restrict __save_ptr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2, 3)));
+
+extern size_t strlen (const char *__s)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern char *strerror (int __errnum) __attribute__ ((__nothrow__ , __leaf__));
+
+extern void __bzero (void *__s, size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+int charCount(char *str);
+void f2();
+int main(int argc, char *argv[]) {
+   {int _var = 10; printf("var in f1: %d\n", var);};
+   return(0);
+}
+void f2() {
+   int var1 = 5;
+   printf("var1 in f2: %d\n", var1);
+}
+int charCount(char *str) {
+   return(strlen(str));
+}
+
+-------------------------------------
+Line 7 - Offending Macro Expansion
+-------------------------------------
+
+The 'f1()' macro expansion led to an undeclared variable error when compiled with '-DTEST=2'. The macro was defined as follows:
+  #define f1() {int _var = 10; printf("var in f1: %d\n", var);}
+And expanded to:
+  {int _var = 10; printf("var in f1: %d\n", var);}
+The error occurred because the macro uses 'var' in the 'printf' function, which is undeclared and not the same as the declared '_var'. This illustrates the importance of ensuring macro definitions match their usage contexts to prevent compilation errors.
+
+
+var in f1: 10
+
+
+MUL_FIVE: 30
+
+--------------------------------------------------
+Line 11 - Explanation for "MUL_FIVE: 30" Result
+--------------------------------------------------
+
+When compiling and running lab_b.c with '-DTEST=3', the expected output for the MUL_FIVE macro was "MUL_FIVE: 50". However, the actual output was "MUL_FIVE: 30". This discrepancy arises from the way the MUL_FIVE macro was defined and subsequently expanded.
+
+The original MUL_FIVE macro is defined as:
+#define MUL_FIVE(mul) (mul * 5)
+
+In the context of 'TEST==3', the macro is used as follows:
+int n = 5;
+int m = MUL_FIVE(n + 5);
+
+One might anticipate that MUL_FIVE(n + 5) would be equivalent to (5 + 5) * 5, yielding 50. However, due to operator precedence in C, where multiplication has a higher precedence than addition, the expression is evaluated as 5 + (5 * 5), resulting in 30, not 50.
+
+To correct this and ensure the entire expression passed to the MUL_FIVE macro is evaluated before being multiplied by 5, the macro definition needs to be adjusted to:
+#define MUL_FIVE(mul) ((mul) * 5)
+
+This adjustment ensures that any expression passed to the MUL_FIVE macro, such as 'n + 5' in this case, is evaluated as a whole prior to the multiplication. With this fix, the macro expansion correctly interprets the expression, leading to the expected result of "MUL_FIVE: 50".
+
+This example underscores the importance of considering operator precedence when defining macros that involve arithmetic operations and demonstrates how parentheses can be used to ensure expressions are evaluated as intended.
+
+
+
+
+Function result: 5
+X IS: -4
+Macro result: 4
+X IS: -3
+
+------------------------------------------------------------------------
+Line 13  - Explanation for Different Results Between Function and Macro
+------------------------------------------------------------------------
+
+When using the 'abs' function with 'x++', the function receives the current value of 'x' before it's incremented due to the post-increment operator. Hence, 'abs(-5)' returns '5', and 'x' is incremented afterward, resulting in 'X IS: -4'.
+
+In contrast, the 'ABS' macro expansion with 'x++' results in the expression '((x++) < 0 ? -(x++) : (x++))'. This leads to 'x' being incremented twice within the macro evaluation: once for the condition check and once for the negation operation. Consequently, the macro evaluates to '4' (since 'x' was '-3' at the point of evaluation) and 'X IS: -3' after two increments from '-5'.
+
+
+Minimum char count of(Hi, Hello): 2
+
+
+---------------------------------------------
+Line 15  - CharCount Function Calls in TEST=5
+---------------------------------------------
+
+In the scenario of TEST==5, the 'MIN' macro is used to determine the minimum character count between two strings, "Hi" and "Hello", by calling the 'charCount()' function for each string. This results in two apparent calls to the 'charCount()' function:
+
+1. charCount("Hi") - to count characters in "Hi"
+2. charCount("Hello") - to count characters in "Hello"
+
+Thus, despite the 'MIN' macro appearing as a single operation, it effectively results in two separate calls to the 'charCount()' function due to its usage with each string argument. The output "Minimum char count of(Hi, Hello): 2." confirms that both function calls are executed, with "Hi" having the minimum character count of 2.
+
+
+------------------------------------------------------
+Line 16  - Actual CharCount() Function Calls in TEST=5
+------------------------------------------------------
+
+While it initially appears that there are only two calls to the 'charCount()' function within the 'MIN' macro for TEST==5, the actual number of function calls can be greater due to the way macros are expanded. If the 'MIN' macro is defined in a way that evaluates its arguments more than once, each 'charCount()' call within the 'MIN' expression could be executed multiple times.
+
+For example, a 'MIN' macro defined as:
+#define MIN(a, b) ((a) < (b) ? (a) : (b))
+would lead to each 'charCount()' call being evaluated twice - once for the comparison and once for determining the result of the ternary operator. This would result in a total of four actual 'charCount()' function calls for the expression 'MIN(charCount(str1), charCount(str2))'.
+
+--------------
+Using Macros
+-------------
+
+C will combine these string
+
+C will combine these string
+snprintf buffer size is (512) bytes
+
+
+C will combine these string
+snprintf buffer size is (512) bytes
+Simple buffer size is (256) bytes
+
+
+C will combine these string
+snprintf buffer size is (512) bytes
+Simple buffer size is (256) bytes
+Complex buffer size is (512) bytes
+
+
+
+C will combine these string
+snprintf buffer size is (512) bytes
+Simple buffer size is (256) bytes
+Complex buffer size is (MACRO_NUMBER) bytes
+
+---------------------------------------------------------------
+Line 11  - Issue with Using MACRO_NUMBER in complexMacroBuffer3
+---------------------------------------------------------------
+
+Attempting to use the MACRO_NUMBER macro within the STR macro for complexMacroBuffer3 leads to unexpected behavior. The intended string "Complex buffer size is (512) bytes" does not materialize as expected when using STR(MACRO_NUMBER). Instead, the preprocessor generates a string with the macro name "MACRO_NUMBER" rather than its value.
+
+This occurs because the STR macro stringizes its argument, and when a macro (MACRO_NUMBER in this case) is passed as an argument, the preprocessor converts the macro's name to a string before the macro has a chance to expand. As a result, STR(MACRO_NUMBER) becomes "MACRO_NUMBER" in the preprocessed code, not the expected "512".
+
+C will combine these string
+snprintf buffer size is (512) bytes
+Simple buffer size is (256) bytes
+Complex buffer size is (512) bytes
+
+
+-------------------------------------
+Line 13  - Resolution with XSTR Macro
+-------------------------------------
+
+The introduction of the XSTR macro resolves the issue encountered when attempting to use STR(MACRO_NUMBER) directly. The XSTR macro is defined as follows:
+
+#define XSTR(S) STR(S)
+
+This macro provides an additional level of indirection, ensuring that its argument (in this case, the MACRO_NUMBER macro) is fully expanded before being passed to the STR macro for string conversion.
+
+When used in the code as XSTR(MACRO_NUMBER), the preprocessor first expands MACRO_NUMBER to its defined value, 512. This expanded value is then passed to the STR macro, resulting in the correct string conversion to "512". Consequently, the string "Complex buffer size is (512) bytes" is successfully generated.
+
+
+
+
+-----------
+2-D Arrays
+-----------
+
+Initial rows and columns: 3, 5
+The 3x5 2D dynamic matrix
+ 0.0	 0.1	 0.2	 0.3	 0.4	
+ 1.0	999.0	 1.2	 1.3	 1.4	
+ 2.0	 2.1	999.0	 2.3	 2.4	
+
+
+-------------------------------------
+Line 2 -  Execution Observations
+-------------------------------------
+
+The program successfully initializes and prints a 3x5 2D dynamic array with specific elements set to 999, as expected. However, there are some areas for improvement and potential hidden issues:
+
+1. Memory Leak: The program allocates memory for the array but does not free it, leading to potential memory leaks. This is a significant issue that tools like Valgrind are adept at uncovering.
+
+2. Error Handling: The program could improve its error handling by freeing any allocated memory before exiting upon encountering a `malloc` error, thus avoiding memory leaks in error situations.
+
+3. Magic Numbers: The direct use of numbers like 3, 5, and 999 in the code (known as "magic numbers") makes the program less readable and maintainable. Defining these as constants would be a better practice.
+
+4. Freeing Memory: The `free_matrix_space` function is intended to free the allocated memory but is not implemented or called. Completing this function and ensuring it is called before program termination would resolve the memory leak issue.
+
+
+
+==180564== Memcheck, a memory error detector
+==180564== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==180564== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==180564== Command: ./lab_d
+==180564== 
+Initial rows and columns: 3, 5
+The 3x5 2D dynamic matrix
+ 0.0	 0.1	 0.2	 0.3	 0.4	
+ 1.0	999.0	 1.2	 1.3	 1.4	
+ 2.0	 2.1	999.0	 2.3	 2.4	
+==180564== 
+==180564== HEAP SUMMARY:
+==180564==     in use at exit: 144 bytes in 4 blocks
+==180564==   total heap usage: 4 allocs, 0 frees, 144 bytes allocated
+==180564== 
+==180564== 144 (24 direct, 120 indirect) bytes in 1 blocks are definitely lost in loss record 2 of 2
+==180564==    at 0x4C29F73: malloc (vg_replace_malloc.c:309)
+==180564==    by 0x40065A: main (lab_d.c:27)
+==180564== 
+==180564== LEAK SUMMARY:
+==180564==    definitely lost: 24 bytes in 1 blocks
+==180564==    indirectly lost: 120 bytes in 3 blocks
+==180564==      possibly lost: 0 bytes in 0 blocks
+==180564==    still reachable: 0 bytes in 0 blocks
+==180564==         suppressed: 0 bytes in 0 blocks
+==180564== 
+==180564== For lists of detected and suppressed errors, rerun with: -s
+==180564== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+
+
+
+
+-----------------------------------
+Line 3 -  Valgrind Report Analysis
+-----------------------------------
+
+Running Valgrind on lab_d revealed memory leaks in the program. The program allocated memory for a 2D dynamic array but failed to free it before exiting, resulting in a total of 144 bytes leaked, comprising 24 bytes directly lost (the array of pointers itself) and 120 bytes indirectly lost (the individual rows of the array).
+
+Heap Summary:
+- Total heap usage: 4 allocations, 0 frees, 144 bytes allocated.
+
+Leak Summary:
+- Definitely lost: 24 bytes in 1 block.
+- Indirectly lost: 120 bytes in 3 blocks.
+
+Error Context:
+- The memory leak originates from the allocation in main (lab_d.c:27), where space for the 2D array is allocated but not freed.
+
+
+
+
+==189089== Memcheck, a memory error detector
+==189089== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==189089== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==189089== Command: ./lab_d
+==189089== 
+Initial rows and columns: 3, 5
+The 3x5 2D dynamic matrix
+ 0.0	 0.1	 0.2	 0.3	 0.4	
+ 1.0	999.0	 1.2	 1.3	 1.4	
+ 2.0	 2.1	999.0	 2.3	 2.4	
+==189089== 
+==189089== HEAP SUMMARY:
+==189089==     in use at exit: 120 bytes in 3 blocks
+==189089==   total heap usage: 4 allocs, 1 frees, 144 bytes allocated
+==189089== 
+==189089== 120 bytes in 3 blocks are definitely lost in loss record 1 of 1
+==189089==    at 0x4C29F73: malloc (vg_replace_malloc.c:309)
+==189089==    by 0x4006F7: main (lab_d.c:35)
+==189089== 
+==189089== LEAK SUMMARY:
+==189089==    definitely lost: 120 bytes in 3 blocks
+==189089==    indirectly lost: 0 bytes in 0 blocks
+==189089==      possibly lost: 0 bytes in 0 blocks
+==189089==    still reachable: 0 bytes in 0 blocks
+==189089==         suppressed: 0 bytes in 0 blocks
+==189089== 
+==189089== For lists of detected and suppressed errors, rerun with: -s
+==189089== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+
+
+
+
+------------------------------------------------------
+Line 5 -  Valgrind Analysis After Implementing free(A)
+------------------------------------------------------
+
+After adding `free(A);` to the program to free the memory allocated for the array of pointers, Valgrind reports a reduced memory leak, with 120 bytes still being lost. This improvement indicates that the top-level pointer was successfully freed, eliminating the "definitely lost" bytes associated with it.
+
+Valgrind Output Summary:
+- The total heap usage shows 4 allocations and 1 free, leading to 120 bytes in 3 blocks still being reported as "definitely lost".
+- These lost bytes correspond to the memory allocated for each row of the 2D array, which was not freed.
+
+
+
+
+==190084== Memcheck, a memory error detector
+==190084== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==190084== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==190084== Command: ./lab_d
+==190084== 
+Initial rows and columns: 3, 5
+The 3x5 2D dynamic matrix
+ 0.0	 0.1	 0.2	 0.3	 0.4	
+ 1.0	999.0	 1.2	 1.3	 1.4	
+ 2.0	 2.1	999.0	 2.3	 2.4	
+==190084== 
+==190084== HEAP SUMMARY:
+==190084==     in use at exit: 0 bytes in 0 blocks
+==190084==   total heap usage: 4 allocs, 4 frees, 144 bytes allocated
+==190084== 
+==190084== All heap blocks were freed -- no leaks are possible
+==190084== 
+==190084== For lists of detected and suppressed errors, rerun with: -s
+==190084== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+------------------------------------------------------------------
+Line 8 -  Valgrind Analysis After Implementing free_matrix_space()
+------------------------------------------------------------------
+
+After replacing the simple `free(A);` with a call to `free_matrix_space(A, rows);', Valgrind reports no memory leaks, indicating that all allocated memory was successfully freed.
+
+Valgrind Output Summary:
+- The program now shows a perfect balance of allocations and frees, with 4 allocations and 4 corresponding frees, resulting in `0 bytes in 0 blocks` in use at exit.
+- Valgrind confirms that "All heap blocks were freed -- no leaks are possible".
+
+
+
+==229945== Memcheck, a memory error detector
+==229945== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==229945== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==229945== Command: ./lab_d
+==229945== 
+Initial rows and columns: 3, 5
+The 3x5 2D dynamic matrix
+ 0.0	 0.1	 0.2	 0.3	 0.4	
+ 1.0	999.0	 1.2	 1.3	 1.4	
+ 2.0	 2.1	999.0	 2.3	 2.4	
+The 8x5 2D dynamic matrix
+ 0.0	 0.1	 0.2	 0.3	 0.4	
+ 1.0	999.0	 1.2	 1.3	 1.4	
+ 2.0	 2.1	999.0	 2.3	 2.4	
+-3.0	-3.1	-3.2	-3.3	-3.4	
+-4.0	-4.1	-4.2	-4.3	-4.4	
+-5.0	-5.1	-5.2	-5.3	-5.4	
+-6.0	-6.1	-6.2	-6.3	-6.4	
+-7.0	-7.1	-7.2	-7.3	-7.4	
+==229945== 
+==229945== HEAP SUMMARY:
+==229945==     in use at exit: 0 bytes in 0 blocks
+==229945==   total heap usage: 10 allocs, 10 frees, 408 bytes allocated
+==229945== 
+==229945== All heap blocks were freed -- no leaks are possible
+==229945== 
+==229945== For lists of detected and suppressed errors, rerun with: -s
+==229945== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

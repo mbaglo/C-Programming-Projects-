@@ -1,0 +1,358 @@
+P(x) =  1x^1 + 1x^0  
+    Found final root with simple math 
+Roots: 
+     -1  
+
+ 
+P(x) =  1x^2 + 1x^0  
+    Found final two roots through quadratic formula 
+Roots: 
+     0.0  +1i  
+     0.0  -1i  
+
+ 
+P(x) =  1x^3 + 2x^2 + 1x^1 + 2x^0  
+Laguerre's Algorithm( tol = 1e-08 )
+      it: 0   x: 0.0 
+    G(x): 0.5 
+             H(x): -1.75 
+             Alpha: 0.133333  +0.884433i  
+      it: 1   x: -0.133333  -0.884433i 
+    G(x): -3.8825  -2.97667i 
+             H(x): 4.43324  +31.9361i 
+             Alpha: -0.133747  +0.115655i  
+      it: 2   x: 0.000413772  -1.00009i 
+    G(x): 2310.99  +496.071i 
+             H(x): 5.09342e+06  +2.2892e+06i 
+             Alpha: 0.000413772  -8.87094e-05i  
+    Found root -1.62428e-12 + -1i 
+    Found imaginary root, deflating twice 
+    Deflated: P(x) =  1x^1 + 2x^0  
+    Found final root with simple math 
+Roots: 
+     -2  
+     0.0  -1i  
+     0.0  +1i  
+
+ 
+P(x) =  1x^3 + 1x^1 + 1x^0  
+Laguerre's Algorithm( tol = 1e-08 )
+      it: 0   x: 0.0 
+    G(x): 1 
+             H(x): 1 
+             Alpha: 1  
+      it: 1   x: -1 
+    G(x): -4 
+             H(x): 10 
+             Alpha: -0.322876  
+      it: 2   x: -0.677124 
+    G(x): 191.326 
+             H(x): 36933 
+             Alpha: 0.00520349  
+      it: 3   x: -0.682328 
+    G(x): -3.00183e+07 
+             H(x): 9.01098e+14 
+             Alpha: -3.3313e-08  
+    Found root -0.682328 + 0i 
+    Deflated: P(x) =  1x^2 - 0.682328x^1 + 1.46557x^0  
+    Found final two roots through quadratic formula 
+Roots: 
+     0.341164  -1.16154i  
+     0.341164  +1.16154i  
+     -0.682328  
+
+ 
+P(x) =  1x^5 + 2x^1 - 1x^0  
+Laguerre's Algorithm( tol = 1e-08 )
+      it: 0   x: 0.0 
+    G(x): -2 
+             H(x): 4 
+             Alpha: -0.5  
+      it: 1   x: 0.5 
+    G(x): 74 
+             H(x): 5396 
+             Alpha: 0.0136134  
+      it: 2   x: 0.486387 
+    G(x): -408466 
+             H(x): 1.66845e+11 
+             Alpha: -2.44818e-06  
+    Found root 0.486389 + 0i 
+    Deflated: P(x) =  1x^4 + 0.486389x^3 + 0.236574x^2 + 0.115067x^1 + 2.05597x^0  
+Laguerre's Algorithm( tol = 1e-08 )
+      it: 0   x: 0.0 
+    G(x): 0.0559674 
+             H(x): -0.227002 
+             Alpha: 0.0818072  +2.41663i  
+      it: 1   x: -0.0818072  -2.41663i 
+    G(x): 0.0148563  +1.57972i 
+             H(x): -0.518152  -0.00222856i 
+             Alpha: -1.12044  -1.664i  
+      it: 2   x: 1.03863  -0.752625i 
+    G(x): 3.52771  -0.172472i 
+             H(x): 5.74801  -4.83248i 
+             Alpha: 0.332234  +0.131581i  
+      it: 3   x: 0.706401  -0.884207i 
+    G(x): 111.77  +111.326i 
+             H(x): 95.154  +24491.8i 
+             Alpha: 0.00452709  -0.00450954i  
+      it: 4   x: 0.701874  -0.879697i 
+    G(x): -1.73833e+07  -1.45548e+07i 
+             H(x): 9.03353e+13  +5.0602e+14i 
+             Alpha: -3.38182e-08  +2.83156e-08i  
+    Found root 0.701874 + -0.879697i 
+    Found imaginary root, deflating twice 
+    Deflated: P(x) =  1x^2 + 1.89014x^1 + 1.62335x^0  
+    Found final two roots through quadratic formula 
+Roots: 
+     -0.945068  -0.854518i  
+     -0.945068  +0.854518i  
+     0.701874  -0.879697i  
+     0.701874  +0.879697i  
+     0.486389  
+
+ 
+P(x) =  16x^4 + 70x^3 - 169x^2 - 580x^1 + 75x^0  
+Laguerre's Algorithm( tol = 1e-08 )
+      it: 0   x: 0.0 
+    G(x): -7.73333 
+             H(x): 64.3111 
+             Alpha: -0.124723  
+      it: 1   x: 0.124723 
+    G(x): -3615.51 
+             H(x): 1.30736e+07 
+             Alpha: -0.000276568  
+    Found root 0.125 + 0i 
+    Deflated: P(x) =  16x^3 + 72x^2 - 160x^1 - 600x^0  
+Laguerre's Algorithm( tol = 1e-08 )
+      it: 0   x: 0.0 
+    G(x): 0.266667 
+             H(x): 0.311111 
+             Alpha: 1.89892  
+      it: 1   x: -1.89892 
+    G(x): 1.78201 
+             H(x): 2.91343 
+             Alpha: 0.586155  
+      it: 2   x: -2.48507 
+    G(x): 67.2061 
+             H(x): 4487.95 
+             Alpha: 0.0149272  
+      it: 3   x: -2.5 
+    G(x): 3.5699e+06 
+             H(x): 1.27442e+13 
+             Alpha: 2.8012e-07  
+    Found root -2.5 + 0i 
+    Deflated: P(x) =  16x^2 + 32x^1 - 240x^0  
+    Found final two roots through quadratic formula 
+Roots: 
+     -5  
+     3  
+     -2.5  
+     0.125  
+
+ 
+P(x) =  1x^4 + 4x^2 - 5x^0  
+Laguerre's Algorithm( tol = 1e-08 )
+      it: 0   x: 0.0 
+    G(x): 0.0 
+             H(x): 1.6 
+             Alpha: -0.912871  
+      it: 1   x: 0.912871 
+    G(x): -10.6415 
+             H(x): 131.755 
+             Alpha: -0.0871952  
+      it: 2   x: 1.00007 
+    G(x): 15131.4 
+             H(x): 2.28935e+08 
+             Alpha: 6.60913e-05  
+    Found root 1 + 0i 
+    Deflated: P(x) =  1x^3 + 1x^2 + 5x^1 + 5x^0  
+Laguerre's Algorithm( tol = 1e-08 )
+      it: 0   x: 0.0 
+    G(x): 1 
+             H(x): 0.6 
+             Alpha: 1.32456  
+      it: 1   x: -1.32456 
+    G(x): -3.47334 
+             H(x): 9.35114 
+             Alpha: -0.328648  
+      it: 2   x: -0.995907 
+    G(x): 244.004 
+             H(x): 59699.9 
+             Alpha: 0.00409273  
+    Found root -1 + 0i 
+    Deflated: P(x) =  1x^2 + 5x^0  
+    Found final two roots through quadratic formula 
+Roots: 
+     0.0  -2.23607i  
+     0.0  +2.23607i  
+     -1  
+     1  
+
+ 
+P(x) =  -9x^3 + 3x^2 + 5x^1 - 3x^0  
+Laguerre's Algorithm( tol = 1e-08 )
+      it: 0   x: 0.0 
+    G(x): -1.66667 
+             H(x): 4.77778 
+             Alpha: -0.463387  
+      it: 1   x: 0.463387 
+    G(x): -2.12187 
+             H(x): -15.8561 
+             Alpha: -0.0585918  +0.281792i  
+      it: 2   x: 0.521979  -0.281792i 
+    G(x): -14.3582  +7.91705i 
+             H(x): 183.089  -177.169i 
+             Alpha: -0.0578832  -0.0233541i  
+      it: 3   x: 0.579862  -0.258438i 
+    G(x): -2150.93  -3926.97i 
+             H(x): -1.08078e+07  +1.69076e+07i 
+             Alpha: -0.000107223  +0.000195798i  
+    Found root 0.579969 + -0.258634i 
+    Found imaginary root, deflating twice 
+    Deflated: P(x) =  -9x^1 - 7.43945x^0  
+    Found final root with simple math 
+Roots: 
+     -0.826605  
+     0.579969  -0.258634i  
+     0.579969  +0.258634i  
+
+ 
+P(x) =  5x^4 - 4x^3 + 3x^2 - 2x^1  
+Laguerre's Algorithm( tol = 1e-08 )
+    Found root 0 + 0i 
+    Deflated: P(x) =  5x^3 - 4x^2 + 3x^1 - 2x^0  
+Laguerre's Algorithm( tol = 1e-08 )
+      it: 0   x: 0.0 
+    G(x): -1.5 
+             H(x): -1.75 
+             Alpha: -0.26087  +0.673562i  
+      it: 1   x: 0.26087  -0.673562i 
+    G(x): 3.49672  +0.492816i 
+             H(x): 14.2514  -11.021i 
+             Alpha: 0.223505  +0.0656073i  
+      it: 2   x: 0.0373641  -0.73917i 
+    G(x): 457.542  -126.04i 
+             H(x): 193722  -116788i 
+             Alpha: 0.00202569  +0.000563374i  
+    Found root 0.0353384 + -0.739733i 
+    Found imaginary root, deflating twice 
+    Deflated: P(x) =  5x^1 - 3.64662x^0  
+    Found final root with simple math 
+Roots: 
+     0.0353384  +0.739733i  
+     0.0353384  -0.739733i  
+     0.729323  
+     0.0  
+
+ 
+P(x) =  1x^5 - 3.4x^4 + 5.4531x^3 - 4.2077x^2 + 1.5092x^1 - 0.203x^0  
+Laguerre's Algorithm( tol = 1e-08 )
+      it: 0   x: 0.0 
+    G(x): -7.43448 
+             H(x): 13.8164 
+             Alpha: -0.336317  
+      it: 1   x: 0.336317 
+    G(x): -24.3728 
+             H(x): 187.95 
+             Alpha: -0.0812222  
+      it: 2   x: 0.417539 
+    G(x): -82.0043 
+             H(x): 3169.04 
+             Alpha: -0.0183145  
+      it: 3   x: 0.435854 
+    G(x): -1975.79 
+             H(x): 3.76072e+06 
+             Alpha: -0.000515684  
+    Found root 0.43637 + 0i 
+    Deflated: P(x) =  1x^4 - 2.96363x^3 + 4.15986x^2 - 2.39246x^1 + 0.465202x^0  
+Laguerre's Algorithm( tol = 1e-08 )
+      it: 0   x: 0.0 
+    G(x): -5.14285 
+             H(x): 8.56477 
+             Alpha: -0.400667  
+      it: 1   x: 0.400667 
+    G(x): -23.9348 
+             H(x): 246.661 
+             Alpha: -0.0676053  
+      it: 2   x: 0.468272 
+    G(x): -43.2499 
+             H(x): -1333.57 
+             Alpha: -0.00736636  +0.0250404i  
+      it: 3   x: 0.475638  -0.0250404i 
+    G(x): -122.665  +92.5982i 
+             H(x): 8621.16  -17123.2i 
+             Alpha: -0.00616241  -0.00376459i  
+      it: 4   x: 0.481801  -0.0212758i 
+    G(x): -4167.42  -16363.4i 
+             H(x): -2.5117e+08  +1.36555e+08i 
+             Alpha: -1.45741e-05  +5.73187e-05i  
+    Found root 0.481815 + -0.0213331i 
+    Found imaginary root, deflating twice 
+    Deflated: P(x) =  1x^2 - 2x^1 + 2x^0  
+    Found final two roots through quadratic formula 
+Roots: 
+     1  -1i  
+     1  +1i  
+     0.481815  -0.0213331i  
+     0.481815  +0.0213331i  
+     0.43637  
+
+
+
+Analysis of Laguerre's Method Implementation
+--------------------------------------------
+Overview:
+The implementation of Laguerre's method in this module is designed to find the 
+roots of a given polynomial efficiently. The key functions that facilitate this 
+process include laguerre(), which implements the core algorithm, evalDerivs() 
+for evaluating the polynomial and its first two derivatives at a given point, 
+and auxiliary functions such as deflPoly() for polynomial deflation upon 
+finding a root.
+
+Module Organization:
+The module is organized around the polynomial data structure, which holds the 
+coefficients of the polynomial and the number of terms. Functions operate on 
+this structure to perform various tasks, such as evaluating the polynomial 
+(cevalPoly()), finding roots (laguerre(), quadraticRoots()), and modifying the 
+polynomial by deflating roots (deflPoly()).
+
+Laguerre's Algorithm Implementation:
+Laguerre's method is implemented in an iterative fashion within the laguerre() 
+function. At each iteration, the algorithm evaluates the polynomial and its 
+derivatives at a current guess, computes G(x) and H(x), and then calculates the 
+correction factor alpha. The guess is updated by subtracting alpha, and the 
+process repeats until the correction factor is below a certain tolerance, 
+indicating convergence to a root.
+
+Handling Complex Roots:
+The implementation is equipped to handle complex roots effectively. When a 
+complex root is found, its conjugate is also considered as a root, and the 
+polynomial is deflated by both roots. This ensures the integrity of the 
+root-finding process and maintains the polynomial's degree.
+
+Roots Function Analysis:
+
+Algorithm Summary: The roots() function orchestrates the root-finding process, 
+handling special cases like linear and quadratic polynomials directly and 
+employing Laguerre's method for higher degrees. It iteratively finds a root, 
+deflates the polynomial by that root, and repeats the process until all roots 
+are discovered.
+Checks and Balances: The implementation includes checks for convergence and 
+special handling for complex roots to ensure accuracy. Tolerance checks are 
+used to determine when a guess is sufficiently close to a root.
+Efficiency Considerations: The algorithm is designed with efficiency in mind, 
+minimizing unnecessary polynomial evaluations and employing Horner's method for 
+efficient polynomial and derivative evaluation.
+
+Challenges and Solutions:
+
+Numerical Stability: Addressed by implementing dynamic tolerance and careful 
+complex arithmetic to handle closely spaced and complex roots effectively.
+
+
+Resetting Initial Guess x: The challenge of carry-over effects between 
+successive root findings was resolved by updating the initial guess x after the 
+verbose output, ensuring accurate root finding.
+
+Verbose Output Management: Verbose outputs were strategically placed to provide 
+insights without disrupting the algorithm's flow.

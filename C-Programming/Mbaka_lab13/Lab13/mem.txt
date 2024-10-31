@@ -1,0 +1,45 @@
+==129226== Memcheck, a memory error detector
+==129226== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==129226== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==129226== Command: ./hw13 -t 8 -f -v
+==129226== 
+
+Starting 8 threads generating 25804800 numbers
+
+Thread index:0  ID:204023552 started
+Thread index:1  ID:212416256 started
+Thread index:2  ID:220808960 started
+Thread index:2 track status:0 seg size:3225600K data ptr:0x5821040
+Thread index:1 track status:0 seg size:3225600K data ptr:0x5821040
+Thread index:3  ID:229201664 started
+Thread index:0 track status:0 seg size:3225600K data ptr:0x5821040
+Thread index:3 track status:0 seg size:3225600K data ptr:0x5821040
+Thread index:4  ID:237594368 started
+Thread index:4 track status:0 seg size:3225600K data ptr:0x5821040
+Thread index:5 track status:0 seg size:3225600K data ptr:0x5821040
+Thread index:5  ID:245987072 started
+Thread index:6  ID:254379776 started
+Thread index:7 track status:0 seg size:3225600K data ptr:0x5821040
+Thread index:7  ID:262772480 started
+Thread index:6 track status:0 seg size:3225600K data ptr:0x5821040
+Thread index 0, join RC 0, task rc 6304128
+Thread index 1, join RC 0, task rc 6304132
+Thread index 2, join RC 0, task rc 6304136
+Thread index 3, join RC 0, task rc 6304140
+Thread index 4, join RC 0, task rc 6304144
+Thread index 5, join RC 0, task rc 6304148
+Thread index 6, join RC 0, task rc 6304152
+Thread index 7, join RC 0, task rc 6304156
+Elapsed CPU Time timer = 8.26 seconds
+Total wall time = 8 sec
+Verifying results...  success
+
+==129226== 
+==129226== HEAP SUMMARY:
+==129226==     in use at exit: 0 bytes in 0 blocks
+==129226==   total heap usage: 10 allocs, 10 frees, 103,223,872 bytes allocated
+==129226== 
+==129226== All heap blocks were freed -- no leaks are possible
+==129226== 
+==129226== For lists of detected and suppressed errors, rerun with: -s
+==129226== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

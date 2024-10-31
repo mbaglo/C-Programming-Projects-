@@ -1,0 +1,27 @@
+==166662== Memcheck, a memory error detector
+==166662== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==166662== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==166662== Command: ./TestDarray -i engWords.txt -w 5
+==166662== 
+First 5 elements:
+ dermatitis
+ toxins
+ wisted
+ benedictions
+ Tera
+Last 5 elements:
+ Pict's
+ Sidman's
+ intercohort
+ pressurize
+ besotting
+Number of Words Read = 206590
+==166662== 
+==166662== HEAP SUMMARY:
+==166662==     in use at exit: 0 bytes in 0 blocks
+==166662==   total heap usage: 2,058 allocs, 2,058 frees, 54,660,250,168 bytes allocated
+==166662== 
+==166662== All heap blocks were freed -- no leaks are possible
+==166662== 
+==166662== For lists of detected and suppressed errors, rerun with: -s
+==166662== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

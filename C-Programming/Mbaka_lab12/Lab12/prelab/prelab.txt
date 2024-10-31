@@ -1,0 +1,283 @@
+Prelab
+------
+1. Test Results for Miles to Km Conversion Program:
+
+Miles to Km Conversion (enter negative number to end)
+Input distance in miles: 1
+
+1.000000 miles = 1.609000 km
+Input distance in miles: 2.2
+
+2.200000 miles = 3.539800 km
+Input distance in miles: gloria
+
+2.200000 miles = 3.539800 km
+Input distance in miles: 
+2.200000 miles = 3.539800 km
+Input distance in miles: 
+2.200000 miles = 3.539800 km
+Input distance in miles: 
+2.200000 miles = 3.539800 km
+Input distance in miles: 
+
+
+
+
+Input: 1 and 2.2
+Results: Both numeric inputs were correctly converted from miles to kilometers. 
+This confirms that the program effectively handles valid numeric inputs.
+Input: gloria (a non-numeric string)
+Result: The program failed to handle the non-numeric input properly, resulting 
+in an infinite loop that continuously printed the last valid conversion. The 
+scanf() function didn’t update the miles variable when faced with invalid 
+input, causing it to retain its previous value and repeat the same output until 
+the program was manually interrupted.
+
+
+2. Test Results with Error Handling in Miles to Km Conversion Program:
+
+Miles to Km Conversion (enter negative number to end)
+Input distance in miles: 1
+
+1.000000 miles = 1.609000 km
+Input distance in miles: 2.2
+
+2.200000 miles = 3.539800 km
+Input distance in miles: gloria
+Error, nothing parsed
+
+
+
+Input: 1
+Result: Successfully parsed and converted 1 mile to 1.609 kilometers. This 
+indicates that the program accurately processes valid numeric inputs.
+Input: 2.2
+Result: Successfully parsed and converted 2.2 miles to 3.5398 kilometers. This 
+confirms the program's ability to handle floating-point numbers effectively.
+Input: gloria
+Result: Detected as invalid input, triggering the error message "Error, nothing 
+parsed" and terminating the program. This was expected and it demonstrates the 
+effectiveness of the added error handling, ensuring the program exits 
+gracefully when faced with non-numeric input.
+
+
+
+Command-line arguments:
+argv[0]: ./lab_b
+argv[1]: hello
+argv[2]: world
+Environment variables:
+env[0]: GNUPLOT_DEFAULT_DDFONT=DejaVuSans.ttf
+env[1]: XDG_SESSION_ID=3834
+env[2]: SPACK_ROOT=/tools/spack
+env[3]: HOSTNAME=gle-3159-ws20
+env[4]: DETECTOS_OS=RHEL
+env[5]: TERM=xterm-256color
+env[6]: SHELL=/bin/bash
+env[7]: HISTSIZE=1000
+env[8]: SSH_CLIENT=129.21.62.200 61530 22
+env[9]: QTDIR=/usr/lib64/qt-3.3
+env[10]: OLDPWD=/home/gm6629/Lab12
+env[11]: QTINC=/usr/lib64/qt-3.3/include
+env[12]: SSH_TTY=/dev/pts/3
+env[13]: QT_GRAPHICSSYSTEM_CHECKED=1
+env[14]: USER=gm6629
+env[15]: 
+LS_COLORS=rs=0:di=38;5;27:ln=38;5;51:mh=44;38;5;15:pi=40;38;5;11:so=38;5;13:do=3
+8;5;5:bd=48;5;232;38;5;11:cd=48;5;232;38;5;3:or=48;5;232;38;5;9:mi=05;48;5;232;3
+8;5;15:su=48;5;196;38;5;15:sg=48;5;11;38;5;16:ca=48;5;196;38;5;226:tw=48;5;10;38
+;5;16:ow=48;5;10;38;5;21:st=48;5;21;38;5;15:ex=38;5;34:*.tar=38;5;9:*.tgz=38;5;9
+:*.arc=38;5;9:*.arj=38;5;9:*.taz=38;5;9:*.lha=38;5;9:*.lz4=38;5;9:*.lzh=38;5;9:*
+.lzma=38;5;9:*.tlz=38;5;9:*.txz=38;5;9:*.tzo=38;5;9:*.t7z=38;5;9:*.zip=38;5;9:*.
+z=38;5;9:*.Z=38;5;9:*.dz=38;5;9:*.gz=38;5;9:*.lrz=38;5;9:*.lz=38;5;9:*.lzo=38;5;
+9:*.xz=38;5;9:*.bz2=38;5;9:*.bz=38;5;9:*.tbz=38;5;9:*.tbz2=38;5;9:*.tz=38;5;9:*.
+deb=38;5;9:*.rpm=38;5;9:*.jar=38;5;9:*.war=38;5;9:*.ear=38;5;9:*.sar=38;5;9:*.ra
+r=38;5;9:*.alz=38;5;9:*.ace=38;5;9:*.zoo=38;5;9:*.cpio=38;5;9:*.7z=38;5;9:*.rz=3
+8;5;9:*.cab=38;5;9:*.jpg=38;5;13:*.jpeg=38;5;13:*.gif=38;5;13:*.bmp=38;5;13:*.pb
+m=38;5;13:*.pgm=38;5;13:*.ppm=38;5;13:*.tga=38;5;13:*.xbm=38;5;13:*.xpm=38;5;13:
+*.tif=38;5;13:*.tiff=38;5;13:*.png=38;5;13:*.svg=38;5;13:*.svgz=38;5;13:*.mng=38
+;5;13:*.pcx=38;5;13:*.mov=38;5;13:*.mpg=38;5;13:*.mpeg=38;5;13:*.m2v=38;5;13:*.m
+kv=38;5;13:*.webm=38;5;13:*.ogm=38;5;13:*.mp4=38;5;13:*.m4v=38;5;13:*.mp4v=38;5;
+13:*.vob=38;5;13:*.qt=38;5;13:*.nuv=38;5;13:*.wmv=38;5;13:*.asf=38;5;13:*.rm=38;
+5;13:*.rmvb=38;5;13:*.flc=38;5;13:*.avi=38;5;13:*.fli=38;5;13:*.flv=38;5;13:*.gl
+=38;5;13:*.dl=38;5;13:*.xcf=38;5;13:*.xwd=38;5;13:*.yuv=38;5;13:*.cgm=38;5;13:*.
+emf=38;5;13:*.axv=38;5;13:*.anx=38;5;13:*.ogv=38;5;13:*.ogx=38;5;13:*.aac=38;5;4
+5:*.au=38;5;45:*.flac=38;5;45:*.mid=38;5;45:*.midi=38;5;45:*.mka=38;5;45:*.mp3=3
+8;5;45:*.mpc=38;5;45:*.ogg=38;5;45:*.ra=38;5;45:*.wav=38;5;45:*.axa=38;5;45:*.og
+a=38;5;45:*.spx=38;5;45:*.xspf=38;5;45:
+env[16]: GDFONTPATH=/usr/share/fonts/dejavu
+env[17]: SOURCED_RC_SH=true
+env[18]: DETECTOS_OSSP=
+env[19]: MAIL=/var/spool/mail/gm6629
+env[20]: 
+PATH=/tools/spack/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/s
+bin:/usr/sbin:/sbin:/tools/bin:/home/gm6629/.local/bin:/home/gm6629/bin
+env[21]: DETECTOS_ARCH=
+env[22]: DETECTOS_OSVERSION=7
+env[23]: PWD=/home/gm6629/Lab12/prelab
+env[24]: 
+_LMFILES_=/etc/modulefiles/tools-dir:/tools/Modules/modulefiles.meta/module_defa
+ult:/tools/Modules/modulefiles/system_defaults:/tools/Modules/modulefiles.meta/m
+odule_rhel7:/tools/Modules/modulefiles.meta/module_class
+env[25]: LANG=en_US.UTF-8
+env[26]: 
+MODULEPATH=/tools/spack/share/spack/modules/linux-rhel7-x86_64:/tools/spack/shar
+e/spack/modules/linux-rhel7-haswell:/tools/spack/share/spack/modules/linux-rhel7
+-broadwell:/tools/spack/share/spack/modules/linux-rhel7-skylake_avx512:/tools/sp
+ack/share/spack/modules/linux-rhel7-x86_64:/tools/spack/share/spack/modules/linu
+x-rhel7-haswell:/tools/spack/share/spack/modules/linux-rhel7-broadwell:/tools/sp
+ack/share/spack/modules/linux-rhel7-skylake_avx512:/usr/share/Modules/modulefile
+s:/etc/modulefiles:/tools/Modules/modulefiles.meta:/tools/Modules/modulefiles:/t
+ools/Modules/modulefiles.rhel7:/tools/Modules/modulefiles.class
+env[27]: 
+LOADEDMODULES=tools-dir:module_default:system_defaults:module_rhel7:module_class
+env[28]: DETECTOS_PM_COMMAND=yum install -y
+env[29]: SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
+env[30]: HISTCONTROL=ignoredups
+env[31]: KRB5CCNAME=FILE:/tmp/krb5cc_2898420_vJh6A5
+env[32]: SHLVL=1
+env[33]: HOME=/home/gm6629
+env[34]: DIRNEWSDIR=/shared/rc/dirnews/
+env[35]: LOGNAME=gm6629
+env[36]: QTLIB=/usr/lib64/qt-3.3/lib
+env[37]: 
+XDG_DATA_DIRS=/home/gm6629/.local/share/flatpak/exports/share:/var/lib/flatpak/e
+xports/share:/usr/local/share:/usr/share
+env[38]: SSH_CONNECTION=129.21.62.200 61530 129.21.219.96 22
+env[39]: LC_CTYPE=UTF-8
+env[40]: MODULESHOME=/usr/share/Modules
+env[41]: LESSOPEN=||/usr/bin/lesspipe.sh %s
+env[42]: SPACK_PYTHON=/usr/bin/python3
+env[43]: XDG_RUNTIME_DIR=/run/user/2898420
+env[44]: DISPLAY=localhost:13.0
+env[45]: DETECTOS_PM_NAME=yum
+env[46]: CUDA_CACHE_MAXSIZE=4294967296
+env[47]: BASH_FUNC__spack_shell_wrapper()=() {  for var in DYLD_LIBRARY_PATH 
+DYLD_FALLBACK_LIBRARY_PATH;
+ do
+ eval "if [ -n \"\${${var}-}\" ]; then export SPACK_$var=\${${var}}; fi";
+ done;
+ if [ -n "${ZSH_VERSION:-}" ]; then
+ emulate -L sh;
+ fi;
+ _sp_flags="";
+ while [ ! -z ${1+x} ] && [ "${1#-}" != "${1}" ]; do
+ _sp_flags="$_sp_flags $1";
+ shift;
+ done;
+ if [ -n "$_sp_flags" ] && [ "${_sp_flags#*h}" != "${_sp_flags}" ] || [ 
+"${_sp_flags#*V}" != "${_sp_flags}" ]; then
+ command spack $_sp_flags "$@";
+ return;
+ fi;
+ _sp_subcommand="";
+ if [ ! -z ${1+x} ]; then
+ _sp_subcommand="$1";
+ shift;
+ fi;
+ case $_sp_subcommand in 
+ "cd")
+ _sp_arg="";
+ if [ -n "$1" ]; then
+ _sp_arg="$1";
+ shift;
+ fi;
+ if [ "$_sp_arg" = "-h" ] || [ "$_sp_arg" = "--help" ]; then
+ command spack cd -h;
+ else
+ LOC="$(SPACK_COLOR="${SPACK_COLOR:-always}" spack location $_sp_arg "$@")";
+ if [ -d "$LOC" ]; then
+ cd "$LOC";
+ else
+ return 1;
+ fi;
+ fi;
+ return
+ ;;
+ "env")
+ _sp_arg="";
+ if [ -n "$1" ]; then
+ _sp_arg="$1";
+ shift;
+ fi;
+ if [ "$_sp_arg" = "-h" ] || [ "$_sp_arg" = "--help" ]; then
+ command spack env -h;
+ else
+ case $_sp_arg in 
+ activate)
+ _a=" $@";
+ if [ "${_a#* --sh}" != "$_a" ] || [ "${_a#* --csh}" != "$_a" ] || [ "${_a#* 
+-h}" != "$_a" ] || [ "${_a#* --help}" != "$_a" ]; then
+ command spack env activate "$@";
+ else
+ stdout="$(SPACK_COLOR="${SPACK_COLOR:-always}" command spack $_sp_flags env 
+activate --sh "$@")" || return;
+ eval "$stdout";
+ fi
+ ;;
+ deactivate)
+ _a=" $@";
+ if [ "${_a#* --sh}" != "$_a" ] || [ "${_a#* --csh}" != "$_a" ]; then
+ command spack env deactivate "$@";
+ else
+ if [ -n "$*" ]; then
+ command spack env deactivate -h;
+ else
+ stdout="$(SPACK_COLOR="${SPACK_COLOR:-always}" command spack $_sp_flags env 
+deactivate --sh)" || return;
+ eval "$stdout";
+ fi;
+ fi
+ ;;
+ *)
+ command spack env $_sp_arg "$@"
+ ;;
+ esac;
+ fi;
+ return
+ ;;
+ "load" | "unload")
+ _a=" $@";
+ if [ "${_a#* --sh}" != "$_a" ] || [ "${_a#* --csh}" != "$_a" ] || [ "${_a#* 
+-h}" != "$_a" ] || [ "${_a#* --list}" != "$_a" ] || [ "${_a#* --help}" != "$_a" 
+]; then
+ command spack $_sp_flags $_sp_subcommand "$@";
+ else
+ stdout="$(SPACK_COLOR="${SPACK_COLOR:-always}" command spack $_sp_flags 
+$_sp_subcommand --sh "$@")" || return;
+ eval "$stdout";
+ fi
+ ;;
+ *)
+ command spack $_sp_flags $_sp_subcommand "$@"
+ ;;
+ esac
+}
+env[48]: BASH_FUNC_module()=() {  eval `/usr/bin/modulecmd bash $*`
+}
+env[49]: BASH_FUNC_spack()=() {  : this is a shell function from: 
+/tools/spack/share/spack/setup-env.sh;
+ : the real spack script is here: /tools/spack/bin/spack;
+ _spack_shell_wrapper "$@";
+ return $?
+}
+env[50]: _=./lab_b
+
+Test Result from Qsort
+----------------------
+
+Usage: ./lab_c <number of entries>
+
+Error: Number of entries must be at least 2
+
+     -49.9
+       2.1
+      26.5
+      30.2
+      39.7
+      49.2
+
+Usage: ./lab_c <number of entries>
+
+
+

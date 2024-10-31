@@ -1,0 +1,210 @@
+Qn Division
+===========
+
+Line 7 - Print out of the results
+----------------------------------
+
+Division test
+fnum        qnum1 (dec)  qnum2 (dec)  qnum1 (float)  qnum2 (float)
+-0.031250   -8192         -2147483648   -0.031250      -8192.000000 
+-0.015625   -4096         0             -0.015625      0.000000     
+-0.007812   -2048         0             -0.007812      0.000000     
+-0.003906   -1024         0             -0.003906      0.000000     
+-0.001953   -512          0             -0.001953      0.000000     
+-0.000977   -256          0             -0.000977      0.000000     
+-0.000488   -128          0             -0.000488      0.000000     
+-0.000244   -64           0             -0.000244      0.000000     
+-0.000122   -32           0             -0.000122      0.000000     
+-0.000061   -16           0             -0.000061      0.000000     
+-0.000031   -8            0             -0.000031      0.000000     
+-0.000015   -4            0             -0.000015      0.000000     
+-0.000008   -2            0             -0.000008      0.000000     
+-0.000004   -1            0             -0.000004      0.000000     
+-0.000002   0             0             0.000000       0.000000     
+
+
+Line 8 - Comment
+----------------
+
+It was observed that `qnum1` behaved as expected when divided using standard 
+integer division, consistently halving its value in each iteration. However, 
+`qnum2`, when divided using the `Qn_DIVIDE` macro, did not follow the 
+anticipated halving pattern. Starting from an initial value of -8192, derived 
+from converting -0.0625 to Qn18 format, `qnum2` abruptly changed to -2147483648 
+upon the first application of `Qn_DIVIDE` and then zeroed out in subsequent 
+iterations. This behavior indicates potential issues with the `Qn_DIVIDE` 
+macro's handling of negative values or its bit-shifting operation, possibly 
+leading to overflow. In contrast, the integer division applied to `qnum1` did 
+not exhibit such problems, maintaining the expected division pattern without 
+overflow or underflow.
+
+
+Qn Multiply
+===========
+
+Line 3 - Print out of the results
+---------------------------------
+Multiplication test
+Product= 48.414375 float  qnx product= 12691491 dec, converted back inf float
+
+Line 4 - Comment
+----------------
+
+In the multiplication test using Qn18 values, an overflow occurred when 
+converting the Qn product back to a floating-point number, resulting in an 
+"inf" value. This indicates significant data loss, as the expected product 
+could not be accurately represented after conversion.
+
+Qn Complex equations
+====================
+
+Line 4
+------
+Complex calculations test
+
+Floating-point test 
+Product= -674.932500 float
+
+Comment
+--------
+The equation F(x) = x^3 - 0.0001x^2 - 676x + 0.0676 was evaluated using 
+standard floating-point arithmetic with x = 1.0. The result obtained was 
+-674.932500. This value will be used as a benchmark to compare the outcomes of 
+the subsequent implementations in fractional and Qn formats.
+
+Line 6 
+------
+Fractional test
+Product= -674.932500 float
+
+Comment 
+-------
+For the fractional test, the equation F(x) = x^3 - (x^2)/10000 - 676x + 
+169/2500 was evaluated using x = 1.0. The result obtained was -674.932500, 
+matching the result from the floating-point implementation. This indicates that 
+both the fractional representation and the floating-point representation of the 
+equation produce consistent outcomes when evaluated with the same value of x.
+
+
+Line 9
+------
+
+Qn test
+Product= -674.932500 float qnx product= -176929506 dec, converted back -inf 
+float
+
+Comment
+-------
+The equation F(x) = x^3 - 0.0001x^2 - 676x + 0.0676 was evaluated in Qn format 
+using x = 1.0 represented as a Qn18 number. The Qn multiplication resulted in a 
+large negative decimal value. Attempting to convert this back to a 
+floating-point number led to an overflow, indicated by the '-inf' value. This 
+suggests challenges in handling the scale of results in Qn format, particularly 
+when converting large Qn products back to floating-point numbers, highlighting 
+the limitations of fixed-point arithmetic for certain calculations.
+
+Qn Performance
+==============
+
+Line 6 - Print out of Result
+----------------------------
+Performance test
+Floating-point addition took 80000 clocks.
+Qn addition took 40000 clocks.
+Faster operation for addition: Qn
+Floating-point multiplication took 40000 clocks.
+Qn multiplication took 40000 clocks.
+Faster operation for multiplication: Qn
+
+Line 7 - Comment on Performance Test Results
+--------------------------------------------
+The performance comparison between floating-point and Qn arithmetic was 
+conducted to understand their efficiency in addition and multiplication 
+operations. Contrary to expectations that floating-point operations might be 
+faster on high-end equipment with specialized FPUs, the test results revealed a 
+different outcome.
+
+Addition: The Qn format outperformed floating-point arithmetic, requiring only 
+40,000 clock cycles compared to 80,000 for floating-point addition. This 
+indicates a higher efficiency of Qn addition operations, possibly due to 
+simpler integer arithmetic involved, even on high-end processors.
+
+Multiplication: Interestingly, both Qn and floating-point multiplications 
+completed in 40,000 clock cycles, showing no significant performance difference 
+for this operation. This result was unexpected, as floating-point 
+multiplication is typically optimized in high-end processors.
+
+
+Line 8 - Output of All Results 
+------------------------------
+
+Division test
+fnum        qnum1 (dec)  qnum2 (dec)  qnum1 (float)  qnum2 (float)
+-0.031250   -8192         -2147483648   -0.031250      -8192.000000 
+-0.015625   -4096         0             -0.015625      0.000000     
+-0.007812   -2048         0             -0.007812      0.000000     
+-0.003906   -1024         0             -0.003906      0.000000     
+-0.001953   -512          0             -0.001953      0.000000     
+-0.000977   -256          0             -0.000977      0.000000     
+-0.000488   -128          0             -0.000488      0.000000     
+-0.000244   -64           0             -0.000244      0.000000     
+-0.000122   -32           0             -0.000122      0.000000     
+-0.000061   -16           0             -0.000061      0.000000     
+-0.000031   -8            0             -0.000031      0.000000     
+-0.000015   -4            0             -0.000015      0.000000     
+-0.000008   -2            0             -0.000008      0.000000     
+-0.000004   -1            0             -0.000004      0.000000     
+-0.000002   0             0             0.000000       0.000000     
+
+Multiplication test
+Product= 48.414375 float  qnx product= 12691491 dec, converted back inf float
+
+
+Complex calculations test
+
+Floating-point test
+Product= -674.932500 float
+
+Fractional test
+Product= -675.932300 float
+
+Qn test
+
+Floating-point result: -674.932500
+Qn product (decimal): -176929506
+Converted back to float: -inf
+
+Product= -674.932500 float qnx product= -176929506 dec, converted back -inf 
+float
+
+
+Performance test
+
+Floating-point addition took 40000 clocks.
+Qn addition took 70000 clocks.
+Faster operation for addition: Floating-point
+
+Floating-point multiplication took 50000 clocks.
+Qn multiplication took 40000 clocks.
+Faster operation for multiplication: Qn
+
+
+Qn application
+==============
+
+Line 6 - Output of result 
+-------------------------
+
+
+value 16.000000 float square root 4.000000  i_sqrt 4 q_sqrt 4.000000
+value 23425.000000 float square root 153.052279  i_sqrt 153 q_sqrt 153.052277
+value 0.000000 float square root 0.000000  i_sqrt 0 q_sqrt 0.000000
+value 0.500000 float square root 0.707107  i_sqrt 0 q_sqrt 0.250000
+Error: Value 3.231460 float square root 1.797626  q_sqrt 1.615723
+Error: Value 3.578574 float square root 1.891712  q_sqrt 1.789276
+Error: Value 1.125480 float square root 1.060886  q_sqrt 0.562729
+Error: Value 2.827794 float square root 1.681605  q_sqrt 1.413895
+automated testing complete
+The floating point roots of 1.000000x^2 + 10.000000x + 23.000000 are -3.585786 
+-6.414214
+The Qn 12 roots of 1.000000x^2 + 10.000000x + 23.000000 are -3.585693 -6.414062

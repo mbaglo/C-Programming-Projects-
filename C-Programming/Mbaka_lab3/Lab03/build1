@@ -1,0 +1,5 @@
+#############################################################################
+# Simple script to compile and link code
+#############################################################################
+echo "Building simpleTest from simpleTest.c and DynamicArrays.c"
+gcc -O1 -g -Wall -std=c99 -pedantic simpleTest.c DynamicArrays.c -o simpleTest

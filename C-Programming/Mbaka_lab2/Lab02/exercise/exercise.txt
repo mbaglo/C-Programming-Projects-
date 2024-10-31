@@ -1,0 +1,351 @@
+// LAB_A RESULT 
+
+short int              value: 1,  Size: 2 bytes
+unsigned short int     value: 2,  Size: 2 bytes
+unsigned int           value: 3,  Size: 4 bytes- At least 16 bits, typically 32 bits (4 bytes) on many systems
+int                    value: 4,  Size: 4 bytes - At least 16 bits, typically 32 bits (4 bytes) on many systems
+long int               value: 5,  Size: 8 bytes - At least 32 bits, but often 64 bits (8 bytes) on 64-bit systems
+unsigned long int      value: 6,  Size: 8 bytes - At least 32 bits, but often 64 bits (8 bytes) on 64-bit systems
+long long int          value: 7,  Size: 8 bytes
+unsigned long long int value: 8,  Size: 8 bytes
+signed char            value: 8,  Size: 1 bytes
+unsigned char          value: 9,  Size: 1 bytes
+float                  value: 11.000000,  Size: 4 bytes
+double                 value: 12.000000,  Size: 8 bytes
+long double            value: 13.000000,  Size: 16 bytes - The size can vary significantly by system. Common sizes are 80 bits (10 bytes) when stored with padding on x86 and x86-64 systems, 128 bits (16 bytes) on some Unix and Unix-like systems, among other variations.
+Different data '123.456789'  '123.457'  ' 123.4568'
+
+
+// LAB_B RESULTS
+
+1. A union of a float and integer 
+
+The value of float and integer is 6.000000 and  1086324736
+
+These values  are not what I expected. However, one of the numbers, the interger value, was overwritten when I assigned the float value. This is because they share the same memory address due to the fact that 'aNumber' is a union. The value of 'i' in the result is reflecting how the bits of the float value '6.0' are interpreted as an interger. 
+
+
+2. A structure of a float and integer
+
+The value of float and integer is 6.000000 and  5
+
+The values are what I expected because 'aNumber2' is a structure, so the values of its members 'i' and 'f' are stored independently.
+
+
+3. Use the sizeof() operator on the data structures 
+
+Size of the union 'anumber1': 4 bytes
+Size of the struct 'anumber2': 8 bytes
+
+The structure ('anumber2') is larger because it allocates seperate memory for each member.
+
+
+4. Print-out of list of Beatle band members and birth years using a typedef and a for loop.
+
+
+Beatle John Lennon born 1940
+Beatle Paul McCartney born 1942
+Beatle George Harrison born 1943
+Beatle Ringo Starr born 1940
+
+
+5. A run on string of Beatle members first names
+
+Run on string of first names: JohnPaulGeorgeRingo
+
+
+6. Code to return the index number for the “Ringo.
+
+The Ringo index is 3
+
+
+7. Code to count from 1 to 255 inclusive
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+
+
+8. Code guaranteed to create a 64 bit long integer on ANY machine
+
+Size of the 64-bit integer: 8 bytes
+
+
+
+// LAB_C RESULTS
+
+3. Print of the resulting string with single quotes around the %s string variable
+
+'CMPE380 lab'
+
+The string did not print properly. This is because the memory allocated to it is too small to contain the 24 characters that make up the string.
+
+
+
+6. Print out the resulting string with single quotes around the %s string variable
+
+After appending: 'CMPE380 lab-- Reall'
+
+The string did not print properly. This is because the memory allocated to it is too small to contain the additional characters.
+'CMPE380 lab'
+After appending: 'CMPE380 lab-- Reall'
+
+
+9  Convert the string to corresponding integer and floating-point values and print them out with a friendly message.
+
+
+The integer value of the string is: 5
+The floating-point value of the string is: 5.600000

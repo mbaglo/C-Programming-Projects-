@@ -1,0 +1,60 @@
+############################################################
+# This make file demonstrated all special variables
+# student copy
+############################################################
+
+# Standard compile flags
+CC       = gcc
+CFLAGS   = -O1 -g -Wall -std=c99 -pedantic
+
+# This demonstrates the returned target name
+# $@ to represent the full target name of the current target
+target1 target2:
+	@echo "Target name is '$@'"
+
+
+#$? returns the dependencies that are newer than the current target
+bin1: a.c b.c c.c
+	@echo "Dependency change for bin1 is '$?'"
+	gcc a.c b.c c.c -o bin1
+
+
+#$^ returns the names of all the dependencies with space as the delimiter
+#$< returns the name of the first dependency
+
+bin2: a.o b.o c.o
+	@echo "Linking '$^' to '$@'"
+	@echo "The first dependency of '$^' is '$<'"
+	gcc $^ -o $@
+
+# This checks the associated .c files for the passed .o files
+# assumes CC and CFLAGS variable for the passed list of objects
+.c.o:
+	@echo "Compiling '$*'"
+
+
+ 
+# This checks the associated .c files and o files, similar to
+# the .c.o: rule but gives more control
+.c.o:
+	@echo "Compiling '$*'"
+	gcc $*.c -c
+
+#%.o : %.c 
+#	@echo "Dependency change is '$*'" 
+#	gcc $*.c -c
+
+#a.o b.o c.o : a.c b.c c.c
+#	@echo "Compiling '$*.c'"
+#	gcc $*.c -c
+
+# This rule really does a multi-comparison of all of the object 
+# against all the the source file.  It doesn't compile the minimum
+# set
+
+ 
+clean:
+	-rm -f *.o bin1 bin2
+   
+
+

@@ -1,0 +1,73 @@
+############################################################
+# This make file demonstrated all special variables
+# student copy
+############################################################
+
+# Standard compile flags
+CC       = gcc
+CFLAGS   = -O1 -g -Wall -std=c99 -pedantic
+
+# Macro for source and object files
+SOURCES = a.c b.c c.c
+OBJECTS = $(SOURCES:.c=.o)
+PROG1 = bin1
+PROG2 = bin2
+VALGRIND = valgrind --tool=memcheck --leak-check=yes --track-origins=yes --error-exitcode=1
+
+MEM_FILE = mem.txt
+
+# This demonstrates the returned target name
+# $@ to represent the full target name of the current target
+target1 target2:
+	@echo "Target name is '$@'"
+
+
+#$? returns the dependencies that are newer than the current target
+$(PROG1): $(SOURCES)
+	@echo "Dependency change for $(PROG1) is '$?'"
+	$(CC) $(CFLAGS) $^ -o $@
+
+
+#$^ returns the names of all the dependencies with space as the delimiter
+#$< returns the name of the first dependency
+
+$(PROG2): $(OBJECTS)
+	@echo "Linking '$^' to '$@'"
+	@echo "The first dependency of '$^' is '$<'"
+	$(CC) $(CFLAGS) $^ -o $@
+
+# This checks the associated .c files for the passed .o files
+# assumes CC and CFLAGS variable for the passed list of objects
+.c.o:
+	@echo "Compiling '$*'"
+
+
+ 
+# This checks the associated .c files and o files, similar to
+# the .c.o: rule but gives more control
+.c.o:
+	@echo "Compiling '$*'"
+	$(CC) $(CFLAGS) $*.c -c
+
+#%.o : %.c 
+#	@echo "Dependency change is '$*'" 
+#	$(CC) $(CFLAGS) $*.c -c
+
+#a.o b.o c.o : a.c b.c c.c
+#	@echo "Compiling '$*.c'"
+#	gcc $*.c -c
+
+# This rule really does a multi-comparison of all of the object 
+# against all the the source file.  It doesn't compile the minimum
+# set
+
+mem: $(PROG2)
+	@echo "Running fib with memory check..."
+	$(VALGRIND) ./$(PROG2) > $(MEM_FILE) 2>&1
+
+ 
+clean:
+	-rm -f $(OBJECTS) $(PROG1) $(PROG2)
+   
+
+

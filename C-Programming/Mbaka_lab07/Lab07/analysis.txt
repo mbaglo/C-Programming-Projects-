@@ -1,0 +1,271 @@
+---------------------------------
+Verbose Bisection
+Test for bisection [-2.5, 2.5]
+---------------------------------
+---
+O1
+---
+Elapsed CPU Time bisectionTimer = 0.16 seconds
+Elapsed CPU Time per Iteration (bisectionTimer, 40000) = 4.000000e-06 seconds
+Bisection returned root: 1.991137
+
+Elapsed CPU Time bisectionTimer = 0.16 seconds
+Elapsed CPU Time per Iteration (bisectionTimer, 40000) = 4.000000e-06 seconds
+Bisection returned root: 1.991137
+
+Elapsed CPU Time bisectionTimer = 0.16 seconds
+Elapsed CPU Time per Iteration (bisectionTimer, 40000) = 4.000000e-06 seconds
+Bisection returned root: 1.991137
+
+---
+O2
+---
+Elapsed CPU Time bisectionTimer = 0.16 seconds
+Elapsed CPU Time per Iteration (bisectionTimer, 40000) = 4.000000e-06 seconds
+Bisection returned root: 1.991137
+
+Elapsed CPU Time bisectionTimer = 0.16 seconds
+Elapsed CPU Time per Iteration (bisectionTimer, 40000) = 4.000000e-06 seconds
+Bisection returned root: 1.991137
+
+Elapsed CPU Time bisectionTimer = 0.16 seconds
+Elapsed CPU Time per Iteration (bisectionTimer, 40000) = 4.000000e-06 seconds
+Bisection returned root: 1.991137
+
+---
+O3
+---
+Elapsed CPU Time bisectionTimer = 0.16 seconds
+Elapsed CPU Time per Iteration (bisectionTimer, 40000) = 4.000000e-06 seconds
+Bisection returned root: 1.991137
+
+Elapsed CPU Time bisectionTimer = 0.16 seconds
+Elapsed CPU Time per Iteration (bisectionTimer, 40000) = 4.000000e-06 seconds
+Bisection returned root: 1.991137
+
+Elapsed CPU Time bisectionTimer = 0.16 seconds
+Elapsed CPU Time per Iteration (bisectionTimer, 40000) = 4.000000e-06 seconds
+Bisection returned root: 1.991137
+
+
+------------------------------------------
+Secant:
+Test 1 for secant x0 = -1.5, x1 = -1.6
+-------------------------------------------
+----
+O1
+----
+Elapsed CPU Time secantTimer = 0.07 seconds
+Elapsed CPU Time per Iteration (secantTimer, 40000) = 1.750000e-06 seconds
+Secant returned root: 14.766624
+
+Elapsed CPU Time secantTimer = 0.07 seconds
+Elapsed CPU Time per Iteration (secantTimer, 40000) = 1.750000e-06 seconds
+Secant returned root: 14.766624
+
+Elapsed CPU Time secantTimer = 0.07 seconds
+Elapsed CPU Time per Iteration (secantTimer, 40000) = 1.750000e-06 seconds
+Secant returned root: 14.766624
+
+----
+O2
+----
+Elapsed CPU Time secantTimer = 0.07 seconds
+Elapsed CPU Time per Iteration (secantTimer, 40000) = 1.750000e-06 seconds
+Secant returned root: 14.766624
+
+Elapsed CPU Time secantTimer = 0.07 seconds
+Elapsed CPU Time per Iteration (secantTimer, 40000) = 1.750000e-06 seconds
+Secant returned root: 14.766624
+
+Elapsed CPU Time secantTimer = 0.07 seconds
+Elapsed CPU Time per Iteration (secantTimer, 40000) = 1.750000e-06 seconds
+Secant returned root: 14.766624
+
+----
+O3
+----
+Elapsed CPU Time secantTimer = 0.07 seconds
+Elapsed CPU Time per Iteration (secantTimer, 40000) = 1.750000e-06 seconds
+Secant returned root: 14.766624
+
+Elapsed CPU Time secantTimer = 0.07 seconds
+Elapsed CPU Time per Iteration (secantTimer, 40000) = 1.750000e-06 seconds
+Secant returned root: 14.766624
+
+Elapsed CPU Time secantTimer = 0.07 seconds
+Elapsed CPU Time per Iteration (secantTimer, 40000) = 1.750000e-06 seconds
+Secant returned root: 14.766624
+
+------------------------------
+Newton:
+Test 1 for newton x0 = -1.5
+----------------------------
+----
+01
+----
+Elapsed CPU Time newtonTimer = 0.05 seconds
+Elapsed CPU Time per Iteration (newtonTimer, 40000) = 1.250000e-06 seconds
+Newton returned root: 1.991137
+
+Elapsed CPU Time newtonTimer = 0.05 seconds
+Elapsed CPU Time per Iteration (newtonTimer, 40000) = 1.250000e-06 seconds
+Newton returned root: 1.991137
+
+Elapsed CPU Time newtonTimer = 0.05 seconds
+Elapsed CPU Time per Iteration (newtonTimer, 40000) = 1.250000e-06 seconds
+Newton returned root: 1.991137
+
+----
+O2
+----
+Elapsed CPU Time newtonTimer = 0.05 seconds
+Elapsed CPU Time per Iteration (newtonTimer, 40000) = 1.250000e-06 seconds
+Newton returned root: 1.991137
+
+Elapsed CPU Time newtonTimer = 0.05 seconds
+Elapsed CPU Time per Iteration (newtonTimer, 40000) = 1.250000e-06 seconds
+Newton returned root: 1.991137
+
+Elapsed CPU Time newtonTimer = 0.05 seconds
+Elapsed CPU Time per Iteration (newtonTimer, 40000) = 1.250000e-06 seconds
+Newton returned root: 1.991137
+
+----
+O3
+---
+Elapsed CPU Time newtonTimer = 0.05 seconds
+Elapsed CPU Time per Iteration (newtonTimer, 40000) = 1.250000e-06 seconds
+Newton returned root: 1.991137
+
+Elapsed CPU Time newtonTimer = 0.05 seconds
+Elapsed CPU Time per Iteration (newtonTimer, 40000) = 1.250000e-06 seconds
+Newton returned root: 1.991137
+
+Elapsed CPU Time newtonTimer = 0.05 seconds
+Elapsed CPU Time per Iteration (newtonTimer, 40000) = 1.250000e-06 seconds
+Newton returned root: 1.991137
+
+---------------------------
+Test 2 for newton x0 = 1.5
+---------------------------
+----
+O1
+----
+
+Elapsed CPU Time newtonTimer = 0.09 seconds
+Elapsed CPU Time per Iteration (newtonTimer, 40000) = 2.250000e-06 seconds
+Newton returned root: -88.630548
+
+Elapsed CPU Time newtonTimer = 0.09 seconds
+Elapsed CPU Time per Iteration (newtonTimer, 40000) = 2.250000e-06 seconds
+Newton returned root: -88.630548
+
+Elapsed CPU Time newtonTimer = 0.09 seconds
+Elapsed CPU Time per Iteration (newtonTimer, 40000) = 2.250000e-06 seconds
+Newton returned root: -88.630548
+----
+O2
+----
+Elapsed CPU Time newtonTimer = 0.09 seconds
+Elapsed CPU Time per Iteration (newtonTimer, 40000) = 2.250000e-06 seconds
+Newton returned root: -88.630548
+
+Elapsed CPU Time newtonTimer = 0.09 seconds
+Elapsed CPU Time per Iteration (newtonTimer, 40000) = 2.250000e-06 seconds
+Newton returned root: -88.630548
+
+Elapsed CPU Time newtonTimer = 0.09 seconds
+Elapsed CPU Time per Iteration (newtonTimer, 40000) = 2.250000e-06 seconds
+Newton returned root: -88.630548
+----
+03
+----
+Elapsed CPU Time newtonTimer = 0.09 seconds
+Elapsed CPU Time per Iteration (newtonTimer, 40000) = 2.250000e-06 seconds
+Newton returned root: -88.630548
+
+Elapsed CPU Time newtonTimer = 0.09 seconds
+Elapsed CPU Time per Iteration (newtonTimer, 40000) = 2.250000e-06 seconds
+Newton returned root: -88.630548
+
+Elapsed CPU Time newtonTimer = 0.09 seconds
+Elapsed CPU Time per Iteration (newtonTimer, 40000) = 2.250000e-06 seconds
+Newton returned root: -88.630548
+
+-----------------------------
+Average Timing for Each Case
+-----------------------------
+
+ Bisection Method
+
+- O1: Average elapsed time per iteration = `4.000000e-06 seconds`
+- O2: Average elapsed time per iteration = `4.000000e-06 seconds`
+- O3: Average elapsed time per iteration = `4.000000e-06 seconds`
+
+ Secant Method (Test 1)
+
+- O1: Average elapsed time per iteration = `1.750000e-06 seconds`
+- O2: Average elapsed time per iteration = `1.750000e-06 seconds`
+- O3: Average elapsed time per iteration = `1.750000e-06 seconds`
+
+ Newton Method (Test 1)
+
+- O1: Average elapsed time per iteration = `1.250000e-06 seconds`
+- O2: Average elapsed time per iteration = `1.250000e-06 seconds`
+- O3: Average elapsed time per iteration = `1.250000e-06 seconds`
+
+ Newton Method (Test 2)
+
+- O1: Average elapsed time per iteration = `2.250000e-06 seconds`
+- O2: Average elapsed time per iteration = `2.250000e-06 seconds`
+- O3: Average elapsed time per iteration = `2.250000e-06 seconds`
+
+
+ (a) Conclusion on Compiler Optimization
+
+The data reveals that the elapsed CPU time per iteration for the Bisection, 
+Secant, and Newton methods remains consistent across different compiler 
+optimization levels (O1, O2, O3). Specifically:
+
+- Bisection Method: The elapsed time per iteration is consistently 
+`4.000000e-06 seconds` across all optimization levels.
+- Secant Method (Test 1): The elapsed time per iteration remains at 
+`1.750000e-06 seconds` for all optimizations.
+- Newton Method (Test 1): Each optimization level results in an elapsed time 
+per iteration of `1.250000e-06 seconds`.
+- Newton Method (Test 2): The elapsed time per iteration increases to 
+`2.250000e-06 seconds`, consistent across all optimization levels.
+
+Conclusion: Compiler optimizations (from O1 to O3) do not significantly impact 
+the execution time of these root-finding algorithms. The overall wall time 
+efficiency appears unaffected by compiler optimization levels for these 
+specific test cases. The "best" optimization level, in this case, could be O1, 
+considering it provides the same performance as higher optimization levels 
+without potentially introducing the more aggressive optimizations of O3, which 
+could affect precision or lead to undefined behavior in more complex scenarios.
+
+ (b) Comparison of Root Finding Methods
+
+- Bisection Method: Consistently finds the root at `1.991137` for the given 
+bracket. This method is stable and guaranteed to converge if the initial 
+bracket contains a root.
+- Secant Method (Test 1): Finds a root at `14.766624`, which is significantly 
+different from the Bisection method's root. This discrepancy could be due to 
+the nature of the Secant method, which does not guarantee convergence to the 
+nearest root and can be sensitive to initial guesses.
+- Newton Method (Test 1): Converges to `1.991137`, matching the Bisection 
+method's root, indicating that the initial guess was sufficiently close to this 
+root, and the derivative did not lead to divergence.
+- Newton Method (Test 2): Yields a root at `-88.630548`, diverging 
+significantly from other found roots. This highlights the Newton method's 
+sensitivity to initial guesses and the possibility of divergence if the 
+derivative is not well-behaved near the root.
+
+Conclusion: Not all algorithms find the same root, and their success in finding 
+a valid root depends on the function's nature, the initial guesses, and the 
+algorithm's inherent characteristics. Bisection offers stability, while Secant 
+and Newton's methods provide faster convergence at the cost of potential 
+sensitivity to initial conditions.
+
+ 

@@ -1,0 +1,8 @@
+#############################################################################
+# simple valgrind script
+#############################################################################
+echo "Checking TestDarray for memory leaks, this should take about 6 min"
+echo "If it takes much longer, then you have a realloc() growth issue"
+echo "hint: you should edit this script and run shortWords.txt first"
+time valgrind --tool=memcheck --leak-check=yes --track-origins=yes --error-exitcode=99 ./TestDarray -i engWords.txt -w 5 > mem.txt 2>&1
+cat mem.txt

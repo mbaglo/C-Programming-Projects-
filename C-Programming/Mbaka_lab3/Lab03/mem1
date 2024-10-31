@@ -1,0 +1,6 @@
+#############################################################################
+# simple valgrind script
+#############################################################################
+echo "Checking simpleTest for memory leaks"
+valgrind --tool=memcheck --leak-check=yes --track-origins=yes --error-exitcode=99 ./simpleTest > mem.txt 2>&1
+cat mem.txt

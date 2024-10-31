@@ -1,0 +1,6 @@
+Searching for: space 
+Found space in the Linked List 
+Found space in the Dynamic Array 
+Searching for: xyzzy 
+Could not find word in Linked List. 
+Could not find word in DynamicArray. 

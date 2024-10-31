@@ -1,0 +1,72 @@
+The list has 0 elements
+From the front:
+
+From the back:
+
+Removing one element from the front
+Attempted to remove front of list, list was empty. 
+
+Destroying the linked list
+The list has 1 elements
+From the front:
+Node 0 has value 'First Line'
+
+From the back:
+Node 0 has value 'First Line'
+
+Removing one element from the front
+Nothing left in the list, no front
+Removed value is: First Line 
+
+Destroying the linked list
+The list has 2 elements
+From the front:
+Node 0 has value 'First Line'
+Node 1 has value 'Second Line'
+
+From the back:
+Node 0 has value 'Second Line'
+Node 1 has value 'First Line'
+
+Removing one element from the front
+
+Remove from front of list, new front is: 'Second Line' 
+Removed value is: First Line 
+
+Destroying the linked list
+The list has 3 elements
+From the front:
+Node 0 has value 'First Line'
+Node 1 has value 'Second Line'
+Node 2 has value 'Third Line'
+
+From the back:
+Node 0 has value 'Third Line'
+Node 1 has value 'Second Line'
+Node 2 has value 'First Line'
+
+Removing one element from the front
+
+Remove from front of list, new front is: 'Second Line' 
+Removed value is: First Line 
+
+Destroying the linked list
+The list has 4 elements
+From the front:
+Node 0 has value 'First Line'
+Node 1 has value 'Second Line'
+Node 2 has value 'Third Line'
+Node 3 has value 'Fourth Line'
+
+From the back:
+Node 0 has value 'Fourth Line'
+Node 1 has value 'Third Line'
+Node 2 has value 'Second Line'
+Node 3 has value 'First Line'
+
+Removing one element from the front
+
+Remove from front of list, new front is: 'Second Line' 
+Removed value is: First Line 
+
+Destroying the linked list

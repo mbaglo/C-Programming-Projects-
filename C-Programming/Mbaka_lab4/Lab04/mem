@@ -1,0 +1,10 @@
+#############################################################################
+# simple valgrind script
+#############################################################################
+rm mem.txt
+valgrind --tool=memcheck --leak-check=yes --track-origins=yes --error-exitcode=99 ./simpleTest 0   > mem.txt 2>&1
+valgrind --tool=memcheck --leak-check=yes --track-origins=yes --error-exitcode=99 ./simpleTest 1  >> mem.txt 2>&1
+valgrind --tool=memcheck --leak-check=yes --track-origins=yes --error-exitcode=99 ./simpleTest 2  >> mem.txt 2>&1
+valgrind --tool=memcheck --leak-check=yes --track-origins=yes --error-exitcode=99 ./simpleTest 3  >> mem.txt 2>&1
+valgrind --tool=memcheck --leak-check=yes --track-origins=yes --error-exitcode=99 ./simpleTest 4  >> mem.txt 2>&1
+cat mem.txt

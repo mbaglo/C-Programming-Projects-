@@ -1,0 +1,28 @@
+Breakpoint 1 at 0x4006dd: file lab_a.c, line 10.
+Starting program: /home/gm6629/Lab03/prelab/./lab_a 
+
+Breakpoint 1, main (argc=1, argv=0x7fffffffd4d8) at lab_a.c:10
+10	   int age = 22;
+Missing separate debuginfos, use: debuginfo-install glibc-2.17-326.el7_9.x86_64
+11	   int height = 6;
+14	   fprintf(stdout, "Message #1 was sent to stdout\n");
+15	   fprintf(stderr, "Message #2 was sent to stderr\n");
+16	   printf(         "Message #3 was sent to stdout\n");
+17	   fprintf(stdout, "Message #4 was sent to stdout\n");
+18	   fprintf(stderr, "Message #5 was sent to stderr\n");
+20	   printf("I am %d years old.\n", age);
+21	   printf("I am %d inches tall.\n\n", height);
+25	   text_p = calloc( 51, sizeof(char) );  
+26	   if(NULL == text_p) {
+31	   strncpy( text_p, "This string is way to long and will corrupt memory", 50);
+No symbol "test_p" in current context.
+$1 = 0x602010 ""
+32	   printf("The string contains '%s'\n", text_p);
+$2 = 0x602010 "This string is way to long and will corrupt memory"
+Breakpoint 2 at 0x400840: file lab_a.c, line 34.
+
+Breakpoint 2, main (argc=1, argv=0x7fffffffd4d8) at lab_a.c:34
+34	   free(text_p);
+$3 = 0x602010 "This string is way to long and will corrupt memory"
+Continuing.
+[Inferior 1 (process 196409) exited normally]

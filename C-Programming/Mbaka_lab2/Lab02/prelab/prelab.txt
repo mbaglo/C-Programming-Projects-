@@ -1,0 +1,65 @@
+Student prelab questions
+
+1)	Describe the following C data types, be sure to include the typical bit length.
+  a.	float - A float is used to store single-precision floating point numbers or decimal numbers, which can represent a wide range of values with fractional parts. A typical size of a float is 4 bytes or 32 bits.  
+  b.	double - A double data type is used for double-precision floating point numbers or decimal numbers. It provides greater precision than float because it uses more bits to store the data. Its typical size is 8 bytes or 64 bits.
+  c.	int - An int is used to store whole numbers, which can be both positive and negative. The size and range of an int can vary depending on the system and compiler but is often designed to be the most efficient size for the specific system.Typically, an int is 4 bytes or 32 bits, but it can vary between systems. On some systems, it might be 2 bytes (16 bits) or even 8 bytes (64 bits) in the case of 64-bit systems.
+  d.	short int - A short int (or simply short) is a smaller version of an integer. It is used to save memory when the values used do not require the full size of an int. The size of a short int is typically 2 bytes, or 16 bits, though this can also vary depending on the system.
+  e.	long int - A long int (or simply long) extends the size of an integer. It is used when larger integer values are needed beyond what a standard int can hold. Typically, a long int is 4 bytes (32 bits) on 32-bit systems and 8 bytes (64 bits) on 64-bit systems, but this can vary with different compilers and architectures.
+  f.	unsigned int - An unsigned int is a variation of the int data type that can only represent non-negative integers. By not allocating a bit for the sign, unsigned int effectively doubles the maximum value that can be stored compared to the signed int. The size of an unsigned int is typically the same as that of an int in the system, usually 4 bytes or 32 bits, but it can vary. It ranges from 0-255.
+  g.	char - A char data type is used to store a single character, which includes letters, numbers, and other symbols.he size of a char is 1 byte, or 8 bits, which is sufficient to represent any character in the ASCII table.The size of a char is 1 byte, or 8 bits, which is sufficient to represent any character in the ASCII table.
+
+2)	Is there a true string data type in C? - In C, there is no built-in, true "string" data type. 
+
+3)	What is the difference between a byte array and string? -  Byte arrays are more general-purpose and can hold any type of data, without a specific terminating character. Strings, on the other hand, are specifically for textual data and are null-terminated to allow for dynamic length determination and manipulation using string-specific functions. 
+
+4)	What does printf() return? - Printf returns an int with the number of characters printed.
+
+5)	What is %d used for in printf()? - %d is a format specifier used to indicate that an integer value should be printed in decimal (base 10) format.
+
+6)	What is %f used for in printf()? -  %f is a format specifier used to print a floating-point number in fixed-point notation. 
+
+7)	What is %s used for in printf()? -  %s is a format specifier used to print a string of characters. 
+
+8)	What is %c used for in printf()? - %c is a format specifier used to print a single character. 
+
+9)	What is \n used for in printf()? -  \n is an escape sequence used to represent the newline character
+
+10)	What does %5.3f mean in printf()? - The format specifier %5.3f is used for floating-point numbers. The "5"  specifies the minimum field width. The output will be at least 5 characters wide. If the floating-point number (including the decimal point and the digits after it) is fewer than 5 characters, the output will be padded with spaces (by default on the left) to ensure it reaches this width. If the number is wider than 5 characters, the field width will be expanded to accommodate the entire number without truncating it. "3"  specifies the precision, which is the number of digits to be printed after the decimal point. In this case, the floating-point number will be rounded (if necessary) to show exactly 3 digits after the decimal point.
+
+
+
+11)	What is strncpy() used for? - The strncpy() function in C is used to copy a specified number of characters from one string to another.
+
+12) How many bytes are required to store the C string "hello world" - 11(characters)+1(null terminator)= 12 bytes are required to store the string "hello world", including the null terminator.
+
+13) given the following prototype: char *strncpy(char *dest, const char *src , int num) what is "num"? - The parameter "num" specifies the maximum number of characters to be copied from the source string src to the destination string dest
+
+14)	What is strncpy() used for? - The strncpy() function in C is used to copy a specified number of characters from one string to another.
+
+
+15)	What is strcmp()-used for? The strcmp() function in C is used to compare two strings logically (character by character).
+
+16)What is malloc() use for?  The malloc() function in C is used for dynamic memory allocation. It stands for "memory allocation" and is used to allocate a specific amount of memory at runtime. 
+
+
+17)What is calloc() used for? - Calloc is used to allocate memory and set allocated memory to “binary zero”.
+18)What is realloc() use for? - The realloc() function in C is used for resizing a previously allocated memory block. It allows you to either expand or reduce the size of the memory block that was originally allocated with malloc(), calloc(), or a previous call to realloc() itself. 
+
+19)What is free() used for?  - The free() function in C is used to deallocate memory that was previously allocated by a call to malloc(), calloc(), realloc(), or any other memory allocation function. 
+
+20)	What is the difference between a struct and a union? An important difference between them is that the structure has a separate memory location for each of its members whereas, the members of a union share the same single memory location.
+
+
+21)	What is the difference between a struct and a “packed struct”? 
+
+22)	What function do you use to convert strings to integers?  - The differences between a regular struct and a "packed struct" mainly involve memory alignment and padding.
+
+23)	What function do you use to convert strings to floats? = atof()
+
+24)	List out the debug commands you would use to execute the following:
+a.	start debugging - gdb 
+b.	add a break point at a line 100 -  b 100
+c.	add a break point using the function name "printf()" - b printf()
+d.	print the variable "counter" in the debugger - print counter
+e.	exit the debugger - q

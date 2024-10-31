@@ -1,0 +1,178 @@
+./hw13 -t 1 -s -v
+
+Starting 1 threads generating 1067458560 numbers
+
+Thread index:0  ID:140061146351360 started
+Thread index:0  track status:1  seg size:1042440K  data ptr:0x7f6286e01010 started
+Processed:         0 lines   0% complete
+Processed:         0 lines   0% complete
+Processed:         0 lines   0% complete
+Processed:         0 lines   0% complete
+Processed:         0 lines   0% complete
+Processed:         0 lines   0% complete
+0 Processed: 106745851 lines  10% complete
+Processed: 106745851 lines  10% complete
+Processed: 106745851 lines  10% complete
+Processed: 106745851 lines  10% complete
+Processed: 106745851 lines  10% complete
+Processed: 106745851 lines  10% complete
+Processed: 106745851 lines  10% complete
+0 Processed: 213491702 lines  20% complete
+Processed: 213491702 lines  20% complete
+Processed: 213491702 lines  20% complete
+Processed: 213491702 lines  20% complete
+Processed: 213491702 lines  20% complete
+Processed: 213491702 lines  20% complete
+Processed: 213491702 lines  20% complete
+0 Processed: 320237553 lines  30% complete
+Processed: 320237553 lines  30% complete
+Processed: 320237553 lines  30% complete
+Processed: 320237553 lines  30% complete
+Processed: 320237553 lines  30% complete
+Processed: 320237553 lines  30% complete
+Processed: 320237553 lines  30% complete
+0 Processed: 426983404 lines  40% complete
+Processed: 426983404 lines  40% complete
+Processed: 426983404 lines  40% complete
+Processed: 426983404 lines  40% complete
+Processed: 426983404 lines  40% complete
+Processed: 426983404 lines  40% complete
+Processed: 426983404 lines  40% complete
+0 Processed: 533729255 lines  50% complete
+Processed: 533729255 lines  50% complete
+Processed: 533729255 lines  50% complete
+Processed: 533729255 lines  50% complete
+Processed: 533729255 lines  50% complete
+Processed: 533729255 lines  50% complete
+Processed: 533729255 lines  50% complete
+0 Processed: 640475106 lines  60% complete
+Processed: 640475106 lines  60% complete
+Processed: 640475106 lines  60% complete
+Processed: 640475106 lines  60% complete
+Processed: 640475106 lines  60% complete
+Processed: 640475106 lines  60% complete
+Processed: 640475106 lines  60% complete
+0 Processed: 747220957 lines  70% complete
+Processed: 747220957 lines  70% complete
+Processed: 747220957 lines  70% complete
+Processed: 747220957 lines  70% complete
+Processed: 747220957 lines  70% complete
+Processed: 747220957 lines  70% complete
+Processed: 747220957 lines  70% complete
+0 Processed: 853966808 lines  80% complete
+Processed: 853966808 lines  80% complete
+Processed: 853966808 lines  80% complete
+Processed: 853966808 lines  80% complete
+Processed: 853966808 lines  80% complete
+Processed: 853966808 lines  80% complete
+Processed: 853966808 lines  80% complete
+0 Processed: 960712659 lines  90% complete
+Processed: 960712659 lines  90% complete
+Processed: 960712659 lines  90% complete
+Processed: 960712659 lines  90% complete
+Processed: 960712659 lines  90% complete
+Processed: 960712659 lines  90% complete
+0 Processed:1067458560 lines 100% complete
+Thread index 0, join RC 0, task rc 10
+Elapsed CPU Time (timer) = '68.95' sec.
+Total wall time = 69 sec
+
+Verifying results...  success
+
+
+
+./hw13 -t 5 -s
+
+
+Starting 5 threads generating 1067458560 numbers
+
+Processed:         0 lines   0% complete
+Processed: 106745855 lines  10% complete
+Processed: 213491710 lines  20% complete
+Processed: 213491710 lines  20% complete
+Processed: 320237565 lines  30% complete
+Processed: 426983420 lines  40% complete
+Processed: 426983420 lines  40% complete
+Processed: 533729275 lines  50% complete
+Processed: 640475130 lines  60% complete
+Processed: 640475130 lines  60% complete
+Processed: 747220985 lines  70% complete
+Processed: 853966840 lines  80% complete
+Processed: 896665182 lines  84% complete
+Processed: 960712695 lines  90% complete
+Processed:1067458560 lines 100% complete
+Elapsed CPU Time (timer) = '72.31' sec.
+Total wall time = 15 sec
+
+Verifying results...  success
+
+
+./hw13 -t 8 -v -s
+
+
+Starting 8 threads generating 1067458560 numbers
+
+Thread index:0  ID:140606153762560 started
+Thread index:1  ID:140606145369856 started
+Thread index:2  ID:140606136977152 started
+Thread index:1  track status:1  seg size:130305K  data ptr:0x7fe18ba94010 started
+Thread index:3  ID:140606128584448 started
+Thread index:0  track status:1  seg size:130305K  data ptr:0x7fe16bd93010 started
+Thread index:2  track status:1  seg size:130305K  data ptr:0x7fe1ab795010 started
+Thread index:3  track status:1  seg size:130305K  data ptr:0x7fe1cb496010 started
+Thread index:4  ID:140606120191744 started
+Thread index:5  ID:140606111799040 started
+Thread index:4  track status:1  seg size:130305K  data ptr:0x7fe1eb197010 started
+Thread index:6  ID:140606103406336 started
+Thread index:5  track status:1  seg size:130305K  data ptr:0x7fe20ae98010 started
+Thread index:6  track status:1  seg size:130305K  data ptr:0x7fe22ab99010 started
+Thread index:7  ID:140606095013632 started
+Thread index:7  track status:1  seg size:130305K  data ptr:0x7fe24a89a010 started
+3 0 1 7 5 2 6 4 Processed: 106745848 lines  10% complete
+3 0 1 7 2 6 4 5 Processed: 213491696 lines  20% complete
+3 1 0 7 6 5 4 2 Processed: 320237544 lines  30% complete
+3 0 1 7 6 4 2 5 Processed: 426983392 lines  40% complete
+3 1 0 7 2 4 6 5 Processed: 533729240 lines  50% complete
+3 1 0 7 2 4 6 5 Processed: 640475088 lines  60% complete
+3 1 0 7 2 6 4 5 Processed: 747220936 lines  70% complete
+3 1 0 7 2 6 5 4 Processed: 853966784 lines  80% complete
+3 1 0 7 6 2 5 4 Processed: 960712632 lines  90% complete
+3 1 0 7 5 6 2 4 Processed:1067458560 lines 100% complete
+Thread index 0, join RC 0, task rc 10
+Thread index 1, join RC 0, task rc 11
+Thread index 2, join RC 0, task rc 12
+Thread index 3, join RC 0, task rc 13
+Thread index 4, join RC 0, task rc 14
+Thread index 5, join RC 0, task rc 15
+Thread index 6, join RC 0, task rc 16
+Thread index 7, join RC 0, task rc 17
+Elapsed CPU Time (timer) = '73.89' sec.
+Total wall time = 10 sec
+Verifying results...  success
+
+
+./hw13 -t 0
+
+This program demonstrates threading performance.
+usage: hw13 -t[hreads] num [-s[tatus]] [-f[ast]] [-m[utex[check]]] [-v[erbose]]
+Where: -t[hreads] num  - number of threads 1 to 8,required
+       -s[tatus]       - display thread progress, optional
+       -v[erbose]      - verbose flag, optional
+       -f[ast]         - shorter run for Valgrind, optional
+       -m[utex[check]] - add a progress variable mutex text verification step
+       -h[elp]         - this help message
+eg: hw13 -t 3 -status
+
+
+
+./hw13 -t 9
+
+This program demonstrates threading performance.
+usage: hw13 -t[hreads] num [-s[tatus]] [-f[ast]] [-m[utex[check]]] [-v[erbose]]
+Where: -t[hreads] num  - number of threads 1 to 8,required
+       -s[tatus]       - display thread progress, optional
+       -v[erbose]      - verbose flag, optional
+       -f[ast]         - shorter run for Valgrind, optional
+       -m[utex[check]] - add a progress variable mutex text verification step
+       -h[elp]         - this help message
+eg: hw13 -t 3 -status

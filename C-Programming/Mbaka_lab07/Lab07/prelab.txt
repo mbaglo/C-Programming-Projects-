@@ -1,0 +1,75 @@
+-------------------------------------------------------------------------------
+
+
+1) What is the minimum requirement for root finding using bisection?
+   - The minimum requirement for root finding using the bisection method is 
+   that the two initial guesses must bracket the root, meaning the function 
+   values at these two points must have opposite signs.
+
+2) How do you know when you have found a root?
+   - You know you have found a root when the value of the function at the 
+   current guess is very close to zero, within a predefined tolerance level.
+
+3) Is the root found ever exactly zero?
+   - In numerical solutions, the value of the root found is almost never 
+   exactly zero due to limitations in machine precision and the approximation 
+   nature of the method.
+
+4) What is the basic bisection algorithm?
+   - The basic bisection algorithm involves:
+     a. Choosing two initial points that bracket the root.
+     b. Computing the midpoint of these points.
+     c. Evaluating the function at the midpoint.
+     d. Determining which half of the interval contains the root based on the 
+     sign of the function at the midpoint.
+     e. Repeating the process with the new interval that contains the root 
+     until the interval is sufficiently small.
+
+5) When you bisect the roots, how do you pick the endpoint root to change?
+   - When bisecting, you change the endpoint that has the same sign as the 
+   function value at the midpoint, thus ensuring that the new interval still 
+   brackets the root.
+
+6) What is the basic idea behind Newton and Secant algorithms?
+   - The basic idea behind both Newton and Secant algorithms is to start with 
+   an initial guess and iteratively refine this guess to approach the true root 
+   of the function. Newton's method uses the derivative of the function for 
+   refinement, while the Secant method uses an approximation of the derivative.
+
+7) Why is an escape hatch required for Newton and Secant?
+   - An escape hatch is required to prevent infinite loops in the case that 
+   the algorithm fails to converge to a root.
+
+8) What special requirement does Newton have that Secant doesn’t?
+   - Newton's method requires a closed-form expression for the derivative of 
+   the function, which is not needed for the Secant method.
+
+9) What are the Newton and Secant update equations?
+   - Newton's update equation is:
+    〖x〗_(n+1)=x_n –(f^' (x_n ))/f(x_n ).
+   - Secant's update equation is:  
+   〖x〗_(n+1)=x_n-f(x_n )⋅(x_n -x_(n-1))/(f(x_n )-f(x_(n-1) ) ).
+
+10) How does the 2nd guess of the Secant differ from the 2nd bisection guess?
+    - The 2nd guess in the Secant method is used to calculate the slope 
+	approximation and does not need to bracket the root, unlike the 2nd guess in 
+	the bisection method, which must have an opposite sign to the first guess to 
+    bracket the root.
+
+11) Why doesn’t Newton require a second guess?
+    - Newton's method does not require a second guess because it uses the 
+    derivative 
+    of the function at the initial guess to guide the iteration process.
+
+12) Why do we use the fabs() function instead of the abs() function in all of 
+our root finding code?
+    - The fabs() function is used instead of abs() to ensure that the absolute 
+    value is calculated for floating-point numbers since abs() is typically used for 
+    integers.
+
+13) In Newton, why do we check for a zero-slope using: if (fabs(dx0) < atol) 
+rather than if (fabs(dx0) == 0.0)?
+    - We check for a small slope using a tolerance (atol) because due to 
+    floating-point precision issues, it's unlikely that the slope (dx0) will be exactly zero. 
+    Checking against a small tolerance ensures we don't encounter division by zero or very 
+    large updates.

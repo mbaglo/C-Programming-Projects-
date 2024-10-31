@@ -1,0 +1,302 @@
+Target name is 'target1'
+Target name is 'target2'
+
+L4: Conclusion on $@
+--------------------------------------
+When running 'make -f Makefile2 target1', the output was "Target name is 'target 1'". Similarly, for 'make -f Makefile2 target2', the output was "Target name is 'target2'". This demonstrates that the special variable $@ in a Makefile rule is replaced by the name of the target being built. It shows the dynamic nature of Makefile variables, allowing for more generalized and reusable rules within the Makefile.
+
+
+
+
+Dependency change for bin1 is 'a.c b.c c.c'
+gcc a.c b.c c.c -o bin1
+make: `bin1' is up to date.
+Dependency change for bin1 is 'b.c c.c'
+gcc a.c b.c c.c -o bin1
+
+L11: Conclusion about the $? Variable
+-------------------------------------
+The `$?` variable is essential for incremental builds in Makefiles, as it lists all prerequisites that are newer than the target. This enables `make` to rebuild only the necessary components of a project, which were modified since the last build, thus optimizing the build process. Through the exercises, it was evident that modifying source files (`a.c`, `b.c`, `c.c`) led to their inclusion in the list represented by `$?` during the next build attempt. On second attempt, make indicated that the source files are up to date with bin1. When 'b.c and c.c' were modified, they were included in the list represented by '$?'. However due to the command in the make structure, a.c was compiled along with the newly modified source files even though it was not modified. 
+
+gcc -O1 -g -Wall -std=c99 -pedantic   -c -o a.o a.c
+gcc -O1 -g -Wall -std=c99 -pedantic   -c -o b.o b.c
+gcc -O1 -g -Wall -std=c99 -pedantic   -c -o c.o c.c
+Linking 'a.o b.o c.o' to 'bin2'
+The first dependency of 'a.o b.o c.o' is 'a.o'
+gcc a.o b.o c.o -o bin2
+
+L14: Implicit Compilation to .o Files
+-------------------------------------
+Despite the absence of explicit rules for converting `.c` files to `.o` files in the Makefile, `.o` files were still generated when the Makefile was executed. This behavior is due to the implicit rules built into `make`, which provide default patterns for common build tasks, including the compilation of C files into object files. These implicit rules are automatically applied when `make` identifies a dependency on `.o` files for a target but does not find an explicit rule for creating them. The compile lines executed by `make` for this process, although not directly specified in the Makefile, follow the conventional pattern of compiling C source files into object files, demonstrating `make`'s capability to fill in common build patterns when explicit instructions are not provided.
+
+gcc -O1 -g -Wall -std=c99 -pedantic   -c -o b.o b.c
+Linking 'a.o b.o c.o' to 'bin2'
+The first dependency of 'a.o b.o c.o' is 'a.o'
+gcc a.o b.o c.o -o bin2
+
+L17: Reaction to Touching b.c and Recompilation Behavior
+--------------------------------------------------------
+After running `touch b.c` to update its modification timestamp, re-executing 
+`make -f Makefile2 bin2` resulted in the recompilation of `b.o` from `b.c`, as 
+indicated by the gcc command for compilation. This demonstrates the expected behavior of `make`, where touching a source file leads to the recompilation of its associated object file to maintain up-to-date dependencies. The subsequent steps included linking `a.o`, `b.o`, and `c.o` into the `bin2` executable, showcasing the use of special variables `$^` and `$<` in the process. This outcome aligns with the expected incremental build process, where `make` intelligently recompiles only those components affected by recent changes, ensuring efficiency in the build process.
+
+
+L19: .c.o Rule Addition and Compilation Output
+----------------------------------------------
+Compiling 'a'
+Compiling 'b'
+Compiling 'c'
+Linking 'a.o b.o c.o' to 'bin2'
+The first dependency of 'a.o b.o c.o' is 'a.o'
+gcc a.o b.o c.o -o bin2
+gcc: error: a.o: No such file or directory
+gcc: error: b.o: No such file or directory
+gcc: error: c.o: No such file or directory
+gcc: fatal error: no input files
+compilation terminated.
+make: *** [bin2] Error 4
+
+L21: .c.o Rule and Compilation Attempt
+--------------------------------------
+After adding a ".c.o" rule that echoes the compilation process, the following output above was observed when `make -f Makefile2 bin2` was executed. However, errors were encountered due to the absence of actual `.o` files. This indicates that while the echo statements executed, indicating an intention to compile, the `.o` files were not actually generated due to the lack of compilation commands in the `.c.o` rule. This highlights the importance of including actual compilation commands in the rules to ensure that source files are properly compiled into object files.
+
+L23: Addition of Compile Line to .c.o Rule
+-------------------------------------------
+Makefile2:40: warning: overriding recipe for target `.c.o'
+Makefile2:33: warning: ignoring old recipe for target `.c.o'
+Compiling 'a'
+gcc a.c -c
+Compiling 'b'
+gcc b.c -c
+Compiling 'c'
+gcc c.c -c
+Linking 'a.o b.o c.o' to 'bin2'
+The first dependency of 'a.o b.o c.o' is 'a.o'
+gcc a.o b.o c.o -o bin2
+
+L25: Compilation Results and Expectations
+-----------------------------------------
+After updating the `.c.o` rule in `Makefile2` to include the actual compilation command, the `make -f Makefile2 bin2` command was re-run, yielding the following results:
+
+- Compilation messages for 'a', 'b', and 'c', indicating the successful compilation of these source files into object files.
+- Successful linking of 'a.o', 'b.o', and 'c.o' into the `bin2` executable, without any errors.
+
+This outcome was anticipated and confirms the effectiveness of the revised `.c.o` rule in ensuring the proper compilation of source files. The warnings about overriding and ignoring recipes for the `.c.o` target suggest that the Makefile contained multiple definitions for this rule, with the final definition being utilized by `make`. This serves as a reminder to ensure that Makefile rules are clearly defined and unambiguous to avoid potential conflicts and unexpected behavior. 
+
+L27: Updating Makefile with New Pattern Rule
+--------------------------------------------
+
+rm -f *.o bin1 bin2
+
+Dependency change is 'a'
+gcc a.c -c
+Dependency change is 'b'
+gcc b.c -c
+Dependency change is 'c'
+gcc c.c -c
+Linking 'a.o b.o c.o' to 'bin2'
+The first dependency of 'a.o b.o c.o' is 'a.o'
+gcc a.o b.o c.o -o bin2
+Dependency change is 'b'
+gcc b.c -c
+Linking 'a.o b.o c.o' to 'bin2'
+The first dependency of 'a.o b.o c.o' is 'a.o'
+gcc a.o b.o c.o -o bin2
+
+L32: Compilation and Dependency Changes
+---------------------------------------
+After updating the Makefile with a new pattern rule for compiling `.c` files to `.o` files and running a series of make commands, the following was observed:
+
+- Initially, all `.c` files were compiled as expected, with "Dependency change is 'x'" echoing for each file (`a`, `b`, `c`), indicating the rule was triggered as intended. The `$*` variable correctly reflected the stem of each target file being compiled.
+- After touching `b.c` and re-running make, only `b.c` was recompiled, demonstrating the effectiveness of the incremental build process. The echo statement "Dependency change is 'b'" confirmed that only the changed file was processed, aligning with expectations.
+- The output related to linking (for `bin2`) mentioned `$^` and `$<`, but explicit echo commands for these variables were not included in the compilation steps. These variables are more relevant to linking rules and would show all prerequisites and the first prerequisite for `bin2`, respectively.
+
+This behavior aligns with the expected functionality of the Makefile, showcasing the incremental build process's efficiency and the utility of pattern rules in automating compilation tasks.
+
+L34: New Compilation Rule for Object Files
+------------------------------------------
+
+rm -f *.o bin1 bin2
+Compiling 'a.c'
+gcc a.c -c
+Compiling 'b.c'
+gcc b.c -c
+Compiling 'c.c'
+gcc c.c -c
+Linking 'a.o b.o c.o' to 'bin2'
+The first dependency of 'a.o b.o c.o' is 'a.o'
+gcc a.o b.o c.o -o bin2
+
+L37: Compilation and Linking Results
+------------------------------------
+Following the introduction of the new rule for compiling `.c` files into `.o` files, the make commands executed as anticipated:
+
+- The `make -f Makefile2 clean` command successfully removed all `.o` files and executables, preparing the environment for a clean build.
+- The `make -f Makefile2 bin2` command triggered the compilation of `a.c`, `b.c`, and `c.c` into `a.o`, `b.o`, and `c.o`, respectively, as evidenced by the compilation messages and commands in the output. This confirms the effectiveness of the new rule in `Makefile2`.
+- Subsequently, the `.o` files were linked to create the `bin2` executable, as indicated by the linking message and the successful execution of the `gcc` command to link the object files.
+
+This outcome was expected based on the latest modifications to the Makefile, demonstrating the rule's functionality in compiling source files and linking object files to produce the final executable. The process aligns with the intended incremental build approach, where only necessary compilations and linkages are performed to optimize the build process.
+
+
+Compiling 'a.c'
+gcc a.c -c
+Compiling 'b.c'
+gcc b.c -c
+Compiling 'c.c'
+gcc c.c -c
+Linking 'a.o b.o c.o' to 'bin2'
+The first dependency of 'a.o b.o c.o' is 'a.o'
+gcc a.o b.o c.o -o bin2
+
+L40: Compilation Behavior After Touching b.c
+--------------------------------------------
+After updating the timestamp of 'b.c' using the `touch` command and re-executing `make -f Makefile2 bin2`, the following behavior was observed:
+
+- All source files ('a.c', 'b.c', 'c.c') were recompiled into their respective object files ('a.o', 'b.o', 'c.o'), as indicated by the compilation messages.
+- The `make` command did not limit its action to only recompiling 'b.c' into 'b.o'; instead, it recompiled all `.c` files.
+- Following the compilation, the object files were linked to create or update the `bin2` executable.
+
+This behavior was somewhat unexpected as the anticipation was that only 'b.c' would be recompiled due to its updated timestamp. However, the current Makefile configuration treats the compilation of object files as a collective operation, leading to the recompilation of all `.c` files whenever the `bin2` target is invoked and any of the source files are newer than the existing object files or the executable. This highlights the importance of carefully structuring Makefile rules to achieve the desired incremental build behavior, where only modified files are recompiled.
+
+
+L41: Optimizing Object File Compilation in Makefile2
+----------------------------------------------------
+To enhance the efficiency of the build process, modifications were made to `Makefile2`. The explicit rule that compiled `a.o`, `b.o`, and `c.o` from `a.c`, `b.c`, and `c.c` was commented out to prevent unnecessary recompilation of all object files for any change in the source files.
+
+Re-enabled was the generic pattern rule:
+.c.o:
+	@echo "Compiling '$*'"
+	gcc $*.c -c
+
+This rule efficiently compiles only the necessary `.c` files into `.o` files, significantly optimizing the build process by compiling the minimum set of objects required. This change reflects a strategic approach to Makefile configuration, focusing on incremental builds and precise dependency management, thereby ensuring that only modified or required source files are compiled during the build process.
+
+
+rm -f *.o bin1 bin2
+Compiling 'a'
+gcc a.c -c
+Compiling 'b'
+gcc b.c -c
+Compiling 'c'
+gcc c.c -c
+Linking 'a.o b.o c.o' to 'bin2'
+The first dependency of 'a.o b.o c.o' is 'a.o'
+gcc a.o b.o c.o -o bin2
+Compiling 'b'
+gcc b.c -c
+Linking 'a.o b.o c.o' to 'bin2'
+The first dependency of 'a.o b.o c.o' is 'a.o'
+gcc a.o b.o c.o -o bin2
+Compiling 'a'
+gcc a.c -c
+Linking 'a.o b.o c.o' to 'bin2'
+The first dependency of 'a.o b.o c.o' is 'a.o'
+gcc a.o b.o c.o -o bin2
+
+L43: Efficiency of the Selected Object Rule in Makefile2
+---------------------------------------------------------
+The efficiency of the re-enabled object rule in `Makefile2` was demonstrated through a series of make commands. Initially, all source files were compiled to ensure a clean build state. Subsequent `make` commands, especially after touching `b.c` and then `a.c`, showcased the rule's ability to compile only the necessary object files:
+
+- The first `make` command after cleaning compiled all source files (`a.c`, `b.c`, `c.c`), as expected for a clean build.
+- Touching `b.c` and re-running `make` resulted in only `b.c` being recompiled, indicating that the Makefile effectively identified and processed only the updated file.
+- Similarly, after touching `a.c`, the subsequent `make` command led to the recompilation of just `a.c`, further validating the rule's capability to minimize the scope of compilation to the changed files.
+
+
+
+
+Using Macro variables
+
+
+Makefile3:46: warning: overriding recipe for target `.c.o'
+Makefile3:39: warning: ignoring old recipe for target `.c.o'
+rm -f a.o b.o c.o bin1 bin2
+Makefile3:46: warning: overriding recipe for target `.c.o'
+Makefile3:39: warning: ignoring old recipe for target `.c.o'
+Dependency change for bin1 is 'a.c b.c c.c'
+gcc a.c b.c c.c -o bin1
+Makefile3:46: warning: overriding recipe for target `.c.o'
+Makefile3:39: warning: ignoring old recipe for target `.c.o'
+make: `bin1' is up to date.
+
+L10: Compilation Results with Makefile3
+---------------------------------------
+The execution of `make -f Makefile3` commands yielded the following observations:
+
+- Initially, the `make -f Makefile3 clean` command successfully cleaned the workspace by removing all `.o` files and binaries (`bin1` and `bin2`), preparing for a clean build.
+- The subsequent execution of `make -f Makefile3 bin1` resulted in the compilation of `bin1` from its source files (`a.c`, `b.c`, `c.c`), as expected. The compilation was successful, with the dependency change for `bin1` clearly indicated.
+- Running `make -f Makefile3 bin1` again confirmed that `make` efficiently recognized `bin1` as up to date, with no recompilation necessary due to unchanged dependencies, showcasing the intended incremental build capability.
+
+
+
+Makefile3:46: warning: overriding recipe for target `.c.o'
+Makefile3:39: warning: ignoring old recipe for target `.c.o'
+rm -f a.o b.o c.o bin1 bin2
+Makefile3:46: warning: overriding recipe for target `.c.o'
+Makefile3:39: warning: ignoring old recipe for target `.c.o'
+Dependency change is 'a'
+gcc a.c -c
+Dependency change is 'b'
+gcc b.c -c
+Dependency change is 'c'
+gcc c.c -c
+Linking 'a.o b.o c.o' to 'bin2'
+The first dependency of 'a.o b.o c.o' is 'a.o'
+gcc a.o b.o c.o -o bin2
+Makefile3:46: warning: overriding recipe for target `.c.o'
+Makefile3:39: warning: ignoring old recipe for target `.c.o'
+make: `bin2' is up to date.
+
+L14: Observations from Building bin2 with Makefile3
+----------------------------------------------------
+Following a clean operation, `make -f Makefile3 bin2` was executed to compile and link `bin2`, with the following key observations:
+
+- The initial build of `bin2` proceeded as anticipated, with all source files (`a.c`, `b.c`, `c.c`) being compiled into object files and then linked to produce the `bin2` executable. This comprehensive build step was expected due to the clean state of the build environment.
+- A subsequent attempt to build `bin2` resulted in `make` reporting that `bin2` was already up to date, indicating no changes in the dependencies that would necessitate a rebuild. This behavior exemplifies the intended efficiency of `make` in recognizing and skipping unnecessary build steps.
+- Persistent warnings regarding overriding recipes for `.c.o` targets were noted, underscoring the need to address potential conflicts within `Makefile3` to ensure clarity and consistency in the build process.
+
+
+
+Makefile3:46: warning: overriding recipe for target `.c.o'
+Makefile3:39: warning: ignoring old recipe for target `.c.o'
+Dependency change is 'b'
+gcc b.c -c
+Linking 'a.o b.o c.o' to 'bin2'
+The first dependency of 'a.o b.o c.o' is 'a.o'
+gcc a.o b.o c.o -o bin2
+
+L17: Incremental Build Efficiency Post-Modification
+---------------------------------------------------
+The incremental build process was tested by modifying `b.c` (using the `touch` command) and then executing `make -f Makefile3 bin2`. The observed behavior was as follows:
+
+- `make` identified `b.c` as the only changed dependency since the last build and accordingly recompiled it into `b.o`. This targeted compilation of `b.c` confirms the Makefile's capability to efficiently manage dependencies and perform incremental builds by only processing modified files.
+- Following the compilation, the updated `b.o` along with the existing `a.o` and `c.o` were linked to refresh the `bin2` executable, ensuring that the binary was up-to-date with the latest changes.
+- The presence of warnings regarding overriding and ignored recipes for `.c.o` targets was noted again, underscoring the necessity of resolving these rule conflicts within `Makefile3` to maintain makefile integrity and prevent unpredictable behaviors.
+
+
+
+
+Makefile3:49: warning: overriding recipe for target `.c.o'
+Makefile3:42: warning: ignoring old recipe for target `.c.o'
+rm -f a.o b.o c.o bin1 bin2
+Makefile3:49: warning: overriding recipe for target `.c.o'
+Makefile3:42: warning: ignoring old recipe for target `.c.o'
+Compiling 'a'
+gcc a.c -c
+Compiling 'b'
+gcc b.c -c
+Compiling 'c'
+gcc c.c -c
+Linking 'a.o b.o c.o' to 'bin2'
+The first dependency of 'a.o b.o c.o' is 'a.o'
+gcc a.o b.o c.o -o bin2
+Running fib with memory check...
+valgrind --tool=memcheck --leak-check=yes --track-origins=yes --error-exitcode=1 ./bin2 > mem.txt 2>&1
+
+L21: Successful Memory Check with Makefile3 Adjustments
+--------------------------------------------------------
+After making the necessary corrections to `Makefile3`, the execution of `make -f Makefile3 mem` yielded the following results:
+
+- The clean operation successfully removed all object files and binaries, ensuring a clean build environment.
+- The `mem` target led to the sequential compilation of `a.c`, `b.c`, and `c.c` into object files, and their subsequent linking to form the `bin2` executable. This confirms that the Makefile correctly rebuilds the binary as needed before performing memory checks.
+- The memory check was successfully initiated with Valgrind, as indicated by the execution of the corrected Valgrind command. This step is crucial for identifying potential memory issues in the program, enhancing its reliability and correctness.
+- However, the presence of warnings regarding conflicting `.c.o` rules was noted again, highlighting the necessity of streamlining rule definitions within `Makefile3` to ensure clarity and consistency in the build process.
+

@@ -1,0 +1,49 @@
+Sample expected output, your results will vary slightly
+
+-------------- hw6c_1  x1, no move fopen
+Elapsed CPU Time (DataTimer) = 6.69 sec.
+Elapsed CPU Time per Iteration (DataTimer, 400) = 1.672500e-02 sec.
+Elapsed CPU Time (CalcTimer) = 0.25 sec.
+Elapsed CPU Time per Iteration (CalcTimer, 40000) = 6.250000e-06 sec.
+move fopen to top disabled test mult 1
+2000000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+
+-------------- hw6c_2  x2, no move fopen
+Elapsed CPU Time (DataTimer) = 13.69 sec.
+Elapsed CPU Time per Iteration (DataTimer, 800) = 1.711250e-02 sec.
+Elapsed CPU Time (CalcTimer) = 0.48 sec.
+Elapsed CPU Time per Iteration (CalcTimer, 80000) = 6.000000e-06 sec.
+move fopen to top disabled test mult 2
+4000000 data lines processed, the least square line is : Y = 1.26393 * X + 0.823035
+note - 2X takes 2x longer but per loop identical
+
+-------------- hw6c_f1 x1, yes move fopen
+Elapsed CPU Time (DataTimer) = 0.01 sec.
+Elapsed CPU Time per Iteration (DataTimer, 400) = 2.500000e-05 sec.
+Elapsed CPU Time (CalcTimer) = 0 sec.
+Elapsed CPU Time per Iteration (CalcTimer, 40000) = 0.000000e+00 sec.
+move fopen to top enabled test mult 1
+5000 data lines processed, the least square line is : Y = -nan * X + -nan
+
+-------------- hw6c_f2 x2, yes move fopen
+Elapsed CPU Time (DataTimer) = 0.01 sec.
+Elapsed CPU Time per Iteration (DataTimer, 800) = 1.250000e-05 sec.
+Elapsed CPU Time (CalcTimer) = 0 sec.
+Elapsed CPU Time per Iteration (CalcTimer, 80000) = 0.000000e+00 sec.
+move fopen to top enabled test mult 2
+5000 data lines processed, the least square line is : Y = -nan * X + -nan
+note - 2X takes 2x longer but per loop is ~2X SHORTER
+
+-------------- hw6cpp_1 x1
+Elapsed CPU Time (DataTimer) = 1.39 sec.
+Elapsed CPU Time per Iteration (DataTimer, 400) = 3.475000e-03 sec.
+Elapsed CPU Time (CalcTimer) = 2.85 sec.
+Elapsed CPU Time per Iteration (CalcTimer, 40000) = 7.125000e-05 sec.
+2000400 data lines processed, the best least squares line is: Y = 1.26393 * X + 0.823035
+-------------- hw6cpp_2 x2
+
+Elapsed CPU Time (DataTimer) = 2.73 sec.
+Elapsed CPU Time per Iteration (DataTimer, 800) = 3.412500e-03 sec.
+Elapsed CPU Time (CalcTimer) = 5.59 sec.
+Elapsed CPU Time per Iteration (CalcTimer, 80000) = 6.987500e-05 sec.
+4000800 data lines processed, the best least squares line is: Y = 1.26393 * X + 0.823035

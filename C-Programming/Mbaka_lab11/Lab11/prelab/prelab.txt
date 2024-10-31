@@ -1,0 +1,27 @@
+Pre-Lab – Part 1
+----------------
+
+Please enter your first name:
+Gloria
+Hello1 'Gloria'
+Please enter your surname name: Mbaka
+Hello2 'Mbaka'
+Hello3 'Mbaka'
+Hello4 'Gloria Mbaka'
+
+Pre-Lab – Part 2
+----------------
+Matrix A (3 x 3)
+  0:      2.00000      8.00000      6.00000 
+  1:      4.00000      2.00000     -2.00000 
+  2:      3.00000     -1.00000      1.00000 
+Vector b (3 x 1)
+    20.00000 
+    -2.00000 
+    11.00000 
+
+Solution vector x (3 x 1)
+     2.00000 
+    -1.00000 
+     4.00000 
+

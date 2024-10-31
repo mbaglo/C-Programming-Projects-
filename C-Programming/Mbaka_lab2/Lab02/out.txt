@@ -1,0 +1,4 @@
+This program inserts 3 objects into a dynamic array of 2 entries
+Line 1 contains text 'First line'
+Line 2 contains text 'Second line'
+Line 3 contains text 'Third line'

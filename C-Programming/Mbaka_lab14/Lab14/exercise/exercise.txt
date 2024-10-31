@@ -1,0 +1,562 @@
+Ram data 0x601070X to 0x60109fX
+  0x601070 kbBuff<nul><nul>
+  0x601078 <nul><nul><nul><nul><nul><nul><nul><nul>
+  0x601080 one<nul><nul><nul><nul><nul>
+  0x601088 two<nul><nul><nul><nul><nul>
+  0x601090 three<nul><nul><nul>
+  0x601098 Other<nul><nul><nul>
+
+Enter password: 12345678901234567891234567288
+Password is INVALID
+Valid passwords
+PW table [0]: '7891234567288'
+PW table [1]: '67288'
+PW table [2]: 'three'
+Ram data 0x601070X to 0x60109fX
+  0x601070 12345678
+  0x601078 90123456
+  0x601080 78912345
+  0x601088 67288<nul><nul><nul>
+  0x601090 three<nul><nul><nul>
+  0x601098 Other<nul><nul><nul>
+
+Enter password: 67288
+Password is VALID
+Valid passwords
+PW table [0]: '7891234567288'
+PW table [1]: '67288'
+PW table [2]: 'three'
+Ram data 0x601070X to 0x60109fX
+  0x601070 67288<nul>78
+  0x601078 90123456
+  0x601080 78912345
+  0x601088 67288<nul><nul><nul>
+  0x601090 three<nul><nul><nul>
+  0x601098 Other<nul><nul><nul>
+
+Enter password: 
+
+Line 6 - Analysis of Buffer Overflow Results
+--------------------------------------------
+The memory address of the buffer block (0x601070X to 0x60109fX) is as expected 
+since it encompasses the regions occupied by kbBuff, passWords, and otherBuff.
+Post-overflow, the entered data "12345678901234567891234567288" exceeds kbBuff 
+and spills over into the memory locations originally holding the passWords. 
+This corrupts the passWords data, changing entries to '7891234567288', '67288', 
+and leaving 'three' intact but shifted.
+Bytes Required for Overflow:
+The kbBuff was designed to hold up to 8 bytes (PW_LEN+1 due to the null 
+terminator).
+The password input that caused the overflow was 
+"12345678901234567891234567288", which is 29 characters long.
+To reach and begin overwriting the first password entry (0x601080 where "one" 
+was stored), the buffer overflow starts after the 8th character.
+The specific bytes that overflow into the passWords table are the 9th character 
+onwards. These extra bytes are sufficient to overwrite all entries in the 
+passWords array.
+
+
+Line 7 -  Lab_afix
+------------------
+
+Results
+-------
+
+[gm6629@gle-3159-ws20 exercise]$ ./lab_afix
+Ram data 0x601070X to 0x601098X
+  0x601070 kbBuff<nul><nul>
+  0x601078 <nul><nul><nul><nul><nul><nul><nul><nul>
+  0x601080 one<nul><nul><nul><nul><nul>
+  0x601088 two<nul><nul><nul><nul><nul>
+  0x601090 three<nul><nul><nul>
+  0x601098 Other<nul><nul><nul>
+
+Enter password:                                   1234
+Password is INVALID
+Valid passwords
+PW table [0]: 'one'
+PW table [1]: 'two'
+PW table [2]: 'three'
+Ram data 0x601070X to 0x601098X
+  0x601070        <nul>
+  0x601078 <nul><nul><nul><nul><nul><nul><nul><nul>
+  0x601080 one<nul><nul><nul><nul><nul>
+  0x601088 two<nul><nul><nul><nul><nul>
+  0x601090 three<nul><nul><nul>
+  0x601098 Other<nul><nul><nul>
+
+Enter password: Password is INVALID
+Valid passwords
+PW table [0]: 'one'
+PW table [1]: 'two'
+PW table [2]: 'three'
+Ram data 0x601070X to 0x601098X
+  0x601070        <nul>
+  0x601078 <nul><nul><nul><nul><nul><nul><nul><nul>
+  0x601080 one<nul><nul><nul><nul><nul>
+  0x601088 two<nul><nul><nul><nul><nul>
+  0x601090 three<nul><nul><nul>
+  0x601098 Other<nul><nul><nul>
+
+Enter password: Password is INVALID
+Valid passwords
+PW table [0]: 'one'
+PW table [1]: 'two'
+PW table [2]: 'three'
+Ram data 0x601070X to 0x601098X
+  0x601070        <nul>
+  0x601078 <nul><nul><nul><nul><nul><nul><nul><nul>
+  0x601080 one<nul><nul><nul><nul><nul>
+  0x601088 two<nul><nul><nul><nul><nul>
+  0x601090 three<nul><nul><nul>
+  0x601098 Other<nul><nul><nul>
+
+Enter password: Password is INVALID
+Valid passwords
+PW table [0]: 'one'
+PW table [1]: 'two'
+PW table [2]: 'three'
+Ram data 0x601070X to 0x601098X
+  0x601070        <nul>
+  0x601078 <nul><nul><nul><nul><nul><nul><nul><nul>
+  0x601080 one<nul><nul><nul><nul><nul>
+  0x601088 two<nul><nul><nul><nul><nul>
+  0x601090 three<nul><nul><nul>
+  0x601098 Other<nul><nul><nul>
+
+Enter password: Password is INVALID
+Valid passwords
+PW table [0]: 'one'
+PW table [1]: 'two'
+PW table [2]: 'three'
+Ram data 0x601070X to 0x601098X
+  0x601070       1<nul>
+  0x601078 <nul><nul><nul><nul><nul><nul><nul><nul>
+  0x601080 one<nul><nul><nul><nul><nul>
+  0x601088 two<nul><nul><nul><nul><nul>
+  0x601090 three<nul><nul><nul>
+  0x601098 Other<nul><nul><nul>
+
+Enter password: Password is INVALID
+Valid passwords
+PW table [0]: 'one'
+PW table [1]: 'two'
+PW table [2]: 'three'
+Ram data 0x601070X to 0x601098X
+  0x601070 234<nul><nul> 1<nul>
+  0x601078 <nul><nul><nul><nul><nul><nul><nul><nul>
+  0x601080 one<nul><nul><nul><nul><nul>
+  0x601088 two<nul><nul><nul><nul><nul>
+  0x601090 three<nul><nul><nul>
+  0x601098 Other<nul><nul><nul>
+
+Enter password: 1222345678901234567890
+Password is INVALID
+Valid passwords
+PW table [0]: 'one'
+PW table [1]: 'two'
+PW table [2]: 'three'
+Ram data 0x601070X to 0x601098X
+  0x601070 1222345<nul>
+  0x601078 <nul><nul><nul><nul><nul><nul><nul><nul>
+  0x601080 one<nul><nul><nul><nul><nul>
+  0x601088 two<nul><nul><nul><nul><nul>
+  0x601090 three<nul><nul><nul>
+  0x601098 Other<nul><nul><nul>
+
+Enter password: Password is INVALID
+Valid passwords
+PW table [0]: 'one'
+PW table [1]: 'two'
+PW table [2]: 'three'
+Ram data 0x601070X to 0x601098X
+  0x601070 6789012<nul>
+  0x601078 <nul><nul><nul><nul><nul><nul><nul><nul>
+  0x601080 one<nul><nul><nul><nul><nul>
+  0x601088 two<nul><nul><nul><nul><nul>
+  0x601090 three<nul><nul><nul>
+  0x601098 Other<nul><nul><nul>
+
+Enter password: Password is INVALID
+Valid passwords
+PW table [0]: 'one'
+PW table [1]: 'two'
+PW table [2]: 'three'
+Ram data 0x601070X to 0x601098X
+  0x601070 3456789<nul>
+  0x601078 <nul><nul><nul><nul><nul><nul><nul><nul>
+  0x601080 one<nul><nul><nul><nul><nul>
+  0x601088 two<nul><nul><nul><nul><nul>
+  0x601090 three<nul><nul><nul>
+  0x601098 Other<nul><nul><nul>
+
+Enter password: Password is INVALID
+Valid passwords
+PW table [0]: 'one'
+PW table [1]: 'two'
+PW table [2]: 'three'
+Ram data 0x601070X to 0x601098X
+  0x601070 0<nul><nul>6789<nul>
+  0x601078 <nul><nul><nul><nul><nul><nul><nul><nul>
+  0x601080 one<nul><nul><nul><nul><nul>
+  0x601088 two<nul><nul><nul><nul><nul>
+  0x601090 three<nul><nul><nul>
+  0x601098 Other<nul><nul><nul>
+
+Enter password: 123456789012345678901234567890
+Password is INVALID
+Valid passwords
+PW table [0]: 'one'
+PW table [1]: 'two'
+PW table [2]: 'three'
+Ram data 0x601070X to 0x601098X
+  0x601070 1234567<nul>
+  0x601078 <nul><nul><nul><nul><nul><nul><nul><nul>
+  0x601080 one<nul><nul><nul><nul><nul>
+  0x601088 two<nul><nul><nul><nul><nul>
+  0x601090 three<nul><nul><nul>
+  0x601098 Other<nul><nul><nul>
+
+Enter password: Password is INVALID
+Valid passwords
+PW table [0]: 'one'
+PW table [1]: 'two'
+PW table [2]: 'three'
+Ram data 0x601070X to 0x601098X
+  0x601070 8901234<nul>
+  0x601078 <nul><nul><nul><nul><nul><nul><nul><nul>
+  0x601080 one<nul><nul><nul><nul><nul>
+  0x601088 two<nul><nul><nul><nul><nul>
+  0x601090 three<nul><nul><nul>
+  0x601098 Other<nul><nul><nul>
+
+Enter password: Password is INVALID
+Valid passwords
+PW table [0]: 'one'
+PW table [1]: 'two'
+PW table [2]: 'three'
+Ram data 0x601070X to 0x601098X
+  0x601070 5678901<nul>
+  0x601078 <nul><nul><nul><nul><nul><nul><nul><nul>
+  0x601080 one<nul><nul><nul><nul><nul>
+  0x601088 two<nul><nul><nul><nul><nul>
+  0x601090 three<nul><nul><nul>
+  0x601098 Other<nul><nul><nul>
+
+Enter password: Password is INVALID
+Valid passwords
+PW table [0]: 'one'
+PW table [1]: 'two'
+PW table [2]: 'three'
+Ram data 0x601070X to 0x601098X
+  0x601070 2345678<nul>
+  0x601078 <nul><nul><nul><nul><nul><nul><nul><nul>
+  0x601080 one<nul><nul><nul><nul><nul>
+  0x601088 two<nul><nul><nul><nul><nul>
+  0x601090 three<nul><nul><nul>
+  0x601098 Other<nul><nul><nul>
+
+Enter password: Password is INVALID
+Valid passwords
+PW table [0]: 'one'
+PW table [1]: 'two'
+PW table [2]: 'three'
+Ram data 0x601070X to 0x601098X
+  0x601070 90<nul><nul>678<nul>
+  0x601078 <nul><nul><nul><nul><nul><nul><nul><nul>
+  0x601080 one<nul><nul><nul><nul><nul>
+  0x601088 two<nul><nul><nul><nul><nul>
+  0x601090 three<nul><nul><nul>
+  0x601098 Other<nul><nul><nul>
+
+Enter password: 
+
+
+Comment
+-------
+
+- The buffer overflow vulnerability identified in lab_a.c has been effectively 
+mitigated in lab_afix.c by replacing `gets()` with `fgets()`. The buffer is now 
+appropriately sized to manage user inputs without overflowing.
+- After each password input, the buffer `kbBuff` is reset to ensure it contains 
+no residual data, thus securing the program against potential buffer overflow 
+exploits.
+- The `passWords` array remains unchanged regardless of input size, confirming 
+the absence of overflow and the effectiveness of the implemented fix.
+- Continuous memory monitoring through `printRam()` function outputs confirms 
+that no memory outside of `kbBuff` is altered, showcasing robust input handling 
+and buffer management.
+
+These changes significantly enhance the security of the password handling 
+mechanism in the program, ensuring that user input does not lead to unintended 
+memory access or data corruption.
+
+
+
+Stack smashing
+--------------
+
+Results
+-------
+
+This program demonstrates a buffer overflow attack to take control of
+the return address to force another function to execute.
+
+Pointer size 8  Int size 4
+main(): 0x40060d,  goodFun(): 0x4006a9, hackedFun(): 0x4006f6
+Calling goodFun()
+
+Initial stack state before overflow:
+The stack data in hex 
+High memory
+0x7ffee38d6158  0a0a0a0a0a0a0a0aX main buffer
+0x7ffee38d6150  0a0a0a0a0a0a0a0aX main buffer
+0x7ffee38d6148  0000000100000000X 
+0x7ffee38d6140  00007ffee38d6258X 
+0x7ffee38d6138  0000000000400698X return address
+0x7ffee38d6130  00007ffee38d6170X 
+0x7ffee38d6128  0000001000400520X 
+0x7ffee38d6120  00007ffee38d6170X 
+0x7ffee38d6118  0b0b0b0b0b0b0b0bX subroutine buffer
+0x7ffee38d6110  0b0b0b0b0b0b0b0bX subroutine buffer
+0x7ffee38d6108  0000000012345678X loop counter 'j'
+0x7ffee38d6100  0000000000000000X 
+0x7ffee38d60f8  00000000004006f3X return address
+Low memory
+Returned from goodFun()
+
+
+Analysis of Stack Printout
+--------------------------
+
+Subroutine Buffer Start: The buffer subBuff initialized with 0x0B starts at 
+address 0x7ffe0a0c8af8. This is your point of reference.
+
+Return Address Locations: The return addresses appear at 0x7ffe0a0c8ae0, 
+0x7ffe0a0c8ad8, and earlier at 0x7ffe0a0c8b18. The closest return address to 
+the start of subBuff is at 0x7ffe0a0c8b18.
+
+
+To determine the number of entries needed to reach the return address at 
+0x7ffe0a0c8b18 from the start of subBuff at 0x7ffe0a0c8af8:
+
+Each address corresponds to an 8-byte block (since we're looking at a 64-bit 
+architecture).
+
+The difference between 0x7ffe0a0c8b18 and 0x7ffe0a0c8af8 is 0x20 bytes (or 32 
+bytes).
+
+Thus, you would need to fill 0x20 bytes of subBuff to start overwriting the 
+return address. Since each entry in your array is a long int (8 bytes), you 
+need:
+
+Entries Required = 32 bytes/(8 bytes/entry) = 4 entries
+
+Analysis of the stack memory indicates that the second char array, 'subBuff', 
+needs to extend by 4 'long int' entries beyond its declared size to reach and 
+overwrite the function's return address. This offset calculation ensures the 
+overwrite starts at the first return address encountered in the stack layout, 
+which is 32 bytes away from the start of 'subBuff'.
+
+Line 12
+--------
+
+
+This program demonstrates a buffer overflow attack to take control of
+the return address to force another function to execute.
+
+Pointer size 8  Int size 4
+main(): 0x40060d,  goodFun(): 0x4006a9, hackedFun(): 0x40075f
+Calling goodFun()
+
+Initial stack state before overflow:
+The stack data in hex 
+High memory
+0x7ffe1837db68  0a0a0a0a0a0a0a0aX main buffer
+0x7ffe1837db60  0a0a0a0a0a0a0a0aX main buffer
+0x7ffe1837db58  0000000100000000X 
+0x7ffe1837db50  00007ffe1837dc68X 
+0x7ffe1837db48  0000000000400698X return address
+0x7ffe1837db40  00007ffe1837db80X 
+0x7ffe1837db38  0000001000400520X 
+0x7ffe1837db30  00007ffe1837db80X 
+0x7ffe1837db28  0b0b0b0b0b0b0b0bX subroutine buffer
+0x7ffe1837db20  0b0b0b0b0b0b0b0bX subroutine buffer
+0x7ffe1837db18  0000000012345678X loop counter 'j'
+0x7ffe1837db10  0000000000000000X 
+0x7ffe1837db08  00000000004006f3X return address
+Low memory
+
+Simulating a local buffer overflow attack
+
+Stack state after overflow:
+The stack data in hex 
+High memory
+0x7ffe1837db68  0a0a0a0a0a0a0a0aX main buffer
+0x7ffe1837db60  0a0a0a0a0a0a0a0aX main buffer
+0x7ffe1837db58  0000000100000000X 
+0x7ffe1837db50  00007ffe1837dc68X 
+0x7ffe1837db48  000000000040075fX hacked return address
+0x7ffe1837db40  000000000040075fX hacked return address
+0x7ffe1837db38  000000000040075fX hacked return address
+0x7ffe1837db30  000000000040075fX hacked return address
+0x7ffe1837db28  000000000040075fX hacked return address
+0x7ffe1837db20  000000000040075fX hacked return address
+0x7ffe1837db18  0000000012345678X loop counter 'j'
+0x7ffe1837db10  0000000000000000X 
+0x7ffe1837db08  000000000040075cX return address
+Low memory
+
+
+------ HACKED!  In hackedFun()------
+
+Comment
+-------
+Q) Did the hackedFun() function execute? Does the hackedFun() function ever get 
+directly called in the code?
+
+
+- The function `hackedFun()` was executed as a result of a buffer overflow in 
+`goodFun()`. The buffer overflow was achieved by copying a large data array 
+(`hackedData`) into a smaller buffer (`subBuff`), which corrupted the stack, 
+including the return address of `goodFun()`.
+
+- The hacked return addresses (`0x40075f`) replaced several instances of what 
+were originally return addresses and other stack values. This alteration 
+redirected the execution flow upon returning from `goodFun()`, triggering the 
+execution of `hackedFun()`.
+
+- `hackedFun()` was never directly invoked in the code. Its execution was 
+solely due to the stack being manipulated to change the return address to point 
+to `hackedFun()`, showcasing the effectiveness and danger of buffer overflow 
+vulnerabilities.
+
+
+Line 14
+-------
+
+Result
+------
+
+
+This program demonstrates a buffer overflow attack to take control of
+the return address to force another function to execute.
+
+Pointer size 8  Int size 4
+main(): 0x40067d,  goodFun(): 0x400742, hackedFun(): 0x40081b
+Calling goodFun()
+
+Initial stack state before overflow:
+The stack data in hex 
+High memory
+0x7ffdec6adcf8  00000010004009edX 
+0x7ffdec6adcf0  0000000000000001X 
+0x7ffdec6adce8  0000000100f0b5ffX 
+0x7ffdec6adce0  00007ffdec6ade18X 
+0x7ffdec6adcd8  0000000000400718X return address
+0x7ffdec6adcd0  00007ffdec6add30X 
+0x7ffdec6adcc8  2873973eb2c04500X stack smashing detector
+0x7ffdec6adcc0  00007ffdec6add30X 
+0x7ffdec6adcb8  0b0b0b0b0b0b0b0bX subroutine buffer
+0x7ffdec6adcb0  0b0b0b0b0b0b0b0bX subroutine buffer
+0x7ffdec6adca8  0000000012345678X loop counter 'j'
+0x7ffdec6adca0  0000001000000000X 
+0x7ffdec6adc98  000000000040079bX return address
+Low memory
+
+Simulating a local buffer overflow attack
+
+Stack state after overflow:
+The stack data in hex 
+High memory
+0x7ffdec6adcf8  00000010004009edX 
+0x7ffdec6adcf0  0000000000000001X 
+0x7ffdec6adce8  0000000100f0b5ffX 
+0x7ffdec6adce0  00007ffdec6ade18X 
+0x7ffdec6adcd8  000000000040081bX hacked return address
+0x7ffdec6adcd0  000000000040081bX hacked return address
+0x7ffdec6adcc8  000000000040081bX hacked return address
+0x7ffdec6adcc0  000000000040081bX hacked return address
+0x7ffdec6adcb8  000000000040081bX hacked return address
+0x7ffdec6adcb0  000000000040081bX hacked return address
+0x7ffdec6adca8  0000000012345678X loop counter 'j'
+0x7ffdec6adca0  0000001000000000X 
+0x7ffdec6adc98  0000000000400804X return address
+Low memory
+
+
+*** stack smashing detected ***: ./lab_b-yes terminated
+======= Backtrace: =========
+/lib64/libc.so.6(__fortify_fail+0x37)[0x7f1fed1b77a7]
+/lib64/libc.so.6(+0x118762)[0x7f1fed1b7762]
+./lab_b-yes[0x400819]
+./lab_b-yes[0x40081b]
+[0x7ffdec6ade18]
+======= Memory map: ========
+00400000-00401000 r-xp 00000000 00:34 1100421124994                      
+/home/gm6629/Lab14/exercise/lab_b-yes
+00601000-00602000 r--p 00001000 00:34 1100421124994                      
+/home/gm6629/Lab14/exercise/lab_b-yes
+00602000-00603000 rw-p 00002000 00:34 1100421124994                      
+/home/gm6629/Lab14/exercise/lab_b-yes
+0165e000-0167f000 rw-p 00000000 00:00 0                                  [heap]
+7f1fece89000-7f1fece9e000 r-xp 00000000 fd:00 100663369                  
+/usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7f1fece9e000-7f1fed09d000 ---p 00015000 fd:00 100663369                  
+/usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7f1fed09d000-7f1fed09e000 r--p 00014000 fd:00 100663369                  
+/usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7f1fed09e000-7f1fed09f000 rw-p 00015000 fd:00 100663369                  
+/usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7f1fed09f000-7f1fed263000 r-xp 00000000 fd:00 100664690                  
+/usr/lib64/libc-2.17.so
+7f1fed263000-7f1fed462000 ---p 001c4000 fd:00 100664690                  
+/usr/lib64/libc-2.17.so
+7f1fed462000-7f1fed466000 r--p 001c3000 fd:00 100664690                  
+/usr/lib64/libc-2.17.so
+7f1fed466000-7f1fed468000 rw-p 001c7000 fd:00 100664690                  
+/usr/lib64/libc-2.17.so
+7f1fed468000-7f1fed46d000 rw-p 00000000 00:00 0 
+7f1fed46d000-7f1fed48f000 r-xp 00000000 fd:00 100892620                  
+/usr/lib64/ld-2.17.so
+7f1fed666000-7f1fed669000 rw-p 00000000 00:00 0 
+7f1fed68a000-7f1fed68e000 rw-p 00000000 00:00 0 
+7f1fed68e000-7f1fed68f000 r--p 00021000 fd:00 100892620                  
+/usr/lib64/ld-2.17.so
+7f1fed68f000-7f1fed690000 rw-p 00022000 fd:00 100892620                  
+/usr/lib64/ld-2.17.so
+7f1fed690000-7f1fed691000 rw-p 00000000 00:00 0 
+7ffdec68e000-7ffdec6b0000 rw-p 00000000 00:00 0                          [stack]
+7ffdec73a000-7ffdec73c000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  
+[vsyscall]
+Aborted (core dumped)
+
+
+Stack Smashing Protection Analysis
+----------------------------------
+
+During the execution of lab_b.c compiled with stack protection enabled 
+(-fstack-protector), the program terminated unexpectedly due to stack smashing 
+protection detecting a buffer overflow. This protection mechanism is designed 
+to prevent overwriting critical return addresses and other control data on the 
+stack, which can lead to arbitrary code execution vulnerabilities.
+
+Results Summary:
+- The program did not execute the hackedFun() function as intended in the 
+unprotected run.
+- Instead, the GCC's stack smashing detector identified an abnormal 
+modification to the stack, which triggered an automatic termination of the 
+program to prevent further execution of potentially harmful operations.
+- A core dump was generated due to the abrupt termination, indicating that the 
+stack was indeed corrupted in a manner consistent with a buffer overflow.
+- The presence of stack canaries (random values placed before the return 
+address) effectively prevented the modification of return addresses and other 
+critical control data.
+
+Differences Observed:
+- With stack protection enabled, the overflow did not alter the control flow to 
+execute hackedFun(). Instead, the program was safely terminated, highlighting 
+the effectiveness of stack protection mechanisms in modern compilers against 
+traditional stack overflow attacks.
+

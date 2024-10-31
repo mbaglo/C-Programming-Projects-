@@ -1,0 +1,30 @@
+Prelab Questions
+----------------
+
+
+
+1) Describe the basic idea behind stack smashing hacking.
+   Stack smashing is an attack technique that exploits buffer overflow 
+vulnerabilities in a program. By overwriting the buffer, an attacker can 
+manipulate the return address on the stack. This allows the attacker to 
+redirect the program's execution flow to execute arbitrary code, potentially 
+taking over the system .
+
+2) Describe the basic idea behind memory smashing hacking.
+   Memory smashing involves overflowing a buffer that is not necessarily on the 
+stack (e.g., buffers located in heap memory). By overflowing such buffers, an 
+attacker can alter adjacent data or execute arbitrary code by manipulating 
+pointers and other critical data structures. This type of attack targets 
+vulnerabilities arising from the use of unsafe functions that do not check 
+buffer boundaries, affecting data integrity and program behavior .
+
+3) Describe how the compiler protects the stack frame.
+   Compilers use several methods to protect the stack frame from overflow 
+attacks. One common technique involves inserting canaries—random values 
+placed next to the return address on the stack. Before executing a return from 
+a function, the compiler checks if the canary's value has changed. If it has, 
+the program aborts, preventing potential exploitation. Additionally, compilers 
+may employ stack randomization techniques to make predicting the stack's memory 
+layout more difficult for attackers .
+
+

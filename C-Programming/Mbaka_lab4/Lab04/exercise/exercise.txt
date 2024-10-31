@@ -1,0 +1,149 @@
+Address of function main: 0x40068d
+Address of static data: 0x601080
+Address of RAM data: 0x6010c0
+Address of heap data: 0x1716010
+Address of stack data: 0x7ffe63a54e80
+Passing the 2X function a 2 I got 4
+Passing the 3X function a 2 I got 6
+Stack data values: 1 2 'Stack'
+Heap data values: 3 4 'Pointer'
+Heap data values after free: 0 0 'Pointer'
+==141467== Memcheck, a memory error detector
+==141467== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==141467== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==141467== Command: ./lab_a
+==141467== 
+==141467== Invalid read of size 4
+==141467==    at 0x40082C: main (lab_a.c:87)
+==141467==  Address 0x5205044 is 4 bytes inside a block of size 48 free'd
+==141467==    at 0x4C2B06D: free (vg_replace_malloc.c:540)
+==141467==    by 0x40082B: main (lab_a.c:84)
+==141467==  Block was alloc'd at
+==141467==    at 0x4C29F73: malloc (vg_replace_malloc.c:309)
+==141467==    by 0x40069C: main (lab_a.c:40)
+==141467== 
+==141467== Invalid read of size 4
+==141467==    at 0x400832: main (lab_a.c:87)
+==141467==  Address 0x5205040 is 0 bytes inside a block of size 48 free'd
+==141467==    at 0x4C2B06D: free (vg_replace_malloc.c:540)
+==141467==    by 0x40082B: main (lab_a.c:84)
+==141467==  Block was alloc'd at
+==141467==    at 0x4C29F73: malloc (vg_replace_malloc.c:309)
+==141467==    by 0x40069C: main (lab_a.c:40)
+==141467== 
+==141467== Invalid read of size 1
+==141467==    at 0x4E84079: vfprintf (in /usr/lib64/libc-2.17.so)
+==141467==    by 0x4E8A4E8: printf (in /usr/lib64/libc-2.17.so)
+==141467==    by 0x400842: main (lab_a.c:87)
+==141467==  Address 0x5205048 is 8 bytes inside a block of size 48 free'd
+==141467==    at 0x4C2B06D: free (vg_replace_malloc.c:540)
+==141467==    by 0x40082B: main (lab_a.c:84)
+==141467==  Block was alloc'd at
+==141467==    at 0x4C29F73: malloc (vg_replace_malloc.c:309)
+==141467==    by 0x40069C: main (lab_a.c:40)
+==141467== 
+==141467== Invalid read of size 1
+==141467==    at 0x4C31D98: __GI_mempcpy (vg_replace_strmem.c:1539)
+==141467==    by 0x4EB1A04: _IO_file_xsputn@@GLIBC_2.2.5 (in /usr/lib64/libc-2.17.so)
+==141467==    by 0x4E84032: vfprintf (in /usr/lib64/libc-2.17.so)
+==141467==    by 0x4E8A4E8: printf (in /usr/lib64/libc-2.17.so)
+==141467==    by 0x400842: main (lab_a.c:87)
+==141467==  Address 0x5205048 is 8 bytes inside a block of size 48 free'd
+==141467==    at 0x4C2B06D: free (vg_replace_malloc.c:540)
+==141467==    by 0x40082B: main (lab_a.c:84)
+==141467==  Block was alloc'd at
+==141467==    at 0x4C29F73: malloc (vg_replace_malloc.c:309)
+==141467==    by 0x40069C: main (lab_a.c:40)
+==141467== 
+==141467== Invalid read of size 1
+==141467==    at 0x4C31DA6: __GI_mempcpy (vg_replace_strmem.c:1539)
+==141467==    by 0x4EB1A04: _IO_file_xsputn@@GLIBC_2.2.5 (in /usr/lib64/libc-2.17.so)
+==141467==    by 0x4E84032: vfprintf (in /usr/lib64/libc-2.17.so)
+==141467==    by 0x4E8A4E8: printf (in /usr/lib64/libc-2.17.so)
+==141467==    by 0x400842: main (lab_a.c:87)
+==141467==  Address 0x520504a is 10 bytes inside a block of size 48 free'd
+==141467==    at 0x4C2B06D: free (vg_replace_malloc.c:540)
+==141467==    by 0x40082B: main (lab_a.c:84)
+==141467==  Block was alloc'd at
+==141467==    at 0x4C29F73: malloc (vg_replace_malloc.c:309)
+==141467==    by 0x40069C: main (lab_a.c:40)
+==141467== 
+Address of function main: 0x40068d
+Address of static data: 0x601080
+Address of RAM data: 0x6010c0
+Address of heap data: 0x5205040
+Address of stack data: 0x1ffefff340
+Passing the 2X function a 2 I got 4
+Passing the 3X function a 2 I got 6
+Stack data values: 1 2 'Stack'
+Heap data values: 3 4 'Pointer'
+Heap data values after free: 3 4 'Pointer'
+==141467== 
+==141467== HEAP SUMMARY:
+==141467==     in use at exit: 0 bytes in 0 blocks
+==141467==   total heap usage: 1 allocs, 1 frees, 48 bytes allocated
+==141467== 
+==141467== All heap blocks were freed -- no leaks are possible
+==141467== 
+==141467== For lists of detected and suppressed errors, rerun with: -s
+==141467== ERROR SUMMARY: 17 errors from 5 contexts (suppressed: 0 from 0)
+
+
+Valgrind Output: The Valgrind tool reports "Invalid read of size" errors, indicating that that the program attempted to read memory that had been freed. This confirms that accessing memory after it has been freed is incorrect and can lead to undefined behavior. Valgrind's report helps identify such issues.
+
+Heap Summary: Valgrind confirms that all heap blocks were freed, and no memory leaks.
+
+
+The program had a Segmentation fault (core dumped) after heapData_p was set to NULL and printf was executed. This is program is trying to access memory location 0x0 through the NULL pointer, which is reserved and not part of the program's allocated memory space, leading to undefined behaviour and a segmentation fault.
+
+
+
+Print poly by reference:   0   2   4   6   8  10  12  14  16  18 
+Print poly by value:   0   2   4   6   8  10  12  14  16  18 
+Print poly by reference:   0   2   4   6   8  10  12  14  16  18 
+Print poly by value:   0   2   4   6   8  10  12  14  16  18 
+Print poly by reference:   0   2   4   6   8  10  12  14  16  18 
+Print poly by value:   0   2   4   6   8  10  12  14  16  18 
+==228910== Memcheck, a memory error detector
+==228910== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==228910== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==228910== Command: ./lab_b
+==228910== 
+Print poly by reference:   0   2   4   6   8  10  12  14  16  18 
+Print poly by value:   0   2   4   6   8  10  12  14  16  18 
+Print poly by reference:   0   2   4   6   8  10  12  14  16  18 
+Print poly by value:   0   2   4   6   8  10  12  14  16  18 
+Print poly by reference:   0   2   4   6   8  10  12  14  16  18 
+Print poly by value:   0   2   4   6   8  10  12  14  16  18 
+==228910== 
+==228910== HEAP SUMMARY:
+==228910==     in use at exit: 0 bytes in 0 blocks
+==228910==   total heap usage: 5 allocs, 5 frees, 272 bytes allocated
+==228910== 
+==228910== All heap blocks were freed -- no leaks are possible
+==228910== 
+==228910== For lists of detected and suppressed errors, rerun with: -s
+==228910== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+
+Node 1 contains the string 'one'
+Node 1 contains the string 'one'
+Node 2 contains the string 'two'
+==240836== Memcheck, a memory error detector
+==240836== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==240836== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==240836== Command: ./lab_c
+==240836== 
+Node 1 contains the string 'one'
+Node 1 contains the string 'one'
+Node 2 contains the string 'two'
+==240836== 
+==240836== HEAP SUMMARY:
+==240836==     in use at exit: 0 bytes in 0 blocks
+==240836==   total heap usage: 3 allocs, 3 frees, 128 bytes allocated
+==240836== 
+==240836== All heap blocks were freed -- no leaks are possible
+==240836== 
+==240836== For lists of detected and suppressed errors, rerun with: -s
+==240836== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

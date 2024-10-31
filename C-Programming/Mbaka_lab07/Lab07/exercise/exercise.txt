@@ -1,0 +1,211 @@
+--------------
+Newton Example
+--------------
+------
+Line 1
+------
+iter:0	x0:1.000000	x1:35.602349	err:34.602349
+iter:1	x0:35.602349	x1:35.685284	err:0.082935
+Newton returned root: 35.685610
+
+---------------------------------------------------------------
+Line 2 - The derivative of the motor function, why is it needed
+---------------------------------------------------------------
+
+The derivative of the motor function is essential in Newton's method because it 
+is integral to the formula used to find successive approximations to the root. 
+
+Specifically, Newton's method uses the formula:
+ x_(n+1) = x_n - f(x_n)/f'(x_n), 
+ where f'(x_n)  is the derivative of the function at  x_n. 
+ 
+This formula iteratively improves the estimate of the 
+root by considering both the value of the function and the slope of the 
+function (as given by the derivative) at the current estimate.
+
+For the motor function f(v) = 0.02v^3 - 0.75v^2 - 52.2v + 1909, 
+
+The derivative  f'(v) = 0.06v^2 - 1.5v - 52.2  
+
+This represents the rate of change of the motor's speed with respect to the 
+voltage. In  Newton's method, this derivative helps in adjusting the estimate 
+of the 
+voltage required to achieve a certain speed (in this case, 1909 RPM) by taking 
+into account how 
+sensitively the speed changes with small adjustments in voltage. The use of the 
+derivative in this manner allows Newton's method to converge quickly to an 
+accurate solution by effectively "correcting" the current estimate based on the 
+function's slope at that point.
+
+-------
+Line 3
+-------
+
+iter:0	x0:30.000000	x1:34.814815	err:4.814815
+iter:1	x0:34.814815	x1:35.653164	err:0.838349
+iter:2	x0:35.653164	x1:35.685560	err:0.032396
+Newton returned root: 35.685610
+
+----------------------------------------------------------------
+Line 4 -  Explanation for the same root and number of iterations 
+----------------------------------------------------------------
+
+For both initial guesses of 1.0 and 30.0, Newton's method converged to the same 
+root of approximately 35.69. This indicates that the function's landscape 
+allows for convergence to this root from different starting points within the 
+specified range. The number of iterations to reach convergence varied slightly: 
+two iterations from the initial guess of 1.0, and three iterations from the 
+initial guess of 30.0. This variation in iteration count suggests that the 
+initial proximity to the root can affect the speed of convergence, with closer 
+initial guesses potentially requiring fewer iterations.
+
+--------------------------------------------
+Line 5 - Response to number of roots and why
+--------------------------------------------
+
+To determine the number of roots the motor function really has, we consider the 
+rearranged form of the equation as provided in the document:
+f(v) = 0.02v^3 - 0.75v^2 - 52.2v + 1909 = 0
+
+The motor function, represented by a cubic equation, can potentially have up to 
+three real roots, as is the characteristic of cubic equations. 
+
+-------------
+Line 6
+-------------
+
+iter:0	x0:50.000000	x1:53.333333	err:3.333333
+iter:1	x0:53.333333	x1:52.664163	err:0.669170
+iter:2	x0:52.664163	x1:52.633179	err:0.030984
+Newton returned root: 52.633113
+
+iter:0	x0:-50.000000	x1:-50.833333	err:0.833333
+iter:1	x0:-50.833333	x1:-50.818728	err:0.014606
+Newton returned root: -50.818723
+
+
+
+------------------
+Bisection Example
+------------------
+
+iter:0    a:0.000000    b:50.000000    x:25.000000    err:25.000000
+iter:1    a:25.000000    b:50.000000    x:37.500000    err:12.500000
+iter:2    a:25.000000    b:37.500000    x:31.250000    err:6.250000
+iter:3    a:31.250000    b:37.500000    x:34.375000    err:3.125000
+iter:4    a:34.375000    b:37.500000    x:35.937500    err:1.562500
+iter:5    a:34.375000    b:35.937500    x:35.156250    err:0.781250
+iter:6    a:35.156250    b:35.937500    x:35.546875    err:0.390625
+iter:7    a:35.546875    b:35.937500    x:35.742188    err:0.195312
+iter:8    a:35.546875    b:35.742188    x:35.644531    err:0.097656
+iter:9    a:35.644531    b:35.742188    x:35.693359    err:0.048828
+iter:10    a:35.644531    b:35.693359    x:35.668945    err:0.024414
+iter:11    a:35.668945    b:35.693359    x:35.681152    err:0.012207
+Bisection returned root: 35.687256
+
+-----------------------------------------------------------------------------
+Line 2 - Why  the voltage constants in the code 0.0 and 50.0 and not 0 and 50 
+If it matters
+-----------------------------------------------------------------------------
+ 
+ The voltage constants 0.0 and 50.0 are used instead of 0 and 50 to explicitly 
+define the voltage range as floating-point numbers, ensuring the calculations 
+involving these values are treated with floating-point arithmetic. This 
+precision is crucial for the accuracy of root-finding numerical methods, such 
+as the bisection method, which relies on the precise evaluation of function 
+values within the specified voltage range. Whether it matters depends on the 
+context of the calculations; for root-finding algorithms, using floating-point 
+representation can enhance the accuracy and reliability of the results.
+
+-------------------------------------------------------------------
+Line 3 -  What the variables “a” and “b” represent in verbose output
+--------------------------------------------------------------------
+
+The variables "a" and "b" represent the current interval bounds within which 
+the root of the function is being sought. Specifically, "a" is the lower bound, 
+and "b" is the upper bound of the interval. The bisection method iteratively 
+narrows down this interval by halving it at each step, based on the evaluation 
+of the function at the midpoint, until the root is localized within a specified 
+tolerance​
+
+iter:0    a:50.000000    b:-50.000000    x:0.000000    err:50.000000
+iter:1    a:50.000000    b:0.000000    x:25.000000    err:25.000000
+iter:2    a:50.000000    b:25.000000    x:37.500000    err:12.500000
+iter:3    a:37.500000    b:25.000000    x:31.250000    err:6.250000
+iter:4    a:37.500000    b:31.250000    x:34.375000    err:3.125000
+iter:5    a:37.500000    b:34.375000    x:35.937500    err:1.562500
+iter:6    a:35.937500    b:34.375000    x:35.156250    err:0.781250
+iter:7    a:35.937500    b:35.156250    x:35.546875    err:0.390625
+iter:8    a:35.937500    b:35.546875    x:35.742188    err:0.195312
+iter:9    a:35.742188    b:35.546875    x:35.644531    err:0.097656
+iter:10    a:35.742188    b:35.644531    x:35.693359    err:0.048828
+iter:11    a:35.693359    b:35.644531    x:35.668945    err:0.024414
+iter:12    a:35.693359    b:35.668945    x:35.681152    err:0.012207
+Bisection returned root: 35.687256
+
+
+iter:0    a:45.000000    b:65.000000    x:55.000000    err:10.000000
+iter:1    a:45.000000    b:55.000000    x:50.000000    err:5.000000
+iter:2    a:50.000000    b:55.000000    x:52.500000    err:2.500000
+iter:3    a:52.500000    b:55.000000    x:53.750000    err:1.250000
+iter:4    a:52.500000    b:53.750000    x:53.125000    err:0.625000
+iter:5    a:52.500000    b:53.125000    x:52.812500    err:0.312500
+iter:6    a:52.500000    b:52.812500    x:52.656250    err:0.156250
+iter:7    a:52.500000    b:52.656250    x:52.578125    err:0.078125
+iter:8    a:52.578125    b:52.656250    x:52.617188    err:0.039062
+iter:9    a:52.617188    b:52.656250    x:52.636719    err:0.019531
+Bisection returned root: 52.626953
+
+
+iter:0    a:-45.000000    b:-65.000000    x:-55.000000    err:10.000000
+iter:1    a:-45.000000    b:-55.000000    x:-50.000000    err:5.000000
+iter:2    a:-50.000000    b:-55.000000    x:-52.500000    err:2.500000
+iter:3    a:-50.000000    b:-52.500000    x:-51.250000    err:1.250000
+iter:4    a:-50.000000    b:-51.250000    x:-50.625000    err:0.625000
+iter:5    a:-50.625000    b:-51.250000    x:-50.937500    err:0.312500
+iter:6    a:-50.625000    b:-50.937500    x:-50.781250    err:0.156250
+iter:7    a:-50.781250    b:-50.937500    x:-50.859375    err:0.078125
+iter:8    a:-50.781250    b:-50.859375    x:-50.820312    err:0.039062
+iter:9    a:-50.781250    b:-50.820312    x:-50.800781    err:0.019531
+Bisection returned root: -50.810547
+
+---------------------------------------------------------
+Line 6 -  Does bisection find the same roots as newton? 
+Which algorithm seems faster?
+--------------------------------------------------------
+
+Both the Bisection method and Newton's method converged to the same root for 
+the motor function. This indicates that despite their different approaches to 
+finding roots, when applied correctly, both methods can arrive at the same 
+solution for a given problem. Newton's method is generally faster, converging 
+in fewer iterations due to its use of the function's derivative to inform its 
+guesses. However, it requires a good initial guess and can be more sensitive to 
+the function's behavior. In contrast, the Bisection method is more robust, 
+guaranteeing convergence to a root if it exists within the initial interval, 
+albeit potentially requiring more iterations, especially if the initial 
+interval is large.
+
+----------------------------------------------------------------
+Line 7 -  The number of iterations between 
+bisection and newton?
+-----------------------------------------------------------------
+
+The number of iterations required for the Bisection method is typically higher 
+than for Newton's method. This is because Bisection method systematically 
+halves the interval in which the root lies, ensuring a steady but gradual 
+approach towards the root, regardless of the function's specific 
+characteristics. On the other hand, Newton's method uses the derivative to make 
+more informed jumps towards the root, allowing it to potentially converge in 
+fewer steps when the initial guess is close to the actual root and the function 
+behaves well. Thus, while Bisection is more robust and guaranteed to find a 
+root within a bracketed interval, it generally does so at the cost of a higher 
+iteration count compared to Newton's method.
+
+
+
+
+
+
+iter:0	x0:-50.000000	x1:-50.833333	err:0.833333
+iter:1	x0:-50.833333	x1:-50.818728	err:0.014606
+Newton returned root: -50.818723

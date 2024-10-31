@@ -1,0 +1,236 @@
+
+ Table 1. Data Table for The Averaged Data
+-------------------------------------------
+
+Config       | Data Timer  | Calc Timer   | ls -l  | text size | data size
+             | per Iter.   | per Iter.    | (bytes)| (bytes)   | (bytes)
+-------------|-------------|--------------|--------|-----------|----------
+hw8c_00      | 4.707e-02   | 2.83e-05     | 16728  | 5194      | 644
+hw8c_01      | 1.587e-02   | 6.00e-06     | 20512  | 3673      | 636
+hw8c_02      | 1.680e-02   | 6.00e-06     | 20976  | 3737      | 636
+hw8c_03      | 1.677e-02   | 6.00e-06     | 23792  | 4121      | 636
+hw8c_opt1_00 | 2.100e-03   | 2.82e-05     | 16760  | 5228      | 652
+hw8c_opt1_01 | 2.167e-03   | 6.00e-06     | 20432  | 3707      | 644
+hw8c_opt1_02 | 2.167e-03   | 6.00e-06     | 20960  | 3715      | 644
+hw8c_opt1_03 | 2.167e-03   | 6.00e-06     | 23624  | 4067      | 644
+hw8c_opt2_00 | 4.700e-02   | 2.50e-05     | 16760  | 5674      | 644
+hw8c_opt2_01 | 1.600e-02   | 5.00e-06     | 20616  | 3873      | 636
+hw8c_opt2_02 | 1.677e-02   | 4.50e-06     | 21096  | 3929      | 636
+hw8c_opt2_03 | 1.663e-02   | 4.67e-06     | 21752  | 4137      | 636
+hw8c_opt3_00 | 4.710e-02   | 2.45e-05     | 16992  | 5818      | 644
+hw8c_opt3_01 | 1.600e-02   | 6.00e-06     | 21328  | 3921      | 636
+hw8c_opt3_02 | 1.687e-02   | 4.50e-06     | 21856  | 3977      | 636
+hw8c_opt3_03 | 1.667e-02   | 4.50e-06     | 22512  | 4185      | 636
+
+
+From the data presented in the table, we can draw several specific conclusions 
+as well as some general ones:
+
+1. Impact of Optimization Levels:
+   - The transition from no optimization (`-O0`) to basic optimization (`-O1`) 
+significantly improves performance, as seen in the decrease in both data timer 
+and calculation timer per iteration across all configurations. This suggests 
+that even basic compiler optimizations can lead to substantial performance 
+improvements.
+   - Further optimization levels (`-O2`, `-O3`) show diminishing returns in 
+performance gains. This is evident from the minor changes in timer values per 
+iteration beyond `-O1`. This suggests that beyond a certain point, compiler 
+optimizations may not yield significant performance improvements.
+
+2. Binary Size:
+   - As the optimization level increases, the binary size generally increases. 
+This is expected as higher optimization levels may inline more functions, 
+unroll loops, or perform other transformations that increase the code size in 
+exchange for speed.
+
+3. Effect of Loop Unrolling (hw8c_opt2.c vs. hw8c_opt3.c):
+   - Comparing hw8c_opt2.c and hw8c_opt3.c, it appears that the "smarter" loop 
+unrolling in hw8c_opt3.c does not result in a significant performance 
+improvement over the simpler loop unrolling in hw8c_opt2.c. The per-iteration 
+times are quite similar, with hw8c_opt3.c showing slight improvements in some 
+cases but not consistently across all optimization levels. This suggests that 
+the added complexity of more aggressive loop unrolling may not always translate 
+to better performance.
+
+4. Adding Extra Temporary Variables:
+   - The impact of adding a few extra temporary variables (as in the transition 
+from hw8c_opt2.c to hw8c_opt3.c) on performance is minimal. This suggests that 
+for compute-bound operations, the overhead of managing a few additional 
+variables is negligible compared to the total computation time.
+
+5. General Conclusions:
+   - A higher optimization level does not always guarantee better performance. 
+While `-O1` provides significant benefits over `-O0`, the higher levels `-O2` 
+and `-O3` offer diminishing returns.
+   - Code transformations like loop unrolling have to be used judiciously. 
+While they can improve performance by reducing the overhead of loop control 
+structures and increasing the efficiency of memory access patterns, their 
+effectiveness highly depends on the specific computation being performed and 
+the characteristics of the processor's memory hierarchy.
+   - The trade-off between binary size and execution speed is evident, and the 
+optimal balance depends on the specific requirements of the application, such 
+as whether it's more important to minimize memory usage or maximize execution 
+speed.
+
+In conclusion, while compiler optimizations and code transformations like loop 
+unrolling can significantly impact performance, their effectiveness varies 
+based on the context. Therefore, performance tuning should be approached with a 
+clear understanding of the specific computation and the target hardware 
+characteristics.
+
+-----------------
+hw8c.c Analysis
+----------------
+- Data Times: Consistently decrease with increasing optimization levels, with a 
+significant drop from `-O0` to `-O1`.
+- Calculation Times: Show minor improvements across optimizations, most notably 
+from `-O0` to `-O1`.
+- File Size (ls -l): Increases with each optimization level, indicating a 
+trade-off between performance and binary size.
+- Code Size (text size): Generally increases with optimization, reflecting the 
+compiler's efforts to enhance execution speed at the cost of larger code 
+segments.
+- Data Size: Remains consistent across optimizations, suggesting that data 
+storage requirements are stable.
+
+---------------------
+hw8c_opt1.c Analysis
+--------------------
+- Data Times: Experience a significant reduction at `-O0` compared to `hw8c.c`, 
+due to the efficient memory resizing with `realloc()`. The changes across 
+optimization levels are less pronounced.
+- Calculation Times: Similar to `hw8c.c`, with slight improvements as 
+optimization levels increase.
+- File Size (ls -l): Slightly larger than `hw8c.c` at `-O0` but follows a 
+similar pattern of increase with higher optimization levels.
+- Code Size (text size): Increases with optimization levels, similar to 
+`hw8c.c`.
+- Data Size: Consistent across different optimizations, unaffected by the 
+changes in memory handling.
+
+---------------------
+hw8c_opt2.c Analysis
+---------------------
+- Data Times: Show an improvement from `hw8c.c` due to loop unrolling, which 
+makes data processing more efficient. The impact of optimization levels on data 
+times is similar to the previous implementations.
+- Calculation Times: Benefit significantly from loop unrolling at `-O0`, with 
+further minor improvements at higher optimizations.
+- File Size (ls -l): Exhibits a slight increase compared to `hw8c.c` and 
+`hw8c_opt1.c`, attributed to the additional code generated by loop unrolling.
+- Code Size (text size): Reflects the increase in the actual code due to loop 
+unrolling, growing with each optimization level.
+- Data Size: Remains stable, indicating that the loop unrolling does not affect 
+data storage requirements.
+
+--------------------
+hw8c_opt3.c Analysis
+--------------------
+- Data Times: Similar to `hw8c_opt2.c`, indicating that the more complex loop 
+unrolling does not significantly impact data handling times.
+- Calculation Times: Shows a marginal improvement over `hw8c_opt2.c`, 
+suggesting diminishing returns from more complex loop unrolling techniques.
+- File Size (ls -l): Further increases from `hw8c_opt2.c`, due to the 
+additional complexity in the loop unrolling.
+- Code Size (text size): Continues to grow with the complexity of the loop 
+unrolling, especially at higher optimization levels.
+- Data Size: Consistent, as loop unrolling primarily affects the code segment, 
+not the data storage.
+
+
+
+-------------------------------------
+Comparing hw8c.c with hw8c_opt1.c
+--------------------------------------
+1. Data Times:
+   - hw8c_opt1.c shows improved data processing times across all optimization 
+levels compared to hw8c.c. This improvement suggests that the modifications 
+made in hw8c_opt1.c, specifically replacing `malloc()`/`copy`/`free()` with 
+`realloc()` and adopting a memory doubling growth policy, enhance data handling 
+efficiency.
+
+2. Calculation Times:
+   - The calculation times between hw8c.c and hw8c_opt1.c are comparable across 
+all optimization levels. This indicates that the changes in hw8c_opt1.c 
+primarily affect data handling and have minimal impact on the calculation 
+efficiency of the code.
+
+3. File Size (ls -l):
+   - hw8c_opt1.c produces slightly larger binaries than hw8c.c at corresponding 
+optimization levels. The increase in file size can be attributed to the 
+additional logic for memory management introduced in hw8c_opt1.c.
+
+4. Code Size (text size):
+   - The text (code) segment sizes are relatively similar between hw8c.c and 
+hw8c_opt1.c, with hw8c_opt1.c being marginally larger. This slight increase is 
+likely due to the implementation of the more efficient `realloc()` approach and 
+memory doubling policy.
+
+5. Data Size:
+   - The data segment sizes are consistent between hw8c.c and hw8c_opt1.c 
+across all optimization levels, indicating that the data storage requirements 
+of the two versions are similar.
+
+
+----------------------------------
+Comparing hw8c.c with hw8c_opt2.c
+----------------------------------
+
+1. Data Times:
+   - hw8c_opt2.c exhibits a reduction in data processing times across all 
+optimization levels when compared to hw8c.c. This suggests that the loop 
+unrolling technique used in hw8c_opt2.c contributes positively to the 
+efficiency of data handling.
+
+2. Calculation Times:
+   - Calculation times see a notable improvement in hw8c_opt2.c compared to 
+hw8c.c. This improvement is a direct consequence of the loop unrolling 
+optimization in hw8c_opt2.c, which enhances the calculation phase by reducing 
+loop overhead and increasing data locality.
+
+3. File Size (ls -l):
+   - The file sizes for hw8c_opt2.c are slightly larger than those for hw8c.c, 
+especially at higher optimization levels. This increase can be attributed to 
+the additional instructions generated by the loop unrolling process.
+
+4. Code Size (text size):
+   - hw8c_opt2.c shows an increase in the text (code) segment size across all 
+optimization levels compared to hw8c.c. This is expected as loop unrolling 
+introduces more code to execute the unrolled loops, leading to larger code 
+segments.
+
+5. Data Size:
+   - The data segment sizes remain consistent between hw8c.c and hw8c_opt2.c, 
+suggesting that the data storage requirements are unaffected by the loop 
+unrolling optimization.
+
+--------------------------------------
+Comparing hw8c_opt2.c and hw8c_opt3.c
+--------------------------------------
+
+1. Data Times:
+   - The data processing times between hw8c_opt2.c and hw8c_opt3.c are quite 
+similar across all optimization levels. Both versions benefit from loop 
+unrolling techniques, but hw8c_opt3.c introduces more complex unrolling, which 
+doesn't significantly affect data handling times.
+
+2. Calculation Times:
+   - hw8c_opt3.c slightly improves upon hw8c_opt2.c in terms of calculation 
+times at higher optimization levels, indicating that the more advanced loop 
+unrolling in hw8c_opt3.c can marginally enhance calculation efficiency.
+
+3. File Size (ls -l):
+   - The executable file sizes of hw8c_opt3.c are marginally larger than those 
+of hw8c_opt2.c. This increase can be attributed to the added complexity from 
+the more sophisticated loop unrolling in hw8c_opt3.c.
+
+4. Code Size (text size):
+   - Similar to file size, the code segment size is slightly larger in 
+hw8c_opt3.c compared to hw8c_opt2.c, reflecting the more complex loop unrolling 
+logic implemented in hw8c_opt3.c.
+
+5. Data Size:
+   - The data segment sizes remain consistent between the two versions, 
+indicating that the variations in loop unrolling do not impact the data storage 
+requirements.
+

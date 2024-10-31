@@ -1,0 +1,19 @@
+#############################################################################
+# Simple script to run tests, 
+#############################################################################
+echo "Should print program help"    > out.txt
+./TestDarray                        >> out.txt 2>&1
+./TestDarray -w 5                   >> out.txt 2>&1
+./TestDarray -i engWords -w 5 -h    >> out.txt 2>&1
+./TestDarray -i                     >> out.txt 2>&1
+./TestDarray -h                     >> out.txt 2>&1
+./TestDarray -help                  >> out.txt 2>&1
+echo "Should print words"    >> out.txt
+./TestDarray -i engWords.txt        >> out.txt 2>&1
+./TestDarray -i engWords.txt -w 5   >> out.txt 2>&1
+./TestDarray -in engWords.txt -word 5 >> out.txt 2>&1
+./TestDarray -input engWords.txt    >> out.txt 2>&1
+echo "Should print 8 lines"    >> out.txt
+./TestDarray -in engWords.txt -word 8 >> out.txt 2>&1
+cat out.txt
+

@@ -1,0 +1,19 @@
+The implementation of the linked list module involved the development of fundamental functions such as `InitLinkedList`, `AddToBackOfLinkedList`, `RemoveFrom FrontOfLinkedList`, and `DestroyLinkedList`. Each function played a pivotal role
+ in managing the list's structure and dynamics, from initializing an empty list 
+to adding and removing nodes, and eventually deallocating all resources to preve
+nt memory leaks. The work of each function is as follow:
+
+InitLinkedList: It initializes the list by setting its size to 0 and both the front and back pointers to NULL, ensuring the list starts empty and ready for new nodes. This initial setup is critical for the list's integrity and future operations.
+
+AddToBackOfLinkedList: In the AddToBackOfLinkedList function, I allocated memory for a new node and ensured the string data was securely copied into it. I then linked the new node into the list, adjusting the Next and Previous pointers to maintain the list's structure. For empty lists, this node also became the front. This function was key to expanding the list, allowing for dynamic data addition.
+
+RemoveFromFrontOfLinkedList: In RemoveFromFrontOfLinkedList function, handles the removal of the first node, adjusting the list accordingly. This involved dynamically allocating a buffer for the data to be returned, updating the FrontPtr to the next node, and then freeing the removed node to avoid memory leaks. 
+
+DestroyLinkedList: The DestroyLinkedList function, free all the nodes in the list to prevent any memory leaks. The function iterates over each node, starting from the front, and frees them one by one. After all nodes are freed, the list's metadata is reset to indicate an empty list, with the number of elements set to 0 and both the front and back pointers set to NULL. This ensures the list is clean and ready for reuse or safe termination of the program. 
+
+The testing phase, as reflected in the results, demonstrated the functionality and robustness of the implemented methods. The list's ability to grow by adding elements to the back and the correct handling of removal operations, particularly from the front, showcased the effectiveness of the pointer manipulations and memory management strategies employed. 
+
+Challenges encountered during development included ensuring the integrity of the list's structure during node addition and removal, especially considering the need to update multiple pointers in a doubly linked list scenario. Debugging issues related to incorrect pointer handling and memory leaks required systematic testing and the use of tools like `gdb` and `valgrind`.
+
+The results provided a concrete illustration of the list's behaviour through various operations, highlighting the successful addition of nodes, the correct sequence of elements when viewed from both the front and back, and the proper handling of node removals, including edge cases where the list becomes empty.
+

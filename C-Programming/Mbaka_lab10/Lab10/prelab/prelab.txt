@@ -1,0 +1,82 @@
+Results
+-------
+
+Integers are 32 bits long
+
+Proving floating point has limits by adding Epsilon
+Epsilon value '2.220446049250313e-16' didn't add to 10.0, proving floating point limits.
+
+Conversion test
+Started with 0.00 converted to Qn0 = 0 decimal then back to 0.00
+Qn0 0 decimal in binary is [0000000000000000]
+Started with 12.25 converted to Qn3 = 98 decimal then back to 12.25
+Qn3 98 decimal in binary is [0000000001100010]
+Started with 12.0625 converted to Qn3 = 96 decimal then back to 12.0000
+Qn3 96 decimal in binary is [0000000001100000]
+Started with 12.0625 converted to Qn4 = 193 decimal then back to 12.0625
+Qn4 193 decimal in binary is [0000000011000001]
+
+
+Comments
+--------
+
+1) Floating Point Limits
+
+The addition of `DBL_EPSILON` to 10.0 did not change the value, 
+demonstrating the limits of double-precision floating-point arithmetic. The 
+test was conducted by comparing the original value (10.0) with the result after 
+adding `DBL_EPSILON`. Since there was no change, it proves that the precision 
+limit of floating-point numbers prevents the addition of very small values to 
+larger ones. `DBL_EPSILON` represents the smallest difference between two 
+distinct double-precision floating-point numbers, illustrating the precision 
+limit of this data type.
+
+2) Qn0 Conversion
+   
+Converting 0.0 to Qn0 and back resulted in no change to the 
+value, indicating no data loss. A Qn0 number can also be referred to as an 
+integer since it does not have any fractional bits.
+
+3) Qn3 Conversion of 12.25
+
+Converting 12.25 to Qn3 and back to floating-point resulted in 
+no data loss, as the original and final values are the same. This indicates 
+that 12.25 can be accurately represented in Qn3 format without losing precision.
+
+4) Qn3 Conversion of 12.0625
+
+Converting 12.0625 to Qn3 and back resulted in a change from 
+the original value (12.0625) to 12.0000, indicating data loss. This 
+demonstrates that the Qn3 format does not have sufficient precision to 
+accurately represent 12.0625.
+
+5) Qn4 Conversion of 12.0625
+
+Converting 12.0625 to Qn4 and back resulted in no change to the 
+value, indicating no data loss. This shows that Qn4 provides sufficient 
+precision to accurately represent 12.0625 without losing any data.
+
+
+
+Answer to Prelab Questions
+--------------------------
+
+1.  "n" in Qm.n or Qn: This refers to the number of fractional bits in the 
+fixed-point representation, dictating the precision and the smallest 
+representable change in value.
+
+2. "m" in Qm.n or Qn: Represents the number of integer bits, influencing the 
+range of representable values before the decimal point.
+
+3. Converting to Qn: This involves multiplying the floating-point number by 
+2^n (where 'n' is the number of fractional bits), rounding to the nearest 
+integer, and then representing this integer in fixed-point format. This process 
+might involve type conversions from floating-point to integer types.
+
+4. Converting from Qn: Convert the fixed-point number back to a floating-point 
+number by dividing the integer value by 2^n, effectively moving the binary 
+point 'n' places to the left. This step also involves a type conversion, this 
+time from an integer to a floating-point type.
+
+
+

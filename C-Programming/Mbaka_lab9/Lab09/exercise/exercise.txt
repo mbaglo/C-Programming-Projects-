@@ -1,0 +1,371 @@
+------------
+IEEE format
+-------------
+
+3) Compile and test IEEE print routine
+-------------------------------------------
+
+Number 0.000000 => Bin sign:0 Dec exponent:-127  Hex significand .0
+Number 1.000000 => Bin sign:0 Dec exponent:0  Hex significand .0
+Number -1.000000 => Bin sign:1 Dec exponent:0  Hex significand .0
+Number 1.500000 => Bin sign:0 Dec exponent:0  Hex significand .800000
+Number 1.250000 => Bin sign:0 Dec exponent:0  Hex significand .400000
+Number 1.125000 => Bin sign:0 Dec exponent:0  Hex significand .200000
+
+------------
+IEEE limits
+-------------
+
+1) The smallest non-zero single precision floating point value possible
+------------------------------------------------------------------------
+
+Smallest Non-Zero Single Precision Value: 1.4013e-45
+
+2) Calculated  single precision epsilon
+----------------------------------------
+Smallest Non-Zero Single Precision Value: 1.4013e-45
+
+         1	2.00000000000000000000
+       0.5	1.50000000000000000000
+      0.25	1.25000000000000000000
+     0.125	1.12500000000000000000
+    0.0625	1.06250000000000000000
+   0.03125	1.03125000000000000000
+  0.015625	1.01562500000000000000
+ 0.0078125	1.00781250000000000000
+0.00390625	1.00390625000000000000
+0.001953125	1.00195312500000000000
+0.0009765625	1.00097656250000000000
+0.00048828125	1.00048828125000000000
+0.00024414062	1.00024414062500000000
+0.00012207031	1.00012207031250000000
+6.1035156e-05	1.00006103515625000000
+3.0517578e-05	1.00003051757812500000
+1.5258789e-05	1.00001525878906250000
+7.6293945e-06	1.00000762939453125000
+3.8146973e-06	1.00000381469726562500
+1.9073486e-06	1.00000190734863281250
+9.5367432e-07	1.00000095367431640625
+4.7683716e-07	1.00000047683715820312
+2.3841858e-07	1.00000023841857910156
+1.1920929e-07	1.00000011920928955078
+
+Calculated Machine Epsilon: 1.19209e-07
+Actual Machine Epsilon:     1.19209e-07
+
+
+4) Difference Between Smallest Floating-Point Number and Epsilon
+----------------------------------------------------------------
+
+Smallest Floating-Point Number: The minimum positive value that 
+single-precision can represent, crucial for handling values near zero.
+
+Epsilon: The smallest value that, when added to 1.0, yields a different result, 
+indicating the precision limit around 1.0.
+
+Logical Difference: The smallest floating-point number deals with 
+representational limits near zero, while epsilon relates to the precision of 
+arithmetic operations around 1.0.
+Smallest Non-Zero Single Precision Value: 1.4013e-45
+
+5) Calculate the smallest non-zero double precision floating point value 
+------------------------------------------------------------------------    
+Smallest Non-Zero Single Precision Value: 1.4013e-45
+
+         1	2.00000000000000000000
+       0.5	1.50000000000000000000
+      0.25	1.25000000000000000000
+     0.125	1.12500000000000000000
+    0.0625	1.06250000000000000000
+   0.03125	1.03125000000000000000
+  0.015625	1.01562500000000000000
+ 0.0078125	1.00781250000000000000
+0.00390625	1.00390625000000000000
+0.001953125	1.00195312500000000000
+0.0009765625	1.00097656250000000000
+0.00048828125	1.00048828125000000000
+0.00024414062	1.00024414062500000000
+0.00012207031	1.00012207031250000000
+6.1035156e-05	1.00006103515625000000
+3.0517578e-05	1.00003051757812500000
+1.5258789e-05	1.00001525878906250000
+7.6293945e-06	1.00000762939453125000
+3.8146973e-06	1.00000381469726562500
+1.9073486e-06	1.00000190734863281250
+9.5367432e-07	1.00000095367431640625
+4.7683716e-07	1.00000047683715820312
+2.3841858e-07	1.00000023841857910156
+1.1920929e-07	1.00000011920928955078
+
+Calculated Machine Epsilon: 1.19209e-07
+Actual Machine Epsilon:     1.19209e-07
+
+Smallest Non-Zero Double Precision Value: 4.94066e-324
+
+
+
+6) Calculate the double precision format epsilon
+------------------------------------------------
+Smallest Non-Zero Single Precision Value: 1.4013e-45
+
+         1	2.00000000000000000000
+       0.5	1.50000000000000000000
+      0.25	1.25000000000000000000
+     0.125	1.12500000000000000000
+    0.0625	1.06250000000000000000
+   0.03125	1.03125000000000000000
+  0.015625	1.01562500000000000000
+ 0.0078125	1.00781250000000000000
+0.00390625	1.00390625000000000000
+0.001953125	1.00195312500000000000
+0.0009765625	1.00097656250000000000
+0.00048828125	1.00048828125000000000
+0.00024414062	1.00024414062500000000
+0.00012207031	1.00012207031250000000
+6.1035156e-05	1.00006103515625000000
+3.0517578e-05	1.00003051757812500000
+1.5258789e-05	1.00001525878906250000
+7.6293945e-06	1.00000762939453125000
+3.8146973e-06	1.00000381469726562500
+1.9073486e-06	1.00000190734863281250
+9.5367432e-07	1.00000095367431640625
+4.7683716e-07	1.00000047683715820312
+2.3841858e-07	1.00000023841857910156
+1.1920929e-07	1.00000011920928955078
+
+Calculated Machine Epsilon: 1.19209e-07
+Actual Machine Epsilon:     1.19209e-07
+
+Smallest Non-Zero Double Precision Value: 4.94066e-324
+
+         1	2.00000000000000000000
+       0.5	1.50000000000000000000
+      0.25	1.25000000000000000000
+     0.125	1.12500000000000000000
+    0.0625	1.06250000000000000000
+   0.03125	1.03125000000000000000
+  0.015625	1.01562500000000000000
+ 0.0078125	1.00781250000000000000
+0.00390625	1.00390625000000000000
+0.001953125	1.00195312500000000000
+0.0009765625	1.00097656250000000000
+0.00048828125	1.00048828125000000000
+0.00024414062	1.00024414062500000000
+0.00012207031	1.00012207031250000000
+6.1035156e-05	1.00006103515625000000
+3.0517578e-05	1.00003051757812500000
+1.5258789e-05	1.00001525878906250000
+7.6293945e-06	1.00000762939453125000
+3.8146973e-06	1.00000381469726562500
+1.9073486e-06	1.00000190734863281250
+9.5367432e-07	1.00000095367431640625
+4.7683716e-07	1.00000047683715820312
+2.3841858e-07	1.00000023841857910156
+1.1920929e-07	1.00000011920928955078
+5.9604645e-08	1.00000005960464477539
+2.9802322e-08	1.00000002980232238770
+1.4901161e-08	1.00000001490116119385
+7.4505806e-09	1.00000000745058059692
+3.7252903e-09	1.00000000372529029846
+1.8626451e-09	1.00000000186264514923
+9.3132257e-10	1.00000000093132257462
+4.6566129e-10	1.00000000046566128731
+2.3283064e-10	1.00000000023283064365
+1.1641532e-10	1.00000000011641532183
+5.8207661e-11	1.00000000005820766091
+2.910383e-11	1.00000000002910383046
+1.4551915e-11	1.00000000001455191523
+7.2759576e-12	1.00000000000727595761
+3.6379788e-12	1.00000000000363797881
+1.8189894e-12	1.00000000000181898940
+9.094947e-13	1.00000000000090949470
+4.5474735e-13	1.00000000000045474735
+2.2737368e-13	1.00000000000022737368
+1.1368684e-13	1.00000000000011368684
+5.6843419e-14	1.00000000000005684342
+2.8421709e-14	1.00000000000002842171
+1.4210855e-14	1.00000000000001421085
+7.1054274e-15	1.00000000000000710543
+3.5527137e-15	1.00000000000000355271
+1.7763568e-15	1.00000000000000177636
+8.8817842e-16	1.00000000000000088818
+4.4408921e-16	1.00000000000000044409
+2.220446e-16	1.00000000000000022204
+
+Calculated Machine Double Precision Epsilon: 2.22045e-16
+Actual Machine Double Precision Epsilon:     2.22045e-16
+
+----------------
+Function design
+----------------
+
+1) Implement the 4 “complex add” functions  and compile them with -O0
+----------------------------------------------------------------------
+
+Adding 1.000000+2.000000i and 3.000000+4.000000i
+   Result(addSSS) is:4.000000+6.000000i
+
+Adding 1.000000+2.000000i and 3.000000+4.000000i
+   Result(addSPI) is:4.000000+6.000000i
+
+Adding 1.000000+2.000000i and 3.000000+4.000000i
+   Result(addPPP) is:4.000000+6.000000i
+
+Adding 1.000000+2.000000i and 3.000000+4.000000i
+Are these results right? length is 25 bytes
+   Result(addSSP) is:4.000000+6.000000i
+
+Adding 1.000000+2.000000i and 3.000000+4.000000i
+Are these results right? length is 25 bytes
+   Result(addSSP) is:0.000000+0.000000i
+
+
+Analysis of Complex Addition Functions:
+The addSSS, addSPI, and addPPP functions all produced the expected results, 
+correctly summing the complex numbers 1.000000+2.000000i and 3.000000+4.000000i 
+to yield 4.000000+6.000000i. These functions appear to be implemented correctly 
+and behave as expected under the -O0 optimization level.
+
+However, the addSSP function showed inconsistent behavior in its output. 
+Initially, it produced the correct result (4.000000+6.000000i), matching the 
+other functions. But upon a subsequent call, it yielded 0.000000+0.000000i, 
+which is incorrect. This discrepancy suggests a potential issue with the addSSP 
+function, likely stemming from returning a pointer to a local variable. While 
+the function might seem to work in certain cases (possibly due to specific 
+compiler optimizations or the state of the stack at the function's return), 
+it's not reliable and exhibits undefined behavior, as demonstrated by the 
+incorrect output in the latter call.
+
+2) The advantages or disadvantages of each addition method.
+------------------------------------------------------------
+
+addSSS (Struct to Struct, returning Struct):
+---------------------------------------------
+
+Advantages:
+Straightforward and easy to understand.
+Safe because it returns a value rather than a pointer, avoiding issues related 
+to pointer invalidation.
+
+Disadvantages:
+Potentially less efficient for large structs due to the overhead of copying the 
+struct for the return value.
+
+addSPI (Struct to Pointer with Input):
+---------------------------------------
+
+Advantages:
+Efficient for large structs because it avoids copying the struct by using a 
+pointer.
+Allows the function to modify the caller's variable directly.
+
+Disadvantages:
+Requires careful management of pointers to avoid dereferencing null or invalid 
+pointers.
+Slightly more complex due to indirect addressing.
+
+addPPP (Pointer to Pointer with Input):
+---------------------------------------
+
+Advantages:
+Highly efficient, especially for large structs, because it works directly with 
+pointers and avoids copying data.
+Flexible, as it can modify the caller's variables directly and can work with 
+dynamically allocated memory.
+
+Disadvantages:
+Complexity increases due to double indirection, making the code harder to read 
+and maintain.
+Risk of pointer-related errors, such as dereferencing null or dangling pointers.
+
+addSSP (Struct to Struct, returning Pointer):
+---------------------------------------------
+
+Advantages:
+Avoids copying the struct for the return value, which can be more efficient for 
+large structs.
+
+Disadvantages:
+Unsafe because it returns a pointer to a local variable, leading to undefined 
+behavior. The local variable goes out of scope when the function returns, 
+making the returned pointer invalid.
+This method's result can be unpredictable and change with different compiler 
+optimizations, making it unreliable.
+   
+ 4) Recompile with -O1 and Analyze Results
+ ------------------------------------------
+Adding 1.000000+2.000000i and 3.000000+4.000000i
+   Result(addSSS) is:4.000000+6.000000i
+
+Adding 1.000000+2.000000i and 3.000000+4.000000i
+   Result(addSPI) is:4.000000+6.000000i
+
+Adding 1.000000+2.000000i and 3.000000+4.000000i
+   Result(addPPP) is:4.000000+6.000000i
+
+Adding 1.000000+2.000000i and 3.000000+4.000000i
+Are these results right? length is 25 bytes
+   Result(addSSP) is:0.000000+0.000000i
+
+Adding 1.000000+2.000000i and 3.000000+4.000000i
+Are these results right? length is 25 bytes
+   Result(addSSP) is:0.000000+0.000000
+
+
+After recompiling with -O1 and running the program, all functions (addSSS, 
+addSPI, addPPP, addSSP) yielded correct results, identical to those from the 
+-O0 compilation. However, the addSSP function remains unreliable because it 
+returns a pointer to a local variable. Although the output did not change in 
+this instance, this method is prone to undefined behavior, making its 
+correctness unpredictable across different environments or optimization levels.
+
+--------------------
+Complex data type
+--------------------
+
+Original polynomial:
+P(x) =  1x^3 + 3x^2 + 7x^1 + 5x^0  
+Derivative polynomial:
+P(x) =  3x^2 + 6x^1 + 7x^0  
+Polynomial evaluations:
+p(2.0+3.0I) is  -42  +66i 
+pDeriv(2.0+3.0I) is  4  +54i 
+Quadratic equation:
+P(x) = 1x^2 - 1x^1 + 1x^0
+Roots:  0.5  -0.866025i  and  0.5  +0.866025i 
+Quadratic equation:
+P(x) = 1x^2 + 3x^1 + 2x^0
+Roots:  -1  and  -2 
+
+
+==157340== Memcheck, a memory error detector
+==157340== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==157340== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==157340== Command: ./lab_d
+==157340== 
+Original polynomial:
+P(x) =  1x^3 + 3x^2 + 7x^1 + 5x^0  
+Derivative polynomial:
+P(x) =  3x^2 + 6x^1 + 7x^0  
+Polynomial evaluations:
+p(2.0+3.0I) is  -42  +66i 
+pDeriv(2.0+3.0I) is  4  +54i 
+Quadratic equation:
+P(x) = 1x^2 - 1x^1 + 1x^0
+Roots:  0.5  -0.866025i  and  0.5  +0.866025i 
+Quadratic equation:
+P(x) = 1x^2 + 3x^1 + 2x^0
+Roots:  -1  and  -2 
+==157340== 
+==157340== HEAP SUMMARY:
+==157340==     in use at exit: 0 bytes in 0 blocks
+==157340==   total heap usage: 4 allocs, 4 frees, 208 bytes allocated
+==157340== 
+==157340== All heap blocks were freed -- no leaks are possible
+==157340== 
+==157340== For lists of detected and suppressed errors, rerun with: -s
+==157340== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+
+

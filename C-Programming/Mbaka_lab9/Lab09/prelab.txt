@@ -1,0 +1,16 @@
+// Macros for IEEE Single Precision Floating-Point Format
+#define SIGN_MASK 0x80000000
+#define SIGN_SHIFT 31
+#define EXPONENT_MASK 0x7F800000
+#define EXPONENT_SHIFT 23
+#define EXPONENT_BIAS 127
+#define SIGNIFICAND_MASK 0x007FFFFF
+
+// Answers to Prelab Questions
+
+1) Normalized 1 format means that the leading digit of the significand is always 1 and is not stored explicitly in the IEEE representation.
+2) Hexadecimal value for IEEE positive zero is 0x00000000.
+3) Hexadecimal value for IEEE negative zero is 0x80000000.
+4) The function used to determine if an IEEE number is "not a number" (NaN) is isnan().
+5) Returning a pointer to a stack variable is invalid because the stack memory is reclaimed after the function returns, making the pointer dangling.
+

@@ -1,0 +1,13 @@
+Running hw6c with data.txt
+Elapsed CPU Time DataTimer = 0.01 seconds
+Elapsed CPU Time per Iteration (DataTimer, 800) = 1.250000e-05 seconds
+Elapsed CPU Time CalcTimer = 0.00 seconds
+Elapsed CPU Time per Iteration (CalcTimer, 80000) = 0.000000e+00 seconds
+move fopen to top enabled 
+5000 data lines processed, the least square line is : Y = -nan * X + -nan
+Running hw6cpp with data.txt
+Elapsed CPU Time DataTimer = 2.67 seconds
+Elapsed CPU Time per Iteration (DataTimer, 800) = 3.337500e-03 seconds
+Elapsed CPU Time CalcTimer = 5.65 seconds
+Elapsed CPU Time per Iteration (CalcTimer, 80000) = 7.062500e-05 seconds
+4000800 data lines processed, the best least squares line is: Y = 1.26393 * X + 0.823035

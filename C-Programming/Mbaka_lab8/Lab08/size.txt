@@ -1,0 +1,860 @@
+----------------------------         
+Line 1a. Analysis for speed
+---------------------------
+-------------------
+./hw8c_00 data.txt
+--------------------
+
+Elapsed CPU Time DataTimer = '4.72' seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = '4.720000e-02' seconds
+Elapsed CPU Time CalcTimer = '0.57' seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = '2.850000e-05' seconds
+move fopen to top disabled 
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+Elapsed CPU Time DataTimer = '4.70' seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = '4.700000e-02' seconds
+Elapsed CPU Time CalcTimer = 0.57 seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = '2.850000e-05' seconds
+move fopen to top disabled 
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+Elapsed CPU Time DataTimer = '4.70' seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = '4.700000e-02' seconds
+Elapsed CPU Time CalcTimer = '0.56' seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = '2.800000e-05' seconds
+move fopen to top disabled 
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+-------------------
+./hw8c_01 data.txt
+------------------
+Elapsed CPU Time DataTimer = '1.59' seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = '1.590000e-02' seconds
+Elapsed CPU Time CalcTimer = 0.12 seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = '6.000000e-06' seconds
+move fopen to top disabled 
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+Elapsed CPU Time DataTimer = '1.59' seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = '1.590000e-02' seconds
+Elapsed CPU Time CalcTimer = '0.12' seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = '6.000000e-06' seconds
+move fopen to top disabled 
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+Elapsed CPU Time DataTimer = '1.58' seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = '1.580000e-02' seconds
+Elapsed CPU Time CalcTimer = '0.12' seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = '6.000000e-06' seconds
+move fopen to top disabled 
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+-------------------
+./hw8c_02 data.txt
+------------------
+Elapsed CPU Time DataTimer = '1.69' seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = '1.690000e-02' seconds
+Elapsed CPU Time CalcTimer = '0.12' seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = '6.000000e-06' seconds
+move fopen to top disabled 
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+Elapsed CPU Time DataTimer = '1.69' seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = '1.690000e-02' seconds
+Elapsed CPU Time CalcTimer = '0.12' seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = '6.000000e-06' seconds
+move fopen to top disabled 
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+Elapsed CPU Time DataTimer = '1.66' seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = '1.660000e-02' seconds
+Elapsed CPU Time CalcTimer = '0.12' seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = '6.000000e-06' seconds
+move fopen to top disabled 
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+-------------------
+./hw8c_03 data.txt
+------------------
+Elapsed CPU Time DataTimer = '1.66' seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = '1.660000e-02' seconds
+Elapsed CPU Time CalcTimer = '0.12' seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = '6.000000e-06' seconds
+move fopen to top disabled 
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+Elapsed CPU Time DataTimer = '1.66' seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = '1.660000e-02' seconds
+Elapsed CPU Time CalcTimer = '0.12' seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = '6.000000e-06' seconds
+move fopen to top disabled 
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+Elapsed CPU Time DataTimer = '1.71' seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = '1.710000e-02' seconds
+Elapsed CPU Time CalcTimer = '0.12' seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = '6.000000e-06' seconds
+move fopen to top disabled 
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+---------------------------------
+Line 1b. Analysis for size - hw8c
+---------------------------------
+----------
+ls -l
+---------
+-rwxrwx--- 1 gm6629 student 16728 Mar 16 12:51 hw8c_00
+-rwxrwx--- 1 gm6629 student 20512 Mar 16 12:51 hw8c_01
+-rwxrwx--- 1 gm6629 student 20976 Mar 16 12:51 hw8c_02
+-rwxrwx--- 1 gm6629 student 23792 Mar 16 12:51 hw8c_03
+
+-------
+size 
+-------
+   text	   data	    bss	    dec	    hex	filename
+   5194	    644	     16	   5854	   16de	hw8c_00
+   
+   text	   data	    bss	    dec	    hex	filename
+   3673	    636	     16	   4325	   10e5	hw8c_01
+   
+   text	   data	    bss	    dec	    hex	filename
+   3737	    636	     16	   4389	   1125	hw8c_02
+ 
+   text	   data	    bss	    dec	    hex	filename
+   4121	    636	     16	   4773	   12a5	hw8c_03
+
+----------------------------------
+Calculation of the Average  Data  
+-----------------------------------
+
+ hw8c_O0 Optimization
+- DataTimer average: (4.72 + 4.70 + 4.70) / 3 = 4.71 seconds
+- DataTimer per-iteration time average: (0.0472 + 0.0470 + 0.0470) / 3 = 
+0.047067 seconds
+- CalcTimer average: (0.57 + 0.57 + 0.56) / 3 = 0.57 seconds
+- CalcTimer per-iteration time average: (2.85e-05 + 2.85e-05 + 2.80e-05) / 3 = 
+2.83e-05 seconds
+ 
+ 
+ hw8c_O1 Optimization
+- DataTimer average: (1.59 + 1.59 + 1.58) / 3 = 1.59 seconds
+- DataTimer per-iteration time average: (0.0159 + 0.0159 + 0.0158) / 3 = 
+0.015867 seconds
+- CalcTimer average: (0.12 + 0.12 + 0.12) / 3 = 0.12 seconds
+- CalcTimer per-iteration time average: (6.00e-06) = 6.00e-06 seconds (since 
+all values are the same, the average is also the same)
+
+ hw8c_O2 Optimization
+- DataTimer average: (1.69 + 1.69 + 1.66) / 3 = 1.68 seconds
+- DataTimer per-iteration time average: (0.0169 + 0.0169 + 0.0166) / 3 = 0.0168 
+seconds
+- CalcTimer average: (0.12 + 0.12 + 0.12) / 3 = 0.12 seconds
+- CalcTimer per-iteration time average: (6.00e-06) = 6.00e-06 seconds (same 
+reasoning as above)
+ 
+ hw8c_O3 Optimization
+- DataTimer average: (1.66 + 1.66 + 1.71) / 3 = 1.68 seconds
+- DataTimer per-iteration time average: (0.0166 + 0.0166 + 0.0171) / 3 = 
+0.016767 seconds
+- CalcTimer average: (0.12 + 0.12 + 0.12) / 3 = 0.12 seconds
+- CalcTimer per-iteration time average: (6.00e-06) = 6.00e-06 seconds (same 
+reasoning as above)
+
+-----------------------------
+Comparisons and Conclusions
+------------------------------
+1. Timing Comparison: The optimization from -O0 to -O1 significantly reduces 
+the data input time, with a notable improvement in per-iteration time. The 
+calculation times and their per-iteration times are fairly consistent from -O1 
+through -O3, indicating that the main performance gain occurs when moving from 
+-O0 to -O1.
+
+2. Per-Iteration Time Analysis: The per-iteration times for data input and 
+calculations decrease significantly from -O0 to -O1, highlighting the 
+efficiency gains from optimization. The consistency in per-iteration times for 
+calculations across -O1 to -O3 suggests that the computational part of the 
+program is already optimized at -O1.
+
+3. Size Comparison: The size of the compiled programs increases with higher 
+optimization levels, indicating a trade-off between execution speed and program 
+size. The binary size increases by approximately 18% from -O0 to -O1, 2% from 
+-O1 to -O2, and 13% from -O2 to -O3.
+
+4. Overall Conclusion: The -O1 optimization level offers the best balance 
+between speed improvement and increase in size. Further optimization levels 
+(-O2, -O3) do not provide significant additional speed benefits but lead to 
+larger binary sizes. Therefore, for this program, -O1 is the recommended 
+optimization level for a balanced improvement in execution speed with a 
+moderate increase in binary size.
+
+
+
+----------------------------         
+Line 2a. Analysis for speed
+---------------------------
+------------------------
+./hw8c_opt1_00 data.txt
+-------------------------
+Elapsed CPU Time DataTimer = '0.21' seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = '2.100000e-03' seconds
+Elapsed CPU Time CalcTimer = '0.56' seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = '2.800000e-05' seconds
+move fopen to top disabled 
+Adds x2 memory growth and realloc to the base code.
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+
+Elapsed CPU Time DataTimer = '0.21' seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = '2.100000e-03' seconds
+Elapsed CPU Time CalcTimer = '0.56' seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = '2.800000e-05' seconds
+move fopen to top disabled 
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+Using realloc for array resizing.
+
+Elapsed CPU Time DataTimer = '0.21' seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = '2.100000e-03' seconds
+Elapsed CPU Time CalcTimer = '0.57' seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = '2.850000e-05' seconds
+move fopen to top disabled 
+Adds x2 memory growth and realloc to the base code.
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+------------------------
+./hw8c_opt1_01 data.txt
+------------------------
+Elapsed CPU Time DataTimer = '0.22' seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = '2.200000e-03' seconds
+Elapsed CPU Time CalcTimer = '0.12' seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = '6.000000e-06' seconds
+move fopen to top disabled 
+Adds x2 memory growth and realloc to the base code.
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+
+Elapsed CPU Time DataTimer = '0.21' seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = '2.100000e-03' seconds
+Elapsed CPU Time CalcTimer = '0.12' seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = '6.000000e-06' seconds
+move fopen to top disabled 
+Adds x2 memory growth and realloc to the base code.
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+
+Elapsed CPU Time DataTimer = '0.22' seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = '2.200000e-03' seconds
+Elapsed CPU Time CalcTimer = '0.12' seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = '6.000000e-06' seconds
+move fopen to top disabled 
+Adds x2 memory growth and realloc to the base code.
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+------------------------
+./hw8c_opt1_02 data.txt
+------------------------
+
+Elapsed CPU Time DataTimer = '0.23' seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = '2.300000e-03' seconds
+Elapsed CPU Time CalcTimer = '0.12' seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = '6.000000e-06' seconds
+move fopen to top disabled 
+Adds x2 memory growth and realloc to the base code.
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+
+Elapsed CPU Time DataTimer = '0.21' seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = '2.100000e-03' seconds
+Elapsed CPU Time CalcTimer = '0.12' seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = '6.000000e-06' seconds
+move fopen to top disabled 
+Adds x2 memory growth and realloc to the base code.
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+
+Elapsed CPU Time DataTimer = '0.21' seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = '2.100000e-03' seconds
+Elapsed CPU Time CalcTimer = '0.12' seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = '6.000000e-06' seconds
+move fopen to top disabled 
+Adds x2 memory growth and realloc to the base code.
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+------------------------
+./hw8c_opt1_03 data.txt
+------------------------
+Elapsed CPU Time DataTimer = '0.22' seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = '2.200000e-03' seconds
+Elapsed CPU Time CalcTimer = '0.12' seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = '6.000000e-06' seconds
+move fopen to top disabled 
+Adds x2 memory growth and realloc to the base code
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+
+Elapsed CPU Time DataTimer = '0.21' seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = '2.100000e-03' seconds
+Elapsed CPU Time CalcTimer = '0.12' seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = '6.000000e-06' seconds
+move fopen to top disabled 
+Adds x2 memory growth and realloc to the base code
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+Elapsed CPU Time DataTimer = '0.22' seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = '2.200000e-03' seconds
+Elapsed CPU Time CalcTimer = '0.12' seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = '6.000000e-06' seconds
+move fopen to top disabled 
+Adds x2 memory growth and realloc to the base code
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+--------------------------------------
+Line 2b. Analysis for size - hw8c_opt1
+--------------------------------------
+----------
+ls -l
+---------
+-rwxrwx--- 1 gm6629 student 16760 Mar 16 16:10 hw8c_opt1_00
+-rwxrwx--- 1 gm6629 student 20432 Mar 16 16:10 hw8c_opt1_01
+-rwxrwx--- 1 gm6629 student 20960 Mar 16 16:10 hw8c_opt1_02
+-rwxrwx--- 1 gm6629 student 23624 Mar 16 16:10 hw8c_opt1_03
+
+----------
+Size
+---------
+
+   text	   data	    bss	    dec	    hex	filename
+   5228	    652	     16	   5896	   1708	hw8c_opt1_00
+
+   text	   data	    bss	    dec	    hex	filename
+   3707	    644	     16	   4367	   110f	hw8c_opt1_01
+
+   text	   data	    bss	    dec	    hex	filename
+   3715	    644	     16	   4375	   1117	hw8c_opt1_02
+
+   text	   data	    bss	    dec	    hex	filename
+   4067	    644	     16	   4727	   1277	hw8c_opt1_03
+
+----------------------------------
+Calculation of the Average  Data  
+----------------------------------
+
+ hw8c_opt1_O0 Optimization
+- DataTimer average: (0.21 + 0.21 + 0.21) / 3 = 0.21 seconds
+- DataTimer per-iteration time average: (2.100000e-03 + 2.100000e-03 + 
+2.100000e-03) / 3 = 2.100000e-03 seconds
+- CalcTimer average: (0.56 + 0.56 + 0.57) / 3 = 0.563 seconds
+- CalcTimer per-iteration time average: (2.800000e-05 + 2.800000e-05 + 
+2.850000e-05) / 3 = 2.816667e-05 seconds
+
+ hw8c_opt1_O1 Optimization
+- DataTimer average: (0.22 + 0.21 + 0.22) / 3 = 0.2167 seconds
+- DataTimer per-iteration time average: (2.200000e-03 + 2.100000e-03 + 
+2.200000e-03) / 3 = 2.166667e-03 seconds
+- CalcTimer average: (0.12 + 0.12 + 0.12) / 3 = 0.12 seconds
+- CalcTimer per-iteration time average: (6.000000e-06) = 6.000000e-06 seconds 
+(since all values are the same, the average is also the same)
+
+ hw8c_opt1_O2 Optimization
+- DataTimer average: (0.23 + 0.21 + 0.21) / 3 = 0.2167 seconds
+- DataTimer per-iteration time average: (2.300000e-03 + 2.100000e-03 + 
+2.100000e-03) / 3 = 2.166667e-03 seconds
+- CalcTimer average: (0.12 + 0.12 + 0.12) / 3 = 0.12 seconds
+- CalcTimer per-iteration time average: (6.000000e-06) = 6.000000e-06 seconds 
+(same reasoning as above)
+
+ hw8c_opt1_O3 Optimization
+- DataTimer average: (0.22 + 0.21 + 0.22) / 3 = 0.2167 seconds
+- DataTimer per-iteration time average: (2.200000e-03 + 2.100000e-03 + 
+2.200000e-03) / 3 = 2.166667e-03 seconds
+- CalcTimer average: (0.12 + 0.12 + 0.12) / 3 = 0.12 seconds
+- CalcTimer per-iteration time average: (6.000000e-06) = 6.000000e-06 seconds 
+(same reasoning as above)
+
+ 
+-------------------------------
+ Comparisons and Conclusions
+------------------------------
+1. Timing Comparison: The -O0 to -O1 transition shows a decrease in DataTimer, 
+and this trend continues slightly into -O2. The CalcTimer remains consistent 
+from -O1 onwards, indicating no further significant gains in calculation 
+efficiency with higher optimizations.
+
+2. Per-Iteration Time Analysis: The per-iteration time for DataTimer decreases 
+slightly from -O0 to -O2 and then stabilizes. The per-iteration time for 
+CalcTimer is consistent across all optimization levels, indicating that the 
+calculation part of the code is not significantly affected by these 
+optimizations.
+
+3. Size Comparison: The binary size increases with each optimization level, 
+indicating a trade-off between execution speed and program size.
+
+4. For this program, -O1 provides a good balance between execution speed and 
+binary size. Further optimizations (-O2, -O3) offer minimal performance gains 
+in terms of execution speed but result in larger binary sizes.
+
+5. The new implementation vs the original implementation across all compiler 
+optimization levels: The new implementation with realloc and memory doubling 
+significantly improves the DataTimer performance across all optimization levels 
+compared to the original implementation. This indicates more efficient data 
+handling, likely due to fewer memory allocation calls and more efficient memory 
+usage patterns. The CalcTimer performance in the new implementation is on par 
+with the original from -O1 onwards, indicating that the calculation part of the 
+code is already optimized in the original implementation and not significantly 
+affected by the changes in data handling.
+
+6. The size of the binaries in the new implementation is slightly larger or 
+comparable to the original, which is a common trade-off for achieving better 
+runtime performance.
+
+----------------------------         
+Line 3a. Analysis for speed
+---------------------------
+-------------------------
+./hw8c_opt2_00 data.txt
+------------------------
+Elapsed CPU Time DataTimer = '4.70' seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = '4.700000e-02' seconds
+Elapsed CPU Time CalcTimer = 0.50 seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = 2.500000e-05 seconds
+move fopen to top disabled 
+Adds native loop unrolling to the base code. 
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+Elapsed CPU Time DataTimer = 4.69 seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = 4.690000e-02 seconds
+Elapsed CPU Time CalcTimer = 0.50 seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = 2.500000e-05 seconds
+move fopen to top disabled 
+Adds native loop unrolling to the base code. 
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+Elapsed CPU Time DataTimer = 4.71 seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = 4.710000e-02 seconds
+Elapsed CPU Time CalcTimer = 0.50 seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = 2.500000e-05 seconds
+move fopen to top disabled 
+Adds native loop unrolling to the base code. 
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+--------------------------
+./hw8c_opt2_01 data.txt
+-------------------------
+Elapsed CPU Time DataTimer = 1.59 seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = 1.590000e-02 seconds
+Elapsed CPU Time CalcTimer = 0.10 seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = 5.000000e-06 seconds
+move fopen to top disabled 
+Adds native loop unrolling to the base code. 
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+Elapsed CPU Time DataTimer = 1.59 seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = 1.590000e-02 seconds
+Elapsed CPU Time CalcTimer = 0.10 seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = 5.000000e-06 seconds
+move fopen to top disabled 
+Adds native loop unrolling to the base code. 
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+Elapsed CPU Time DataTimer = 1.62 seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = 1.620000e-02 seconds
+Elapsed CPU Time CalcTimer = 0.10 seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = 5.000000e-06 seconds
+move fopen to top disabled 
+Adds native loop unrolling to the base code. 
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+-------------------------
+./hw8c_opt2_02 data.txt
+--------------------------
+
+Elapsed CPU Time DataTimer = 1.65 seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = 1.650000e-02 seconds
+Elapsed CPU Time CalcTimer = 0.09 seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = 4.500000e-06 seconds
+move fopen to top disabled 
+Adds native loop unrolling to the base code. 
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+Elapsed CPU Time DataTimer = 1.72 seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = 1.720000e-02 seconds
+Elapsed CPU Time CalcTimer = 0.09 seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = 4.500000e-06 seconds
+move fopen to top disabled 
+Adds native loop unrolling to the base code. 
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+Elapsed CPU Time DataTimer = 1.66 seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = 1.660000e-02 seconds
+Elapsed CPU Time CalcTimer = 0.09 seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = 4.500000e-06 seconds
+move fopen to top disabled 
+Adds native loop unrolling to the base code. 
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+-----------------------
+./hw8c_opt2_03 data.txt
+-----------------------
+
+Elapsed CPU Time DataTimer = 1.64 seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = 1.640000e-02 seconds
+Elapsed CPU Time CalcTimer = 0.09 seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = 4.500000e-06 seconds
+move fopen to top disabled 
+Adds native loop unrolling to the base code. 
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+Elapsed CPU Time DataTimer = 1.64 seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = 1.640000e-02 seconds
+Elapsed CPU Time CalcTimer = 0.10 seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = 5.000000e-06 seconds
+move fopen to top disabled 
+Adds native loop unrolling to the base code. 
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+Elapsed CPU Time DataTimer = 1.71 seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = 1.710000e-02 seconds
+Elapsed CPU Time CalcTimer = 0.09 seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = 4.500000e-06 seconds
+move fopen to top disabled 
+Adds native loop unrolling to the base code. 
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+---------------------------------------
+Line 3b. Analysis for size - hw8c_opt2
+---------------------------------------
+---------
+ls -l
+---------
+-rwxrwx--- 1 gm6629 student 16760 Mar 16 17:39 hw8c_opt2_00
+-rwxrwx--- 1 gm6629 student 20616 Mar 16 17:39 hw8c_opt2_01
+-rwxrwx--- 1 gm6629 student 21096 Mar 16 17:39 hw8c_opt2_02
+-rwxrwx--- 1 gm6629 student 21752 Mar 16 17:39 hw8c_opt2_03
+ 
+---------
+Size
+---------
+   
+   text	   data	    bss	    dec	    hex	filename
+   5674	    644	     16	   6334	   18be	hw8c_opt2_00
+
+   text	   data	    bss	    dec	    hex	filename
+   3873	    636	     16	   4525	   11ad	hw8c_opt2_01
+
+   text	   data	    bss	    dec	    hex	filename
+   3929	    636	     16	   4581	   11e5	hw8c_opt2_02
+
+   text	   data	    bss	    dec	    hex	filename
+   4137	    636	     16	   4789	   12b5	hw8c_opt2_03
+
+
+----------------------------------
+Calculation of the Average  Data  
+----------------------------------
+
+ hw8c_opt2_O0 Optimization
+- DataTimer average: (4.70 + 4.69 + 4.71) / 3 = 4.70 seconds
+- DataTimer per-iteration time average: (4.700000e-02 + 4.690000e-02 + 
+4.710000e-02) / 3 = 4.700000e-02 seconds
+- CalcTimer average: (0.50 + 0.50 + 0.50) / 3 = 0.50 seconds
+- CalcTimer per-iteration time average: (2.500000e-05 + 2.500000e-05 + 
+2.500000e-05) / 3 = 2.500000e-05 seconds
+
+ hw8c_opt2_O1 Optimization
+- DataTimer average: (1.59 + 1.59 + 1.62) / 3 = 1.60 seconds
+- DataTimer per-iteration time average: (1.590000e-02 + 1.590000e-02 + 
+1.620000e-02) / 3 = 1.600000e-02 seconds
+- CalcTimer average: (0.10 + 0.10 + 0.10) / 3 = 0.10 seconds
+- CalcTimer per-iteration time average: (5.000000e-06 + 5.000000e-06 + 
+5.000000e-06) / 3 = 5.000000e-06 seconds
+
+ hw8c_opt2_O2 Optimization
+- DataTimer average: (1.65 + 1.72 + 1.66) / 3 = 1.6767 seconds
+- DataTimer per-iteration time average: (1.650000e-02 + 1.720000e-02 + 
+1.660000e-02) / 3 = 1.6767e-02 seconds
+- CalcTimer average: (0.09 + 0.09 + 0.09) / 3 = 0.09 seconds
+- CalcTimer per-iteration time average: (4.500000e-06 + 4.500000e-06 + 
+4.500000e-06) / 3 = 4.500000e-06 seconds
+
+ hw8c_opt2_O3 Optimization
+- DataTimer average: (1.64 + 1.64 + 1.71) / 3 = 1.6633 seconds
+- DataTimer per-iteration time average: (1.640000e-02 + 1.640000e-02 + 
+1.710000e-02) / 3 = 1.6633e-02 seconds
+- CalcTimer average: (0.09 + 0.10 + 0.09) / 3 = 0.0933 seconds
+- CalcTimer per-iteration time average: (4.500000e-06 + 5.000000e-06 + 
+4.500000e-06) / 3 = 4.666667e-06 seconds
+
+ 
+-------------------------------
+ Comparisons and Conclusions
+-------------------------------
+
+1. Timing Comparison: Moving from -O0 to -O1 optimization shows a significant 
+reduction in both DataTimer and CalcTimer, indicating a substantial performance 
+improvement. The transition from -O1 to -O3 offers marginal gains in speed, 
+especially in CalcTimer.
+
+2. Per-Iteration Time Analysis: The per-iteration times for both DataTimer and 
+CalcTimer show a consistent decrease from -O0 to -O3 optimizations, with 
+notable improvements from -O0 to -O1. Further optimizations beyond -O1 provide 
+smaller incremental improvements.
+
+3. Size Comparison: The binary size increases with each optimization level, 
+with the most significant jump observed from -O0 to -O1.
+
+4. Overall Conclusion: The loop unrolling technique implemented in hw8c_opt2 
+shows improved performance, especially in the calculation phase, across all 
+optimization levels. The -O1 optimization level stands out as the most 
+beneficial in terms of performance gains relative to the increase in binary 
+size. Further optimizations (-O2, -O3) yield diminishing returns in performance 
+gains compared.
+
+
+----------------------------         
+Line 4a. Analysis for speed
+---------------------------
+-----------------------------
+./hw8c_opt3_00 data.txt
+----------------------------
+Elapsed CPU Time DataTimer = 4.76 seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = 4.760000e-02 seconds
+Elapsed CPU Time CalcTimer = 0.49 seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = 2.450000e-05 seconds
+move fopen to top disabled 
+Adds smarter loop unrolling to the base code. 
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+Elapsed CPU Time DataTimer = 4.68 seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = 4.680000e-02 seconds
+Elapsed CPU Time CalcTimer = 0.49 seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = 2.450000e-05 seconds
+move fopen to top disabled 
+Adds smarter loop unrolling to the base code. 
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+Elapsed CPU Time DataTimer = 4.69 seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = 4.690000e-02 seconds
+Elapsed CPU Time CalcTimer = 0.49 seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = 2.450000e-05 seconds
+move fopen to top disabled 
+Adds smarter loop unrolling to the base code. 
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+------------------------
+./hw8c_opt3_01 data.txt
+------------------------
+Elapsed CPU Time DataTimer = 1.58 seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = 1.580000e-02 seconds
+Elapsed CPU Time CalcTimer = 0.12 seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = 6.000000e-06 seconds
+move fopen to top disabled 
+Adds smarter loop unrolling to the base code. 
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+Elapsed CPU Time DataTimer = 1.61 seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = 1.610000e-02 seconds
+Elapsed CPU Time CalcTimer = 0.12 seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = 6.000000e-06 seconds
+move fopen to top disabled 
+Adds smarter loop unrolling to the base code. 
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+Elapsed CPU Time DataTimer = 1.61 seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = 1.610000e-02 seconds
+Elapsed CPU Time CalcTimer = 0.12 seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = 6.000000e-06 seconds
+move fopen to top disabled 
+Adds smarter loop unrolling to the base code. 
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+
+------------------------
+./hw8c_opt3_02 data.txt
+-----------------------
+Elapsed CPU Time DataTimer = 1.70 seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = 1.700000e-02 seconds
+Elapsed CPU Time CalcTimer = 0.09 seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = 4.500000e-06 seconds
+move fopen to top disabled 
+Adds smarter loop unrolling to the base code. 
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+Elapsed CPU Time DataTimer = 1.71 seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = 1.710000e-02 seconds
+Elapsed CPU Time CalcTimer = 0.09 seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = 4.500000e-06 seconds
+move fopen to top disabled 
+Adds smarter loop unrolling to the base code. 
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+Elapsed CPU Time DataTimer = 1.65 seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = 1.650000e-02 seconds
+Elapsed CPU Time CalcTimer = 0.09 seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = 4.500000e-06 seconds
+move fopen to top disabled 
+Adds smarter loop unrolling to the base code. 
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+
+---------------------------
+./hw8c_opt3_03 data.txt
+---------------------------
+Elapsed CPU Time DataTimer = 1.69 seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = 1.690000e-02 seconds
+Elapsed CPU Time CalcTimer = 0.09 seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = 4.500000e-06 seconds
+move fopen to top disabled 
+Adds smarter loop unrolling to the base code. 
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+Elapsed CPU Time DataTimer = 1.65 seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = 1.650000e-02 seconds
+Elapsed CPU Time CalcTimer = 0.09 seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = 4.500000e-06 seconds
+move fopen to top disabled 
+Adds smarter loop unrolling to the base code. 
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+Elapsed CPU Time DataTimer = 1.66 seconds
+Elapsed CPU Time per Iteration (DataTimer, 100) = 1.660000e-02 seconds
+Elapsed CPU Time CalcTimer = 0.09 seconds
+Elapsed CPU Time per Iteration (CalcTimer, 20000) = 4.500000e-06 seconds
+move fopen to top disabled 
+Adds smarter loop unrolling to the base code. 
+500000 data lines processed, the least square line is : Y = 1.26393 * X + 
+0.823035
+
+--------------------------------------
+Line 4b. Analysis for size - hw8c_opt1
+--------------------------------------
+----------
+ls -l
+---------
+
+-rwxrwx--- 1 gm6629 student 16992 Mar 16 18:22 hw8c_opt3_00
+-rwxrwx--- 1 gm6629 student 21328 Mar 16 18:22 hw8c_opt3_01
+-rwxrwx--- 1 gm6629 student 21856 Mar 16 18:22 hw8c_opt3_02
+-rwxrwx--- 1 gm6629 student 22512 Mar 16 18:22 hw8c_opt3_03
+
+----------
+Size
+---------
+   text	   data	    bss	    dec	    hex	filename
+   5818	    644	     16	   6478	   194e	hw8c_opt3_00
+
+   text	   data	    bss	    dec	    hex	filename
+   3921	    636	     16	   4573	   11dd	hw8c_opt3_01
+
+   text	   data	    bss	    dec	    hex	filename
+   3977	    636	     16	   4629	   1215	hw8c_opt3_02
+
+   text	   data	    bss	    dec	    hex	filename
+   4185	    636	     16	   4837	   12e5	hw8c_opt3_03
+
+
+----------------------------------
+Calculation of the Average  Data  
+----------------------------------
+
+hw8c_opt3_O0 Optimization
+- DataTimer average: (4.76 + 4.68 + 4.69) / 3 = 4.71 seconds
+- DataTimer per-iteration time average: (4.760000e-02 + 4.680000e-02 + 
+4.690000e-02) / 3 = 4.71e-02 seconds
+- CalcTimer average: (0.49 + 0.49 + 0.49) / 3 = 0.49 seconds
+- CalcTimer per-iteration time average: (2.450000e-05) = 2.45e-05 seconds 
+(since all values are the same, the average is also the same)
+
+ hw8c_opt3_O1 Optimization
+- DataTimer average: (1.58 + 1.61 + 1.61) / 3 = 1.60 seconds
+- DataTimer per-iteration time average: (1.580000e-02 + 1.610000e-02 + 
+1.610000e-02) / 3 = 1.60e-02 seconds
+- CalcTimer average: (0.12 + 0.12 + 0.12) / 3 = 0.12 seconds
+- CalcTimer per-iteration time average: (6.000000e-06) = 6.00e-06 seconds (same 
+reasoning as above)
+
+ hw8c_opt3_O2 Optimization
+- DataTimer average: (1.70 + 1.71 + 1.65) / 3 = 1.6867 seconds
+- DataTimer per-iteration time average: (1.700000e-02 + 1.710000e-02 + 
+1.650000e-02) / 3 = 1.6867e-02 seconds
+- CalcTimer average: (0.09 + 0.09 + 0.09) / 3 = 0.09 seconds
+- CalcTimer per-iteration time average: (4.500000e-06) = 4.50e-06 seconds (same 
+reasoning as above)
+
+ hw8c_opt3_O3 Optimization
+- DataTimer average: (1.69 + 1.65 + 1.66) / 3 = 1.6667 seconds
+- DataTimer per-iteration time average: (1.690000e-02 + 1.650000e-02 + 
+1.660000e-02) / 3 = 1.6667e-02 seconds
+- CalcTimer average: (0.09 + 0.09 + 0.09) / 3 = 0.09 seconds
+- CalcTimer per-iteration time average: (4.500000e-06) = 4.50e-06 seconds (same 
+reasoning as above)
+
+ ----------------------------
+ Comparisons and Conclusions
+ ----------------------------
+
+1. Timing Comparison: The data input times slightly increased from hw8c_opt2 to 
+hw8c_opt3, while the calculation times remained relatively stable across 
+optimization levels. This indicates that the smarter loop unrolling in 
+hw8c_opt3 had minimal impact on CalcTimer but slightly increased DataTimer.
+
+2. Per-Iteration Time Analysis: The per-iteration times for both DataTimer and 
+CalcTimer remained consistent across optimization levels, suggesting that the 
+smarter loop unrolling technique has reached a plateau in terms of 
+computational efficiency.
+
+3. Size Comparison: The binary size of hw8c_opt3 is slightly larger than 
+hw8c_opt2 across all optimization levels, suggesting an increase in complexity 
+due to the more complex loop unrolling implementation.
+
+4. Overall Conclusion: The transition to a more complex loop unrolling approach 
+in hw8c_opt3 results in a minimal change in execution performance but leads to 
+a slight increase in binary size. This suggests that the benefits of further 
+loop unrolling optimizations are marginal and might not justify the added 
+complexity and size in certain cases.

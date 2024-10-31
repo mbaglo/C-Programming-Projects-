@@ -1,0 +1,355 @@
+Line 4
+------
+
+Main: Starting thread...
+Main: All threads started...
+Main will sleep 1 second. 
+     Thread 1, will sleep 1 second. 
+Main will sleep 1 second. 
+     Thread 1, will sleep 1 second. 
+Exiting main thread
+     Thread 1, will sleep 1 second. 
+     Thread 1, will sleep 1 second. 
+     Thread 1, will sleep 1 second. 
+     Thread 1, will sleep 1 second. 
+
+Line 5
+------
+
+==38076== Memcheck, a memory error detector
+==38076== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==38076== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==38076== Command: ./lab_a
+==38076== 
+==38076== Thread 2:
+==38076== Conditional jump or move depends on uninitialised value(s)
+==38076==    at 0x509DC5E: vfprintf (in /usr/lib64/libc-2.17.so)
+==38076==    by 0x50A64E8: printf (in /usr/lib64/libc-2.17.so)
+==38076==    by 0x4007AB: mySimpleThread (lab_a.c:60)
+==38076==    by 0x4E3EEA4: start_thread (in /usr/lib64/libpthread-2.17.so)
+==38076==    by 0x5151B0C: clone (in /usr/lib64/libc-2.17.so)
+==38076==  Uninitialised value was created by a stack allocation
+==38076==    at 0x5142350: __exit_thread (in /usr/lib64/libc-2.17.so)
+==38076== 
+==38076== Use of uninitialised value of size 8
+==38076==    at 0x509B32B: _itoa_word (in /usr/lib64/libc-2.17.so)
+==38076==    by 0x509F5B0: vfprintf (in /usr/lib64/libc-2.17.so)
+==38076==    by 0x50A64E8: printf (in /usr/lib64/libc-2.17.so)
+==38076==    by 0x4007AB: mySimpleThread (lab_a.c:60)
+==38076==    by 0x4E3EEA4: start_thread (in /usr/lib64/libpthread-2.17.so)
+==38076==    by 0x5151B0C: clone (in /usr/lib64/libc-2.17.so)
+==38076==  Uninitialised value was created by a stack allocation
+==38076==    at 0x5142350: __exit_thread (in /usr/lib64/libc-2.17.so)
+==38076== 
+==38076== Conditional jump or move depends on uninitialised value(s)
+==38076==    at 0x509B335: _itoa_word (in /usr/lib64/libc-2.17.so)
+==38076==    by 0x509F5B0: vfprintf (in /usr/lib64/libc-2.17.so)
+==38076==    by 0x50A64E8: printf (in /usr/lib64/libc-2.17.so)
+==38076==    by 0x4007AB: mySimpleThread (lab_a.c:60)
+==38076==    by 0x4E3EEA4: start_thread (in /usr/lib64/libpthread-2.17.so)
+==38076==    by 0x5151B0C: clone (in /usr/lib64/libc-2.17.so)
+==38076==  Uninitialised value was created by a stack allocation
+==38076==    at 0x5142350: __exit_thread (in /usr/lib64/libc-2.17.so)
+==38076== 
+==38076== Conditional jump or move depends on uninitialised value(s)
+==38076==    at 0x509F5FF: vfprintf (in /usr/lib64/libc-2.17.so)
+==38076==    by 0x50A64E8: printf (in /usr/lib64/libc-2.17.so)
+==38076==    by 0x4007AB: mySimpleThread (lab_a.c:60)
+==38076==    by 0x4E3EEA4: start_thread (in /usr/lib64/libpthread-2.17.so)
+==38076==    by 0x5151B0C: clone (in /usr/lib64/libc-2.17.so)
+==38076==  Uninitialised value was created by a stack allocation
+==38076==    at 0x5142350: __exit_thread (in /usr/lib64/libc-2.17.so)
+==38076== 
+==38076== Conditional jump or move depends on uninitialised value(s)
+==38076==    at 0x509DD2B: vfprintf (in /usr/lib64/libc-2.17.so)
+==38076==    by 0x50A64E8: printf (in /usr/lib64/libc-2.17.so)
+==38076==    by 0x4007AB: mySimpleThread (lab_a.c:60)
+==38076==    by 0x4E3EEA4: start_thread (in /usr/lib64/libpthread-2.17.so)
+==38076==    by 0x5151B0C: clone (in /usr/lib64/libc-2.17.so)
+==38076==  Uninitialised value was created by a stack allocation
+==38076==    at 0x5142350: __exit_thread (in /usr/lib64/libc-2.17.so)
+==38076== 
+==38076== Conditional jump or move depends on uninitialised value(s)
+==38076==    at 0x509DDAE: vfprintf (in /usr/lib64/libc-2.17.so)
+==38076==    by 0x50A64E8: printf (in /usr/lib64/libc-2.17.so)
+==38076==    by 0x4007AB: mySimpleThread (lab_a.c:60)
+==38076==    by 0x4E3EEA4: start_thread (in /usr/lib64/libpthread-2.17.so)
+==38076==    by 0x5151B0C: clone (in /usr/lib64/libc-2.17.so)
+==38076==  Uninitialised value was created by a stack allocation
+==38076==    at 0x5142350: __exit_thread (in /usr/lib64/libc-2.17.so)
+==38076== 
+Main: Starting thread...
+Main: All threads started...
+Main will sleep 1 second. 
+     Thread 1, will sleep 1 second. 
+Main will sleep 1 second. 
+     Thread 1, will sleep 1 second. 
+Exiting main thread
+     Thread 1, will sleep 1 second. 
+     Thread 1, will sleep 1 second. 
+     Thread 1, will sleep 1 second. 
+     Thread 1, will sleep 1 second. 
+==38076== 
+==38076== HEAP SUMMARY:
+==38076==     in use at exit: 560 bytes in 1 blocks
+==38076==   total heap usage: 6 allocs, 5 frees, 2,192 bytes allocated
+==38076== 
+==38076== Thread 1:
+==38076== 560 bytes in 1 blocks are possibly lost in loss record 1 of 1
+==38076==    at 0x4C2C089: calloc (vg_replace_malloc.c:762)
+==38076==    by 0x4012784: _dl_allocate_tls (in /usr/lib64/ld-2.17.so)
+==38076==    by 0x4E3F87B: pthread_create@@GLIBC_2.2.5 (in 
+/usr/lib64/libpthread-2.17.so)
+==38076==    by 0x400709: main (lab_a.c:32)
+==38076== 
+==38076== LEAK SUMMARY:
+==38076==    definitely lost: 0 bytes in 0 blocks
+==38076==    indirectly lost: 0 bytes in 0 blocks
+==38076==      possibly lost: 560 bytes in 1 blocks
+==38076==    still reachable: 0 bytes in 0 blocks
+==38076==         suppressed: 0 bytes in 0 blocks
+==38076== 
+==38076== For lists of detected and suppressed errors, rerun with: -s
+==38076== ERROR SUMMARY: 19 errors from 7 contexts (suppressed: 0 from 0)
+
+Comment
+-------
+
+Did valgrind report memory leaks?
+
+Yes, the valgrind reported memory leaks.
+
+Line 9
+------
+
+Main: Starting thread...
+Main: All threads started...
+     Thread 1, will sleep 1 second. 
+     Thread 1, will sleep 1 second. 
+     Thread 1, will sleep 1 second. 
+     Thread 1, will sleep 1 second. 
+     Thread 1, will sleep 1 second. 
+     Thread 1, will sleep 1 second. 
+Thread finished with return code: 0
+Main will sleep 1 second. 
+Main will sleep 1 second. 
+Exiting main thread
+
+Comment
+-------
+How does the new code differ from the previous?
+
+The modifications from lab_a.c to lab_b.c incorporate pthread_join(), ensuring 
+that the main thread waits for the child thread to finish before proceeding. 
+This synchronization enhances the control and predictability of the program's 
+execution. In lab_a.c, the main and child threads run concurrently without 
+synchronization, leading to interleaved outputs and potential premature 
+termination of the main thread. In contrast, lab_b.c shows a structured and 
+sequential execution, with the child thread completing all its tasks before the 
+main thread continues, thereby ensuring a cleaner and safer program 
+termination. 
+
+
+Line 10
+--------
+
+
+==143043== Memcheck, a memory error detector
+==143043== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==143043== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==143043== Command: ./lab_b
+==143043== 
+Main: Starting thread...
+Main: All threads started...
+     Thread 1, will sleep 1 second. 
+     Thread 1, will sleep 1 second. 
+     Thread 1, will sleep 1 second. 
+     Thread 1, will sleep 1 second. 
+     Thread 1, will sleep 1 second. 
+     Thread 1, will sleep 1 second. 
+Thread finished with return code: 0
+Main will sleep 1 second. 
+Main will sleep 1 second. 
+Exiting main thread
+==143043== 
+==143043== HEAP SUMMARY:
+==143043==     in use at exit: 0 bytes in 0 blocks
+==143043==   total heap usage: 6 allocs, 6 frees, 2,192 bytes allocated
+==143043== 
+==143043== All heap blocks were freed -- no leaks are possible
+==143043== 
+==143043== For lists of detected and suppressed errors, rerun with: -s
+==143043== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+Comment
+-------
+
+Did valgrind report memory leaks?
+
+No there are no memory leaks.
+
+What is the basic difference between lab_a.c and lab_b.c?
+
+In transitioning from `lab_a.c` to `lab_b.c`, the introduction of 
+`pthread_join()` significantly improved thread management. `lab_a.c` showed 
+potential memory leaks and utilized uninitialized values, which could lead to 
+unpredictable behavior. In contrast, `lab_b.c` demonstrated perfect memory 
+management with no leaks and all allocated memory freed properly, reflecting 
+robust and reliable execution. The addition of `pthread_join()` in `lab_b.c` 
+ensured that the main thread properly waited for the child thread to complete, 
+leading to more orderly and safe program termination.
+
+
+Main: Starting thread 1...
+Main: Starting thread 2...
+     Thread 1, will sleep 1 second. 
+Main: Starting thread 3...
+Main: All threads started...
+     Thread 3, will sleep 1 second. 
+     Thread 2, will sleep 1 second. 
+     Thread 1, will sleep 1 second. 
+     Thread 3, will sleep 1 second. 
+     Thread 2, will sleep 1 second. 
+     Thread 3, will sleep 1 second. 
+     Thread 2, will sleep 1 second. 
+     Thread 1, will sleep 1 second. 
+     Thread 3, will sleep 1 second. 
+     Thread 2, will sleep 1 second. 
+     Thread 1, will sleep 1 second. 
+     Thread 3, will sleep 1 second. 
+     Thread 2, will sleep 1 second. 
+     Thread 1, will sleep 1 second. 
+     Thread 3, will sleep 1 second. 
+     Thread 2, will sleep 1 second. 
+     Thread 1, will sleep 1 second. 
+Thread 1 finished with return code: 1
+Thread 2 finished with return code: 2
+Thread 3 finished with return code: 3
+Main will sleep 1 second. 
+Main will sleep 1 second. 
+Exiting main thread
+
+==187175== Memcheck, a memory error detector
+==187175== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==187175== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==187175== Command: ./lab_c
+==187175== 
+Main: Starting thread 1...
+Main: Starting thread 2...
+Main: Starting thread 3...
+Main: All threads started...
+     Thread 1, will sleep 1 second. 
+     Thread 3, will sleep 1 second. 
+     Thread 2, will sleep 1 second. 
+     Thread 1, will sleep 1 second. 
+     Thread 2, will sleep 1 second. 
+     Thread 3, will sleep 1 second. 
+     Thread 2, will sleep 1 second. 
+     Thread 3, will sleep 1 second. 
+     Thread 1, will sleep 1 second. 
+     Thread 2, will sleep 1 second. 
+     Thread 3, will sleep 1 second. 
+     Thread 1, will sleep 1 second. 
+     Thread 2, will sleep 1 second. 
+     Thread 3, will sleep 1 second. 
+     Thread 1, will sleep 1 second. 
+     Thread 2, will sleep 1 second. 
+     Thread 1, will sleep 1 second. 
+     Thread 3, will sleep 1 second. 
+Thread 1 finished with return code: 1
+Thread 2 finished with return code: 2
+Thread 3 finished with return code: 3
+Main will sleep 1 second. 
+Main will sleep 1 second. 
+Exiting main thread
+==187175== 
+==187175== HEAP SUMMARY:
+==187175==     in use at exit: 0 bytes in 0 blocks
+==187175==   total heap usage: 8 allocs, 8 frees, 3,312 bytes allocated
+==187175== 
+==187175== All heap blocks were freed -- no leaks are possible
+==187175== 
+==187175== For lists of detected and suppressed errors, rerun with: -s
+==187175== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+Comment
+-------
+
+The program successfully manages three concurrent threads, each executing and 
+sleeping in a controlled manner, demonstrating effective multi-threading. 
+Output from the threads is interleaved, indicating true parallel processing. 
+All threads complete their tasks correctly, with unique return codes assigned 
+and verified. Valgrind analysis confirms no memory leaks, showcasing efficient 
+memory management and error-free execution. The application exits cleanly after 
+ensuring all threads have properly finished, exemplifying robust thread 
+synchronization and termination handling.
+
+
+Line 21
+-------
+
+Main: Starting thread 1...
+Main: Starting thread 2...
+Main: Starting thread 3...
+Processed: 0 tasks
+Processed: 0 tasks
+Processed: 3 tasks
+Processed: 6 tasks
+Processed: 9 tasks
+Processed: 12 tasks
+Processed: 15 tasks
+Thread 1 finished with return code: 1
+Thread 2 finished with return code: 2
+Thread 3 finished with return code: 3
+Total wall time: 7 seconds
+Exiting main thread
+
+
+Comment
+-------
+
+The new code in `lab_d.c` enhances thread synchronization using mutexes and 
+introduces real-time progress monitoring and precise performance timing, 
+significantly improving upon `lab_c.c` by adding functionalities that track and 
+report on the execution progress and efficiency of thread operations.
+
+Line 22
+-------
+
+==209291== Memcheck, a memory error detector
+==209291== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==209291== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==209291== Command: ./lab_d
+==209291== 
+Main: Starting thread 1...
+Main: Starting thread 2...
+Main: Starting thread 3...
+Processed: 0 tasks
+Processed: 1 tasks
+Processed: 6 tasks
+Processed: 9 tasks
+Processed: 12 tasks
+Processed: 15 tasks
+Thread 1 finished with return code: 1
+Thread 2 finished with return code: 2
+Thread 3 finished with return code: 3
+Total wall time: 6 seconds
+Exiting main thread
+==209291== 
+==209291== HEAP SUMMARY:
+==209291==     in use at exit: 0 bytes in 0 blocks
+==209291==   total heap usage: 8 allocs, 8 frees, 3,312 bytes allocated
+==209291== 
+==209291== All heap blocks were freed -- no leaks are possible
+==209291== 
+==209291== For lists of detected and suppressed errors, rerun with: -s
+==209291== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+
+Comment
+-------
+
+Did valgrind report memory leaks?
+
+No there are no memory leaks.
